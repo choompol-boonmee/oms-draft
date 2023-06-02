@@ -1,0 +1,1392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:a="http://langdale.com.au/2005/Message#"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <title>Profile Documentation</title>
+      <style type="text/css">
+/* typography: fonts */
+body { font-family: arial, sans-serif; }
+
+.name, .type, .cardinality, .superclass, .xsdtype, .namespace { font-family: courier, monospace; }
+
+
+/* typography: emphasis */
+h1 { color: white; background: gray;}
+
+h2, h3 { color: gray; text-decoration: none;}
+
+h2.abstract, h2.enumerated, h2.domain {font-style: italic } 
+
+p.note { background-color: #ddd }
+
+p.declaration { color: gray }
+
+:link { color: purple; }
+
+.xsdtype { color: black; font-weight: bold; }
+
+.namespace { color: black }
+
+.package { font-size: x-large; color: gray }
+
+
+/* borders */
+div.group {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	
+}
+
+th, td {
+	border-top-style : solid;
+	border-top-width : 1px;
+	border-color: gray;
+ }
+
+
+/* spacing and alignment */
+body {padding: 5px; }
+
+h1 { padding: 5px;}
+
+div.group {
+	margin-top: 10px;
+	padding: 5px;
+	position: relative;
+}
+th, td {
+	text-align : left;
+	vertical-align : top;
+}
+th, td.type { width: 15em; overflow: visible; }
+
+p.cardinality { width: 4em; }
+
+p.package { position: absolute; right: 10px; top: 0px}				
+</style>
+   </head>
+   <body>
+      <h1>Profile Documentation</h1>
+      <p/>
+      <p class="declaration">
+					Profile namespace:
+					<span class="namespace">http://pea.co.th/cim/profile/PM_OMS#</span>
+      </p>
+      <h1>Concrete Classes</h1>
+      <div id="OutageOrder" class="group">
+         <a href="#OutageOrder">
+            <h2 class="concrete">OutageOrder</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Transmits an outage plan to a crew in order for the planned outage to be executed.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="OutageOrder.authorName">authorName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Name of the author of this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageOrder.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageOrder.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free-form comment associated with the outage order</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageOrder.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageOrder.lastModifiedDateTime">lastModifiedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageOrder.revisionNumber">revisionNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Revision number for this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageOrder.subject">subject</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document subject.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageOrder.title">title</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document title.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageOrder.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Utility-specific classification of this document, according to its corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageOrder.OutagePlan">OutagePlan</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#OutagePlan">OutagePlan</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The outage plan that is defined to address the outage order.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="PlannedOutage" class="group">
+         <a href="#PlannedOutage">
+            <h2 class="concrete">PlannedOutage</h2>
+         </a>
+         <p class="package">Operations</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.authorName">authorName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Name of the author of this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.communityDescriptor">communityDescriptor</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">a name to denote the community - this could be a name or a code of some kind.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.customersRestored">customersRestored</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">number of customers that have been restored in the area.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.lastModifiedDateTime">lastModifiedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.metersAffected">metersAffected</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.originalCustomersServed">originalCustomersServed</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">the total number of customers that are served in the area (both outaged and not outaged).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.originalMetersAffected">originalMetersAffected</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.outageKind">outageKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#OutageStatusKind">OutageStatusKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Defines if the outage has been verified or is only estimated</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The reason for the planned outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.revisionNumber">revisionNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Revision number for this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.statusKind">statusKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CrewStatusKind">CrewStatusKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">defines the status of the crew as in dispatched or arrived, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.subject">subject</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document subject.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.title">title</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document title.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Utility-specific classification of this document, according to its corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.utilityDisclaimer">utilityDisclaimer</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">This contains an disclaimers the utility would like to place on the data provided to any stakeholder.  This may be different for different stakeholders.  This should possibly be an attribute under the Organization class but it is placed here for now.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.actualPeriod">actualPeriod</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#DateTimeInterval">DateTimeInterval</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Actual outage period; end of the period corresponds to the actual restoration time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PlannedOutage.estimatedPeriod">estimatedPeriod</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#DateTimeInterval">DateTimeInterval</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Estimated outage period for a planned outage. The start of the period is the start of the planned outage and the end of the period corresponds to the end of the planned outage.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Abstract Classes</h1>
+      <div id="ActivityRecord" class="group">
+         <a href="#ActivityRecord">
+            <h2 class="abstract">ActivityRecord</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Records activity for an entity at a point in time; activity may be for an event that has already occurred or for a planned activity.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason for event resulting in this activity record, typically supplied when user initiated.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.severity">severity</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Severity level of event resulting in this activity record.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Type of event resulting in this activity record.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Information on consequence of event resulting in this activity record.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="CUWorkEquipmentItem" class="group">
+         <a href="#CUWorkEquipmentItem">
+            <h2 class="abstract">CUWorkEquipmentItem</h2>
+         </a>
+         <p class="package">InfWork</p>
+         <p class="comment">Compatible unit for various types of WorkEquipmentAssets, including vehicles.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="CUWorkEquipmentItem.equipCode">equipCode</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The equipment type code.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CUWorkEquipmentItem.rate">rate</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CostRate">CostRate</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Standard usage rate for the type of vehicle.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CUWorkEquipmentItem.CompatibleUnits">CompatibleUnits</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CompatibleUnit">CompatibleUnit</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CUWorkEquipmentItem.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CUWorkEquipmentItem.TypeAsset">TypeAsset</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#WorkAsset">WorkAsset</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+         </table>
+      </div>
+      <div id="OutagePlan" class="group">
+         <a href="#OutagePlan">
+            <h2 class="abstract">OutagePlan</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Document containing the definition of planned outages of equipment and/or usage points. It will reference switching plans that are used to execute the planned outage.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.approvedDateTime">approvedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">The date and time the outage plan was approved</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.authorName">authorName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Name of the author of this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.cancelledDateTime">cancelledDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and Time the planned outage was canceled.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.lastModifiedDateTime">lastModifiedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.purpose">purpose</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Purpose of  this outage plan, such as whether it is to replace equipment or perform maintenance or repairs or to reconfigure network topology.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.revisionNumber">revisionNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Revision number for this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.subject">subject</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document subject.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.title">title</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document title.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Utility-specific classification of this document, according to its corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.PlannedOutage">PlannedOutage</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PlannedOutage">PlannedOutage</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The outage resulting from the execution of the outage plan.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="WorkAsset" class="group">
+         <a href="#WorkAsset">
+            <h2 class="abstract">WorkAsset</h2>
+         </a>
+         <p class="package">Work</p>
+         <p class="comment">Asset used to perform work.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="WorkAsset.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkAsset.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkAsset.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkAsset.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkAsset.CUWorkEquipmentAsset">CUWorkEquipmentAsset</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CUWorkEquipmentItem">CUWorkEquipmentItem</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+         </table>
+      </div>
+      <div id="WorkOrder" class="group">
+         <a href="#WorkOrder">
+            <h2 class="abstract">WorkOrder</h2>
+         </a>
+         <p class="package">Work</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.authorName">authorName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Name of the author of this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.lastModifiedDateTime">lastModifiedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.revisionNumber">revisionNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Revision number for this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.subject">subject</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document subject.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.title">title</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document title.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Utility-specific classification of this document, according to its corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkOrder.ActivityRecord">ActivityRecord</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ActivityRecord">ActivityRecord</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The activity record for a document</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Enumerations</h1>
+      <h1>Compound Types</h1>
+      <div id="Status" class="group">
+         <a href="#Status">
+            <h2 class="abstract">Status</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Current status information relevant to an entity.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Status.dateTime">dateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time for which status 'value' applies.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason code or explanation for why an object went to the current status 'value'.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.remark">remark</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Pertinent information regarding the current 'value', as free form text.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.value">value</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Status value at 'dateTime'; prior status changes may have been kept in instances of activity records associated with the object to which this status applies.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Datatypes</h1>
+      <div id="CostRate" class="group">
+         <a href="#CostRate">
+            <h2 class="domain">CostRate</h2>
+         </a>
+         <p class="package"/>
+         <p class="comment">Cost, in units of currency, per elapsed time.</p>
+         <p class="declaration">XSD type: <span class="xsdtype">float</span>
+         </p>
+      </div>
+   </body>
+</html>

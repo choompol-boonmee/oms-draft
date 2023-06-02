@@ -1,0 +1,941 @@
+@prefix msg:     <http://langdale.com.au/2005/Message#> .
+@prefix :        <http://pea.co.th/cim/profile/ADS_OMS#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix uml:     <http://langdale.com.au/2005/UML#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+
+<http://langdale.com.au/2007/Buildlet#html>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#java>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#legacy-rdfs>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#part100-ed2.xsd>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#rtf>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#ttl>
+      a       msg:Flag .
+
+<http://pea.co.th/cim/profile/ADS_OMS>
+      a       owl:Ontology ;
+      rdfs:label "ADS_OMS_Profile" ;
+      owl:imports <http://iec.ch/TC57/CIM100> .
+
+:AcceptanceTest
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#AcceptanceTest> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AcceptanceTest.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "dateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AcceptanceTest.dateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AcceptanceTest.dateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "success" ;
+                          owl:equivalentClass xsd:boolean
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AcceptanceTest.success>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AcceptanceTest.success>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AcceptanceTest.type>
+              ] .
+
+:ActivityRecord
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#ActivityRecord> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "reason" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.reason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.reason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "severity" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.severity>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.severity>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "createdDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.createdDateTime>
+              ] .
+
+:Analytic
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Analytic> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "bestValue" ;
+                          owl:equivalentClass xsd:float
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Analytic.bestValue>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Analytic.bestValue>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "worstValue" ;
+                          owl:equivalentClass xsd:float
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Analytic.worstValue>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Analytic.worstValue>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "kind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#AnalyticKind> ;
+                          owl:unionOf (:AnalyticKind)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Analytic.kind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Analytic.kind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "scaleKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ScaleKind>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Analytic.scaleKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Analytic.scaleKind>
+              ] .
+
+:AnalyticKind
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#AnalyticKind> .
+
+:AnalyticScore
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#AnalyticScore> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AnalyticScore.calculationDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "effectiveDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AnalyticScore.effectiveDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AnalyticScore.effectiveDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "value" ;
+                          owl:equivalentClass xsd:float
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AnalyticScore.value>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AnalyticScore.value>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "calculationDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#AnalyticScore.calculationDateTime>
+              ] .
+
+:Asset
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Asset> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "acceptanceTest" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#AcceptanceTest> ;
+                          owl:unionOf (:AcceptanceTest)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.acceptanceTest>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Analytic" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Analytic> ;
+                          owl:unionOf (:Analytic)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.Analytic>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "purchasePrice" ;
+                          owl:equivalentClass <http://iec.ch/TC57/CIM100#Money>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.purchasePrice>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "initialCondition" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.initialCondition>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.lifecycleDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.retiredReason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.initialLossOfLife>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "critical" ;
+                          owl:equivalentClass xsd:boolean
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.critical>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.electronicAddress>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.AnalyticScore>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.ErpItemMaster>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "lotNumber" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.lotNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.Analytic>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.purchasePrice>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.initialCondition>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "PowerSystemResources" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#PowerSystemResource> ;
+                          owl:unionOf (:PowerSystemResource)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.PowerSystemResources>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "ActivityRecords" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ActivityRecord> ;
+                          owl:unionOf (:ActivityRecord)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.ActivityRecords>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "position" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.position>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "inUseState" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#InUseStateKind>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.inUseState>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "lifecycleState" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#AssetLifecycleStateKind> ;
+                          owl:unionOf (:AssetLifecycleStateKind)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.lifecycleState>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.acceptanceTest>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.inUseDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.critical>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.PowerSystemResources>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.ActivityRecords>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.position>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.inUseState>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "status" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Status>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.status>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Location" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Location> ;
+                          owl:unionOf (:Location)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.Location>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "utcNumber" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.utcNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "kind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#AssetKind> ;
+                          owl:unionOf (:AssetKind)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.kind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.lifecycleState>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "inUseDate" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#InUseDate> ;
+                          owl:unionOf (:InUseDate)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.inUseDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "ErpInventory" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ErpInventory> ;
+                          owl:unionOf (:ErpInventory)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.ErpInventory>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "serialNumber" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.serialNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "initialLossOfLife" ;
+                          owl:equivalentClass <http://iec.ch/TC57/CIM100#PerCent>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.initialLossOfLife>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.status>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.Location>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.utcNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.lotNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "retiredReason" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#RetiredReasonKind>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.retiredReason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.ErpInventory>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.serialNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.kind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "electronicAddress" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ElectronicAddress> ;
+                          owl:unionOf (:ElectronicAddress)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.electronicAddress>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "AnalyticScore" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#AnalyticScore> ;
+                          owl:unionOf (:AnalyticScore)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.AnalyticScore>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "lifecycleDate" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#LifecycleDate> ;
+                          owl:unionOf (:LifecycleDate)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.lifecycleDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "ErpItemMaster" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ErpItemMaster> ;
+                          owl:unionOf ()
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Asset.ErpItemMaster>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:AssetKind
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#AssetKind> .
+
+:AssetLifecycleStateKind
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#AssetLifecycleStateKind> .
+
+:ElectronicAddress
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#ElectronicAddress> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "email1" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ElectronicAddress.email1>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ElectronicAddress.email1>
+              ] .
+
+:ErpInventory
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#ErpInventory> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "status" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Status> ;
+                          owl:unionOf (:Status)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ErpInventory.status>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ErpInventory.status>
+              ] .
+
+:ErpItemMaster
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#ErpItemMaster> .
+
+:InUseDate
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#InUseDate> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#InUseDate.readyForUseDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "readyForUseDate" ;
+                          owl:equivalentClass xsd:date
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#InUseDate.readyForUseDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#InUseDate.inUseDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "inUseDate" ;
+                          owl:equivalentClass xsd:date
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#InUseDate.inUseDate>
+              ] .
+
+:LifecycleDate
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#LifecycleDate> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.receivedDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.installationDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "installationDate" ;
+                          owl:equivalentClass xsd:date
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.installationDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "receivedDate" ;
+                          owl:equivalentClass xsd:date
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.receivedDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.retiredDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.purchaseDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "retiredDate" ;
+                          owl:equivalentClass xsd:date
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.retiredDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "purchaseDate" ;
+                          owl:equivalentClass xsd:date
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.purchaseDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.removalDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.manufacturedDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "removalDate" ;
+                          owl:equivalentClass xsd:date
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.removalDate>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "manufacturedDate" ;
+                          owl:equivalentClass xsd:date
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#LifecycleDate.manufacturedDate>
+              ] .
+
+:Location
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Location> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "PositionPoints" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#PositionPoint>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.PositionPoints>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.CoordinateSystem>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.direction>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "CoordinateSystem" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#CoordinateSystem>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.CoordinateSystem>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "direction" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.direction>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.PositionPoints>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.geoInfoReference>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "geoInfoReference" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.geoInfoReference>
+              ] .
+
+:PowerSystemResource
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#PowerSystemResource> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Location" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Location> ;
+                          owl:unionOf (:Location)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PowerSystemResource.Location>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PowerSystemResource.Location>
+              ] .
+
+:Status
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Status> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.value>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.dateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "reason" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.reason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.reason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "remark" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.remark>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.remark>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "value" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.value>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "dateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.dateTime>
+              ] .
+
+owl:Thing
+      a       owl:Class .

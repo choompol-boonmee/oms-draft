@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns="http://tu.ac.th/myprof/switch#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:msg="http://langdale.com.au/2005/Message#"
+    xmlns:uml="http://langdale.com.au/2005/UML#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://tu.ac.th/myprof/switch" > 
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bec">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#AnalogValue.value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bee"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#AnalogValue.value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bee">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>value</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bf2">
+    <rdf:first rdf:resource="#AnalogValue"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bf3">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#UnitSymbol.W"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bf4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bf4">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#UnitSymbol.VA"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bf5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bf5">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#UnitSymbol.V"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bf6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bf6">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#UnitSymbol.A"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f74">
+    <rdf:first rdf:resource="#UnitSymbol"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f75">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.ABC"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f76"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f76">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.AB"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f77"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f77">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.A"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f78"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f78">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.BN"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f79"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f79">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.BC"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7a">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.ABCN"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7b">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.CN"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7c">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.AN"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7d">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.AC"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7e">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.B"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f7f">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.ABN"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f9c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f9c">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.ACN"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff0">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.BCN"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff1">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.C"/>
+    <rdf:rest rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff2">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.N"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff3">
+    <rdf:first rdf:resource="#PhaseCode"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Measurement.unitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff6"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Measurement.unitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>unitSymbol</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#UnitSymbol"/>
+    <owl:unionOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f74"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Measurement.phases"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff9"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Measurement.phases"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>phases</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode"/>
+    <owl:unionOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ffa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Analog.AnalogValues"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ffb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ffc"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Analog.AnalogValues"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ffc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>AnalogValues</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#AnalogValue"/>
+    <owl:unionOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bf2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ffd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Analog.normalValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ffe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7fff"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Analog.normalValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7fff">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>normalValue</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#html">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#java">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#rtf">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>Profile</rdfs:label>
+    <owl:imports rdf:resource="http://iec.ch/TC57/CIM100"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Analog">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff4"/>
+    <rdfs:subClassOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff5"/>
+    <rdfs:subClassOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff7"/>
+    <rdfs:subClassOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ff8"/>
+    <rdfs:subClassOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ffa"/>
+    <rdfs:subClassOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ffb"/>
+    <rdfs:subClassOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ffd"/>
+    <rdfs:subClassOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7ffe"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Analog"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AnalogValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bec"/>
+    <rdfs:subClassOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bed"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#AnalogValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PhaseCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode"/>
+    <owl:oneOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-7f75"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#UnitSymbol"/>
+    <owl:oneOf rdf:nodeID="X23Xc4f6f10Xa3X188483f387fXa3X-6bf3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

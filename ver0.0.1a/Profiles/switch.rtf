@@ -1,0 +1,433 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033\fs20{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0{\*\fname Arial;}Arial CE;}
+{\f23\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Arial;}}{\colortbl;\red0\green0\blue238;}
+\pard\plain \sb120\qj\fs20\lang1033
+{\par\b\fs28Profile\par}Profile namespace:  http://tu.ac.th/myprof/switch# 
+\par\pard\plain \sb120\qj\fs20\lang1033 
+
+{\par\b\fs28 Concrete Classes \par}
+
+{\par\b\fs24 {\*\bkmkstart Analog}Analog}{\fs24 {\*\bkmkend Analog}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 Analog represents an analog Measurement.}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 normalValue \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 float \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Normal measurement value, e.g., used for percentage calculations.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 phases \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "PhaseCode"}}{\fldrslt {\fs16\ul\cf1 PhaseCode}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Indicates to which phases the measurement applies and avoids the need to use 'measurementType' to also encode phase information (which would explode the types). The phase information in Measurement, along with 'measurementType' and 'phases' uniquely defines a Measurement for a device, based on normal network phase. Their meaning will not change when the computed energizing phasing is changed due to jumpers or other reasons.}
+
+{\sb120\sa120 If the attribute is missing three phases (ABC) shall be assumed.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 unitSymbol \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "UnitSymbol"}}{\fldrslt {\fs16\ul\cf1 UnitSymbol}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 The unit of measure of the measured quantity.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 AnalogValues \cell}
+{\pard \intbl \sb120\sa120\fs16 1..*  \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AnalogValue"}}{\fldrslt {\fs16\ul\cf1 AnalogValue}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 The values connected to this measurement.}
+ \cell}
+\row
+}
+
+{\par\b\fs28 Abstract Classes \par}
+
+{\par\b\fs24 {\*\bkmkstart AnalogValue}AnalogValue}{\fs32 {\*\bkmkend AnalogValue}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 AnalogValue represents an analog MeasurementValue.}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 value \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 float \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 The value to supervise.}
+ \cell}
+\row
+}
+
+{\par\b\fs28 Enumerations \par}
+
+{\par\b\fs24 {\*\bkmkstart PhaseCode}PhaseCode}{\fs32 {\*\bkmkend PhaseCode} \par}
+An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.The integer values are from IEC 61968-9 to support revenue metering applications.
+\par\pard\plain \sb120\qj\fs20\lang1033 
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 A \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phase A.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 AB \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases A and B.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 ABC \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases A, B, and C.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 ABCN \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases A, B, C, and N.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 ABN \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases A, B, and neutral.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 AC \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases A and C.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 ACN \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases A, C and neutral.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 AN \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases A and neutral.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 B \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phase B.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 BC \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases B and C.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 BCN \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases B, C, and neutral.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 BN \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases B and neutral.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 C \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phase C.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 CN \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Phases C and neutral.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 N \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Neutral phase.}
+ \cell}
+\row
+}
+
+{\par\b\fs24 {\*\bkmkstart UnitSymbol}UnitSymbol}{\fs32 {\*\bkmkend UnitSymbol} \par}
+The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as "F" instead of "CPerV". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as "kgPerm3". With the exception of the "kg", which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole.Every unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.To allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol "/" is replaced by the letters "Per". Exponents are written in plain text after the unit as "m3" instead of being formatted as "m" with a superscript of 3  or introducing a symbol as in "m^3". The degree symbol "" is replaced with the letters "deg". Any clarification of the meaning for a substitution is included in the description for the unit symbol.Non-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units.The integer values are used for harmonization with IEC 61850.
+\par\pard\plain \sb120\qj\fs20\lang1033 
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 A \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Current in amperes.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 V \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Electric potential in volts (W/A).}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 VA \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Apparent power in volt amperes. See also real power and reactive power.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 W \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power.}
+ \cell}
+\row
+}
+
+\par}}}}}}}}

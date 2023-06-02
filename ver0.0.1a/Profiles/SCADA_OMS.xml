@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Catalog xmlns="http://langdale.com.au/2005/Message#"
+         xmlns:m="http://pea.co.th/cim/profile/SCADA_OMS#"
+         baseURI="http://pea.co.th/cim/profile/SCADA_OMS#"
+         name="Profile">
+   <ComplexType name="Approver"
+                baseClass="http://iec.ch/TC57/CIM100#Approver"
+                package="Common"
+                minOccurs="0"
+                maxOccurs="unbounded">
+      <Comment>Person who accepted/signed or rejected the document.</Comment>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#Person"
+                type="Person"
+                name="Person"
+                baseProperty="http://iec.ch/TC57/CIM100#PersonRole.Person"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>Person having this role.</Comment>
+      </Instance>
+   </ComplexType>
+   <ComplexType name="Author"
+                baseClass="http://iec.ch/TC57/CIM100#Author"
+                package="Common"
+                minOccurs="0"
+                maxOccurs="unbounded">
+      <Comment>Person who created document or activity record.</Comment>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#Person"
+                type="Person"
+                name="Person"
+                baseProperty="http://iec.ch/TC57/CIM100#PersonRole.Person"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>Person having this role.</Comment>
+      </Instance>
+   </ComplexType>
+   <CompoundType name="DateTimeInterval"
+                 baseClass="http://iec.ch/TC57/CIM100#DateTimeInterval"
+                 package="Domain"
+                 minOccurs="0"
+                 maxOccurs="unbounded">
+      <Comment>Interval between two date and time points, where the interval includes the start time but excludes end time.</Comment>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="end"
+              baseProperty="http://iec.ch/TC57/CIM100#DateTimeInterval.end"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>End date and time of this interval.  The end date and time where the interval is defined up to, but excluded.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="start"
+              baseProperty="http://iec.ch/TC57/CIM100#DateTimeInterval.start"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Start date and time of this interval.  The start date and time is included in the defined interval.</Comment>
+      </Simple>
+   </CompoundType>
+   <ComplexType name="Issuer"
+                baseClass="http://iec.ch/TC57/CIM100#Issuer"
+                package="Common"
+                minOccurs="0"
+                maxOccurs="unbounded">
+      <Comment>Person who issued the document and is responsible for its content.</Comment>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#Person"
+                type="Person"
+                name="Person"
+                baseProperty="http://iec.ch/TC57/CIM100#PersonRole.Person"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>Person having this role.</Comment>
+      </Instance>
+   </ComplexType>
+   <ComplexType name="Location"
+                baseClass="http://iec.ch/TC57/CIM100#Location"
+                package="Common"
+                minOccurs="0"
+                maxOccurs="unbounded">
+      <Comment>The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.</Comment>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="direction"
+              baseProperty="http://iec.ch/TC57/CIM100#Location.direction"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>(if applicable) Direction that allows field crews to quickly find a given asset. For a given location, such as a street address, this is the relative direction in which to find the asset. For example, a streetlight may be located at the 'NW' (northwest) corner of the customer's site, or a usage point may be located on the second floor of an apartment building.</Comment>
+      </Simple>
+   </ComplexType>
+   <ComplexType name="OutagePlan"
+                baseClass="http://iec.ch/TC57/CIM100#OutagePlan"
+                package="Operations"
+                minOccurs="0"
+                maxOccurs="unbounded">
+      <Comment>Document containing the definition of planned outages of equipment and/or usage points. It will reference switching plans that are used to execute the planned outage.</Comment>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="approvedDateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#OutagePlan.approvedDateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>The date and time the outage plan was approved</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="cancelledDateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#OutagePlan.cancelledDateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Date and Time the planned outage was canceled.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="purpose"
+              baseProperty="http://iec.ch/TC57/CIM100#OutagePlan.purpose"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Purpose of  this outage plan, such as whether it is to replace equipment or perform maintenance or repairs or to reconfigure network topology.</Comment>
+      </Simple>
+      <Reference type="DateTimeInterval"
+                 name="plannedPeriod"
+                 baseProperty="http://iec.ch/TC57/CIM100#OutagePlan.plannedPeriod"
+                 minOccurs="1"
+                 maxOccurs="1">
+         <Comment>planned start and end time of the planned outage.</Comment>
+      </Reference>
+   </ComplexType>
+   <ComplexType name="Person"
+                baseClass="http://iec.ch/TC57/CIM100#Person"
+                package="Common"
+                minOccurs="0"
+                maxOccurs="unbounded">
+      <Comment>General purpose information for name and other information to contact people.</Comment>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="mName"
+              baseProperty="http://iec.ch/TC57/CIM100#Person.mName"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Middle name(s) or initial(s).</Comment>
+      </Simple>
+   </ComplexType>
+   <EnumeratedType name="PhaseCode"
+                   baseClass="http://iec.ch/TC57/CIM100#PhaseCode"
+                   package="Core"
+                   minOccurs="0"
+                   maxOccurs="unbounded">
+      <Comment>An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.</Comment>
+      <Comment>Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.</Comment>
+      <Comment>The integer values are from IEC 61968-9 to support revenue metering applications.</Comment>
+      <EnumeratedValue name="A" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.A">
+         <Comment>Phase A.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="AB" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.AB">
+         <Comment>Phases A and B.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="ABC" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.ABC">
+         <Comment>Phases A, B, and C.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="ABCN" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.ABCN">
+         <Comment>Phases A, B, C, and N.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="ABN" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.ABN">
+         <Comment>Phases A, B, and neutral.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="AC" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.AC">
+         <Comment>Phases A and C.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="ACN" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.ACN">
+         <Comment>Phases A, C and neutral.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="AN" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.AN">
+         <Comment>Phases A and neutral.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="B" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.B">
+         <Comment>Phase B.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="BC" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.BC">
+         <Comment>Phases B and C.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="BCN" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.BCN">
+         <Comment>Phases B, C, and neutral.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="BN" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.BN">
+         <Comment>Phases B and neutral.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="C" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.C">
+         <Comment>Phase C.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="CN" baseResource="http://iec.ch/TC57/CIM100#PhaseCode.CN">
+         <Comment>Phases C and neutral.</Comment>
+      </EnumeratedValue>
+   </EnumeratedType>
+   <CompoundType name="Status"
+                 baseClass="http://iec.ch/TC57/CIM100#Status"
+                 package="Common"
+                 minOccurs="0"
+                 maxOccurs="unbounded">
+      <Comment>Current status information relevant to an entity.</Comment>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="dateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#Status.dateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Date and time for which status 'value' applies.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="reason"
+              baseProperty="http://iec.ch/TC57/CIM100#Status.reason"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Reason code or explanation for why an object went to the current status 'value'.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="remark"
+              baseProperty="http://iec.ch/TC57/CIM100#Status.remark"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Pertinent information regarding the current 'value', as free form text.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="value"
+              baseProperty="http://iec.ch/TC57/CIM100#Status.value"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Status value at 'dateTime'; prior status changes may have been kept in instances of activity records associated with the object to which this status applies.</Comment>
+      </Simple>
+   </CompoundType>
+   <ComplexType name="Switch"
+                baseClass="http://iec.ch/TC57/CIM100#Switch"
+                package="Wires"
+                minOccurs="0"
+                maxOccurs="unbounded">
+      <Comment>A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches. The ACDCTerminal.connected at the two sides of the switch shall not be considered for assessing switch connectivity, i.e. only Switch.open, .normalOpen and .locked are relevant.</Comment>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#boolean"
+              xstype="boolean"
+              name="normalOpen"
+              baseProperty="http://iec.ch/TC57/CIM100#Switch.normalOpen"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#boolean"
+              xstype="boolean"
+              name="open"
+              baseProperty="http://iec.ch/TC57/CIM100#Switch.open"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>The attribute tells if the switch is considered open when used as input to topology processing.</Comment>
+      </Simple>
+      <Domain type="CurrentFlow"
+              dataType="http://iec.ch/TC57/CIM100#CurrentFlow"
+              xstype="float"
+              name="ratedCurrent"
+              baseProperty="http://iec.ch/TC57/CIM100#Switch.ratedCurrent"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>The maximum continuous current carrying capacity in amps governed by the device material and construction.</Comment>
+         <Comment>The attribute shall be a positive value.</Comment>
+      </Domain>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="switchOnDate"
+              baseProperty="http://iec.ch/TC57/CIM100#Switch.switchOnDate"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>The date and time when the switch was last switched on.</Comment>
+      </Simple>
+   </ComplexType>
+   <Root name="SwitchAction"
+         baseClass="http://iec.ch/TC57/CIM100#SwitchAction"
+         package="Operations"
+         minOccurs="0"
+         maxOccurs="unbounded">
+      <Comment>Action on switch as a switching step.</Comment>
+      <Stereotype>http://langdale.com.au/2005/UML#concrete</Stereotype>
+      <SuperType name="SwitchingAction"/>
+      <Enumerated baseClass="http://iec.ch/TC57/CIM100#SwitchActionKind"
+                  type="SwitchActionKind"
+                  name="kind"
+                  baseProperty="http://iec.ch/TC57/CIM100#SwitchAction.kind"
+                  minOccurs="1"
+                  maxOccurs="1">
+         <Comment>Switching action to perform.</Comment>
+      </Enumerated>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#Switch"
+                type="Switch"
+                name="OperatedSwitch"
+                baseProperty="http://iec.ch/TC57/CIM100#SwitchAction.OperatedSwitch"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>Switch that is the object of this switch action.</Comment>
+      </Instance>
+   </Root>
+   <EnumeratedType name="SwitchActionKind"
+                   baseClass="http://iec.ch/TC57/CIM100#SwitchActionKind"
+                   package="Operations"
+                   minOccurs="0"
+                   maxOccurs="unbounded">
+      <Comment>Kind of action on switch.</Comment>
+      <EnumeratedValue name="close"
+                       baseResource="http://iec.ch/TC57/CIM100#SwitchActionKind.close">
+         <Comment>Close the switch.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="disableReclosing"
+                       baseResource="http://iec.ch/TC57/CIM100#SwitchActionKind.disableReclosing">
+         <Comment>Disable (automatic) switch reclosing.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="enableReclosing"
+                       baseResource="http://iec.ch/TC57/CIM100#SwitchActionKind.enableReclosing">
+         <Comment>Enable (automatic) switch reclosing.</Comment>
+      </EnumeratedValue>
+      <EnumeratedValue name="open"
+                       baseResource="http://iec.ch/TC57/CIM100#SwitchActionKind.open">
+         <Comment>Open the switch.</Comment>
+      </EnumeratedValue>
+   </EnumeratedType>
+   <Root name="SwitchingAction"
+         baseClass="http://iec.ch/TC57/CIM100#SwitchingAction"
+         package="Operations"
+         minOccurs="0"
+         maxOccurs="unbounded">
+      <Comment>Atomic switching action.</Comment>
+      <Stereotype>http://langdale.com.au/2005/UML#concrete</Stereotype>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="executedDateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#SwitchingAction.executedDateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Actual date and time of this switching step.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="issuedDateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#SwitchingAction.issuedDateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Date and time when the crew was given the instruction to execute the action; not applicable if the action is performed by operator remote control.</Comment>
+      </Simple>
+      <Enumerated baseClass="http://iec.ch/TC57/CIM100#PhaseCode"
+                  type="PhaseCode"
+                  name="phases"
+                  baseProperty="http://iec.ch/TC57/CIM100#SwitchingAction.phases"
+                  minOccurs="1"
+                  maxOccurs="1">
+         <Comment>Phases of the Switching Action</Comment>
+      </Enumerated>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="plannedDateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#SwitchingAction.plannedDateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Planned date and time of this switching step.</Comment>
+      </Simple>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#SwitchingEvent"
+                type="SwitchingEvent"
+                name="SwitchingEvent"
+                baseProperty="http://iec.ch/TC57/CIM100#SwitchingAction.SwitchingEvent"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>The switching event that the switching action is performed on</Comment>
+      </Instance>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#SwitchingStep"
+                type="SwitchingStep"
+                name="SwitchingStep"
+                baseProperty="http://iec.ch/TC57/CIM100#SwitchingAction.SwitchingStep"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>The switching step that is associated to the switching action.</Comment>
+      </Instance>
+   </Root>
+   <Root name="SwitchingEvent"
+         baseClass="http://iec.ch/TC57/CIM100#SwitchingEvent"
+         package="Operations"
+         minOccurs="0"
+         maxOccurs="unbounded">
+      <Comment>Event indicating the completion (success or fail) of any switching action (jumper action, cut action, tag action, etc).  The switching action may or may not be a consequential event in response to a request to complete the action.</Comment>
+      <Stereotype>http://langdale.com.au/2005/UML#concrete</Stereotype>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="createdDateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#ActivityRecord.createdDateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable).</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="reason"
+              baseProperty="http://iec.ch/TC57/CIM100#ActivityRecord.reason"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Reason for event resulting in this activity record, typically supplied when user initiated.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="severity"
+              baseProperty="http://iec.ch/TC57/CIM100#ActivityRecord.severity"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Severity level of event resulting in this activity record.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="type"
+              baseProperty="http://iec.ch/TC57/CIM100#ActivityRecord.type"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Type of event resulting in this activity record.</Comment>
+      </Simple>
+   </Root>
+   <Root name="SwitchingOrder"
+         baseClass="http://iec.ch/TC57/CIM100#SwitchingOrder"
+         package="Operations"
+         minOccurs="0"
+         maxOccurs="unbounded">
+      <Comment>Transmits a switching plan to a crew in order for the plan to be executed.</Comment>
+      <Stereotype>http://langdale.com.au/2005/UML#concrete</Stereotype>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="mRID"
+              baseProperty="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</Comment>
+         <Comment>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="authorName"
+              baseProperty="http://iec.ch/TC57/CIM100#Document.authorName"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Name of the author of this document.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="comment"
+              baseProperty="http://iec.ch/TC57/CIM100#SwitchingOrder.comment"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Free-form comment associated with the switching order.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="createdDateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#Document.createdDateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Date and time that this document was created.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="description"
+              baseProperty="http://iec.ch/TC57/CIM100#IdentifiedObject.description"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="lastModifiedDateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="revisionNumber"
+              baseProperty="http://iec.ch/TC57/CIM100#Document.revisionNumber"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Revision number for this document.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="title"
+              baseProperty="http://iec.ch/TC57/CIM100#Document.title"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Document title.</Comment>
+      </Simple>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#Approver"
+                type="Approver"
+                name="Approver"
+                baseProperty="http://iec.ch/TC57/CIM100#Document.Approver"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>Approver of this document.</Comment>
+      </Instance>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#Author"
+                type="Author"
+                name="Author"
+                baseProperty="http://iec.ch/TC57/CIM100#Document.Author"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>Author of this document.</Comment>
+      </Instance>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#Status"
+                type="Status"
+                name="docStatus"
+                baseProperty="http://iec.ch/TC57/CIM100#Document.docStatus"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>Status of this document. For status of subject matter this document represents (e.g., Agreement, Work), use 'status' attribute.</Comment>
+         <Comment>Example values for 'docStatus.status' are draft, approved, cancelled, etc.</Comment>
+      </Instance>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#Issuer"
+                type="Issuer"
+                name="Issuer"
+                baseProperty="http://iec.ch/TC57/CIM100#Document.Issuer"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>Issuer of this document.</Comment>
+      </Instance>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#Location"
+                type="Location"
+                name="Location"
+                baseProperty="http://iec.ch/TC57/CIM100#SwitchingOrder.Location"
+                minOccurs="1"
+                maxOccurs="unbounded">
+         <Comment>Location of this switching order.</Comment>
+      </Instance>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#DateTimeInterval"
+                type="DateTimeInterval"
+                name="plannedExecutionInterval"
+                baseProperty="http://iec.ch/TC57/CIM100#SwitchingOrder.plannedExecutionInterval"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>The planned start and end time for the switching order.</Comment>
+      </Instance>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#Status"
+                type="Status"
+                name="status"
+                baseProperty="http://iec.ch/TC57/CIM100#Document.status"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>Status of subject matter (e.g., Agreement, Work) this document represents. For status of the document itself, use 'docStatus' attribute.</Comment>
+      </Instance>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#SwitchingPlan"
+                type="SwitchingPlan"
+                name="SwitchingPlan"
+                baseProperty="http://iec.ch/TC57/CIM100#SwitchingOrder.SwitchingPlan"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>The switching plan that is defined in the switching order.</Comment>
+      </Instance>
+   </Root>
+   <Root name="SwitchingPlan"
+         baseClass="http://iec.ch/TC57/CIM100#SwitchingPlan"
+         package="Operations"
+         minOccurs="0"
+         maxOccurs="unbounded">
+      <Comment>A sequence of grouped or atomic steps intended to:</Comment>
+      <Comment>- de-energise equipment or part of the network for safe work, and/or</Comment>
+      <Comment>- bring back in service previously de-energised equipment or part of the network.</Comment>
+      <Stereotype>http://langdale.com.au/2005/UML#concrete</Stereotype>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="approvedDateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#SwitchingPlan.approvedDateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>The date and time the switching plan was approved</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#dateTime"
+              xstype="dateTime"
+              name="cancelledDateTime"
+              baseProperty="http://iec.ch/TC57/CIM100#SwitchingPlan.cancelledDateTime"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Date and Time the switching plan was cancelled.</Comment>
+      </Simple>
+      <Simple dataType="http://www.w3.org/2001/XMLSchema#string"
+              xstype="string"
+              name="purpose"
+              baseProperty="http://iec.ch/TC57/CIM100#SwitchingPlan.purpose"
+              minOccurs="1"
+              maxOccurs="1">
+         <Comment>Purpose of  this plan, such as whether it is to move the state from normal to some abnormal condition, or to restore the normal state after an abnormal condition, or to perform some kind of optimisation such as correction of overload, voltage control, etc.</Comment>
+      </Simple>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#OutagePlan"
+                type="OutagePlan"
+                name="OutagePlan"
+                baseProperty="http://iec.ch/TC57/CIM100#SwitchingPlan.OutagePlan"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>The outage plan for which the switching plan is defined.</Comment>
+      </Instance>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#DateTimeInterval"
+                type="DateTimeInterval"
+                name="plannedPeriod"
+                baseProperty="http://iec.ch/TC57/CIM100#SwitchingPlan.plannedPeriod"
+                minOccurs="1"
+                maxOccurs="1">
+         <Comment>the planned start and end times for the switching plan.</Comment>
+      </Instance>
+      <Instance baseClass="http://iec.ch/TC57/CIM100#SwitchingAction"
+                type="SwitchingAction"
+                name="SwitchingAction"
+                baseProperty="http://iec.ch/TC57/CIM100#SwitchingPlan.SwitchingAction"
+                minOccurs="1"
+                maxOccurs="unbounded">
+         <Comment>The switching actions that are associated with the switching plan.</Comment>
+      </Instance>
+   </Root>
+   <ComplexType name="SwitchingStep"
+                baseClass="http://iec.ch/TC57/CIM100#SwitchingStep"
+                package="Operations"
+                minOccurs="0"
+                maxOccurs="unbounded">
+      <Comment>Atomic switching step; can be part of a switching step group, or part of a switching plan.</Comment>
+   </ComplexType>
+   <SimpleType dataType="http://iec.ch/TC57/CIM100#CurrentFlow"
+               name="CurrentFlow"
+               xstype="float">
+      <Comment>Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC.</Comment>
+   </SimpleType>
+</Catalog>

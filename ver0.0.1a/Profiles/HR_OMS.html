@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:a="http://langdale.com.au/2005/Message#"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <title>Profile Documentation</title>
+      <style type="text/css">
+/* typography: fonts */
+body { font-family: arial, sans-serif; }
+
+.name, .type, .cardinality, .superclass, .xsdtype, .namespace { font-family: courier, monospace; }
+
+
+/* typography: emphasis */
+h1 { color: white; background: gray;}
+
+h2, h3 { color: gray; text-decoration: none;}
+
+h2.abstract, h2.enumerated, h2.domain {font-style: italic } 
+
+p.note { background-color: #ddd }
+
+p.declaration { color: gray }
+
+:link { color: purple; }
+
+.xsdtype { color: black; font-weight: bold; }
+
+.namespace { color: black }
+
+.package { font-size: x-large; color: gray }
+
+
+/* borders */
+div.group {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	
+}
+
+th, td {
+	border-top-style : solid;
+	border-top-width : 1px;
+	border-color: gray;
+ }
+
+
+/* spacing and alignment */
+body {padding: 5px; }
+
+h1 { padding: 5px;}
+
+div.group {
+	margin-top: 10px;
+	padding: 5px;
+	position: relative;
+}
+th, td {
+	text-align : left;
+	vertical-align : top;
+}
+th, td.type { width: 15em; overflow: visible; }
+
+p.cardinality { width: 4em; }
+
+p.package { position: absolute; right: 10px; top: 0px}				
+</style>
+   </head>
+   <body>
+      <h1>Profile Documentation</h1>
+      <p/>
+      <p class="declaration">
+					Profile namespace:
+					<span class="namespace">http://pea.co.th/cim/profile/HR_OMS#</span>
+      </p>
+      <h1>Concrete Classes</h1>
+      <div id="Crew" class="group">
+         <a href="#Crew">
+            <h2 class="concrete">Crew</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Group of people with specific skills, tools, and vehicles.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.CrewMembers">CrewMembers</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CrewMember">CrewMember</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All members of this crew.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.CrewType">CrewType</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CrewType">CrewType</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Type of this crew.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.Location">Location</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Location">Location</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The location this crew is assigned to.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Status of this crew.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="CrewMember" class="group">
+         <a href="#CrewMember">
+            <h2 class="concrete">CrewMember</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Member of a crew.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="CrewMember.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewMember.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewMember.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewMember.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewMember.Names">Names</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Name">Name</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All names of this identified object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewMember.Person">Person</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Person">Person</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Person having this role.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Abstract Classes</h1>
+      <div id="Appointment" class="group">
+         <a href="#Appointment">
+            <h2 class="abstract">Appointment</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Meeting time and location.</p>
+      </div>
+      <div id="ConfigurationEvent" class="group">
+         <a href="#ConfigurationEvent">
+            <h2 class="abstract">ConfigurationEvent</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Used to report details on creation, change or deletion of an entity or its configuration.</p>
+      </div>
+      <div id="CoordinateSystem" class="group">
+         <a href="#CoordinateSystem">
+            <h2 class="abstract">CoordinateSystem</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Coordinate reference system.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="CoordinateSystem.crsUrn">crsUrn</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'.</p>
+                  <p class="comment">An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc:def:crs:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry web site http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would be urn:ogc:def:crs:EPSG::4.3.2.6</p>
+                  <p class="comment">A profile should limit this code to a set of allowed URNs agreed to by all sending and receiving parties.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="CrewType" class="group">
+         <a href="#CrewType">
+            <h2 class="abstract">CrewType</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Custom description of the type of crew. This may be used to determine the type of work the crew can be assigned to. Examples include repair, tree trimming, switching, etc.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="CrewType.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewType.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewType.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewType.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Location" class="group">
+         <a href="#Location">
+            <h2 class="abstract">Location</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Location.direction">direction</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">(if applicable) Direction that allows field crews to quickly find a given asset. For a given location, such as a street address, this is the relative direction in which to find the asset. For example, a streetlight may be located at the 'NW' (northwest) corner of the customer's site, or a usage point may be located on the second floor of an apartment building.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Location.geoInfoReference">geoInfoReference</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">(if applicable) Reference to geographical information source, often external to the utility.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Location.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Classification by utility's corporate standards and practices, relative to the location itself (e.g., geographical, functional accounting, etc., not a given property that happens to exist at that location).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Location.CoordinateSystem">CoordinateSystem</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CoordinateSystem">CoordinateSystem</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Coordinate system used to describe position points of this location.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Location.PositionPoints">PositionPoints</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PositionPoint">PositionPoint</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Sequence of position points describing this location, expressed in coordinate system 'Location.CoordinateSystem'.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Name" class="group">
+         <a href="#Name">
+            <h2 class="abstract">Name</h2>
+         </a>
+         <p class="package">Core</p>
+         <p class="comment">The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b&gt;not&lt;/b&gt; to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Name.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Any free text that name the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Name.IdentifiedObject">IdentifiedObject</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#IdentifiedObject">IdentifiedObject</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Identified object that this name designates.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Name.NameType">NameType</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#NameType">NameType</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Type of this name.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="NameType" class="group">
+         <a href="#NameType">
+            <h2 class="abstract">NameType</h2>
+         </a>
+         <p class="package">Core</p>
+         <p class="comment">Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName as defined in CIM version 14. The definition from CIM14 is:</p>
+         <p class="comment">The localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="NameType.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Description of the name type.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="NameType.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Name of the name type.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="NameType.NameTypeAuthority">NameTypeAuthority</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#NameTypeAuthority">NameTypeAuthority</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Authority responsible for managing names of this type.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="NameTypeAuthority" class="group">
+         <a href="#NameTypeAuthority">
+            <h2 class="abstract">NameTypeAuthority</h2>
+         </a>
+         <p class="package">Core</p>
+         <p class="comment">Authority responsible for creation and management of names of a given type; typically an organization or an enterprise system.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="NameTypeAuthority.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Description of the name type authority.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="NameTypeAuthority.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Name of the name type authority.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Person" class="group">
+         <a href="#Person">
+            <h2 class="abstract">Person</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">General purpose information for name and other information to contact people.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Person.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.firstName">firstName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Person's first name.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.lastName">lastName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Person's last (family, sir) name.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.mName">mName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Middle name(s) or initial(s).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.prefix">prefix</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">A prefix or title for the person's name, such as Miss, Mister, Doctor, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.specialNeed">specialNeed</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Special service needs for the person (contact) are described; examples include life support, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.electronicAddress">electronicAddress</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ElectronicAddress">ElectronicAddress</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Electronic address.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.landlinePhone">landlinePhone</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#TelephoneNumber">TelephoneNumber</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Landline phone number.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Person.mobilePhone">mobilePhone</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#TelephoneNumber">TelephoneNumber</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Mobile phone number.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="PositionPoint" class="group">
+         <a href="#PositionPoint">
+            <h2 class="abstract">PositionPoint</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Set of spatial coordinates that determine a point, defined in the coordinate system specified in 'Location.CoordinateSystem'. Use a single position point instance to describe a point-oriented location. Use a sequence of position points to describe a line-oriented object (physical location of non-point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone - in this case, have first and last position point with the same values).</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="PositionPoint.sequenceNumber">sequenceNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">Zero-relative sequence number of this point within a series of points.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PositionPoint.xPosition">xPosition</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">X axis position.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PositionPoint.yPosition">yPosition</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Y axis position.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Enumerations</h1>
+      <h1>Compound Types</h1>
+      <div id="ElectronicAddress" class="group">
+         <a href="#ElectronicAddress">
+            <h2 class="abstract">ElectronicAddress</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Electronic address information.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="ElectronicAddress.email1">email1</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Primary email address.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ElectronicAddress.email2">email2</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Alternate email address.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ElectronicAddress.radio">radio</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Radio address.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="TelephoneNumber" class="group">
+         <a href="#TelephoneNumber">
+            <h2 class="abstract">TelephoneNumber</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Telephone number.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="TelephoneNumber.localNumber">localNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Main (local) part of this telephone number.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Datatypes</h1>
+   </body>
+</html>

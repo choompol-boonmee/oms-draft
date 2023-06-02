@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:a="http://langdale.com.au/2005/Message#"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <title>Profile Documentation</title>
+      <style type="text/css">
+/* typography: fonts */
+body { font-family: arial, sans-serif; }
+
+.name, .type, .cardinality, .superclass, .xsdtype, .namespace { font-family: courier, monospace; }
+
+
+/* typography: emphasis */
+h1 { color: white; background: gray;}
+
+h2, h3 { color: gray; text-decoration: none;}
+
+h2.abstract, h2.enumerated, h2.domain {font-style: italic } 
+
+p.note { background-color: #ddd }
+
+p.declaration { color: gray }
+
+:link { color: purple; }
+
+.xsdtype { color: black; font-weight: bold; }
+
+.namespace { color: black }
+
+.package { font-size: x-large; color: gray }
+
+
+/* borders */
+div.group {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	
+}
+
+th, td {
+	border-top-style : solid;
+	border-top-width : 1px;
+	border-color: gray;
+ }
+
+
+/* spacing and alignment */
+body {padding: 5px; }
+
+h1 { padding: 5px;}
+
+div.group {
+	margin-top: 10px;
+	padding: 5px;
+	position: relative;
+}
+th, td {
+	text-align : left;
+	vertical-align : top;
+}
+th, td.type { width: 15em; overflow: visible; }
+
+p.cardinality { width: 4em; }
+
+p.package { position: absolute; right: 10px; top: 0px}				
+</style>
+   </head>
+   <body>
+      <h1>Profile Documentation</h1>
+      <p/>
+      <p class="declaration">
+					Profile namespace:
+					<span class="namespace">http://pea.co.th/cim/profile/CS_OMS#</span>
+      </p>
+      <h1>Concrete Classes</h1>
+      <div id="Customer" class="group">
+         <a href="#Customer">
+            <h2 class="concrete">Customer</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Organisation receiving services from service supplier.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.kind">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CustomerKind">CustomerKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.locale">locale</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Locale designating language to use in communications with this customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.vip">vip</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">(deprecated) (use 'priority' instead) True if this is an important customer. Importance is for matters different than those in 'specialNeed' attribute.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.CustomerAccounts">CustomerAccounts</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CustomerAccount">CustomerAccount</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All accounts of this customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.EndDevices">EndDevices</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Meter">Meter</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All end devices of this customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.ErpPersons">ErpPersons</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#OldPerson">OldPerson</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.Organisation">Organisation</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Organisation">Organisation</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Organisation having this role.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.Person">Person</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Person">Person</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The person representing the customer</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.ServiceRequest">ServiceRequest</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ServiceRequest">ServiceRequest</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All service requests for the customer</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Status of this customer.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Abstract Classes</h1>
+      <div id="CustomerAccount" class="group">
+         <a href="#CustomerAccount">
+            <h2 class="abstract">CustomerAccount</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Assignment of a group of products and services purchased by the customer through a customer agreement, used as a mechanism for customer billing and payment. It contains common information from the various types of customer agreements to create billings (invoices) for a customer and receive payment.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.billingCycle">billingCycle</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Cycle day on which the associated customer account will normally be billed, used to determine when to produce the billing.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.lastBillAmount">lastBillAmount</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Money">Money</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The last amount that will be billed to the customer prior to shut off of the account.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.lastModifiedDateTime">lastModifiedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.title">title</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document title.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.CustomerAgreements">CustomerAgreements</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CustomerAgreement">CustomerAgreement</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All agreements for this customer account.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.ErpInvoicees">ErpInvoicees</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ErpInvoice">ErpInvoice</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.MeterReadSchedule">MeterReadSchedule</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#MeterReadSchedule">MeterReadSchedule</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Meter read schedule that applies to the customer account</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="CustomerAgreement" class="group">
+         <a href="#CustomerAgreement">
+            <h2 class="abstract">CustomerAgreement</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Agreement between the customer and the service supplier to pay for service at a specific service location. It records certain billing information about the type of service provided at the service location and is used during charge creation to determine the type of service.</p>
+      </div>
+      <div id="EndDevice" class="group">
+         <a href="#EndDevice">
+            <h2 class="abstract">EndDevice</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Asset container that performs one or more end device functions. One type of end device is a meter which can perform metering, load management, connect/disconnect, accounting functions, etc. Some end devices, such as ones monitoring and controlling air conditioners, refrigerators, pool pumps may be connected to a meter. All end devices may have communication capability defined by the associated communication function(s). An end device may be owned by a consumer, a service provider, utility or otherwise.</p>
+         <p class="comment">There may be a related end device function that identifies a sensor or control point within a metering application or communications systems (e.g., water, gas, electricity).</p>
+         <p class="comment">Some devices may use an optical port that conforms to the ANSI C12.18 standard for communications.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.connectionCategory">connectionCategory</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">A code used to specify the connection category, e.g. low voltage, where the meter operates.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="ErpInvoice" class="group">
+         <a href="#ErpInvoice">
+            <h2 class="abstract">ErpInvoice</h2>
+         </a>
+         <p class="package">InfERPSupport</p>
+         <p class="comment">A roll up of invoice line items. The whole invoice has a due date and amount to be paid, with information such as customer, banks etc. being obtained through associations. The invoice roll up is based on individual line items that each contain amounts and descriptions for specific services or products.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.billMediaKind">billMediaKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#BillMediaKind">BillMediaKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of media by which the CustomerBillingInfo was delivered.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.dueDate">dueDate</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">date</p>
+               </td>
+               <td>
+                  <p class="comment">Calculated date upon which the Invoice amount is due.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.kind">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ErpInvoiceKind">ErpInvoiceKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of invoice (default is 'sales').</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.mailedDate">mailedDate</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">date</p>
+               </td>
+               <td>
+                  <p class="comment">Date on which the customer billing statement/invoice was printed/mailed.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.referenceNumber">referenceNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Number of an invoice to be reference by this invoice.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Meter" class="group">
+         <a href="#Meter">
+            <h2 class="abstract">Meter</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Physical asset that performs the metering role of the usage point. Used for measuring consumption and detection of events.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Meter.connectionCategory">connectionCategory</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">A code used to specify the connection category, e.g. low voltage, where the meter operates.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Meter.MeterReadings">MeterReadings</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#MeterReading">MeterReading</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All meter readings provided by this meter.</p>
+               </td>
+            </tr>
+         </table>
+         <h3>Inherited Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.mRID">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">connectionCategory</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.connectionCategory">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.description">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.name">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="MeterReadSchedule" class="group">
+         <a href="#MeterReadSchedule">
+            <h2 class="abstract">MeterReadSchedule</h2>
+         </a>
+         <p class="package">Metering</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.EndDevice">EndDevice</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDevice">EndDevice</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All end devices for the meter read schedule.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.ReadingType">ReadingType</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ReadingType">ReadingType</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All reading types for the meter read schedule.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.TimeSchedule">TimeSchedule</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#TimeSchedule">TimeSchedule</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All time schedules for the meter read schedule.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.UsagePoint">UsagePoint</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#UsagePoint">UsagePoint</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All usage points for the meter read schedule.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="OldPerson" class="group">
+         <a href="#OldPerson">
+            <h2 class="abstract">OldPerson</h2>
+         </a>
+         <p class="package">InfCommon</p>
+         <p class="comment">General purpose information for name and other information to contact people.</p>
+         <h3>Inherited Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">mName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Person.mName">Person</a>
+                  </p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Organisation" class="group">
+         <a href="#Organisation">
+            <h2 class="abstract">Organisation</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Organisation that might have roles as utility, contractor, supplier, manufacturer, customer, etc.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Organisation.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Organisation.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Organisation.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Organisation.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Person" class="group">
+         <a href="#Person">
+            <h2 class="abstract">Person</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">General purpose information for name and other information to contact people.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Person.mName">mName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Middle name(s) or initial(s).</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="ServiceRequest" class="group">
+         <a href="#ServiceRequest">
+            <h2 class="abstract">ServiceRequest</h2>
+         </a>
+         <p class="package">Customers</p>
+      </div>
+      <h1>Enumerations</h1>
+      <div id="CustomerKind" class="group">
+         <a href="#CustomerKind">
+            <h2 class="enumerated">CustomerKind</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Kind of customer.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">commercialIndustrial</p>
+               </th>
+               <td>
+                  <p class="comment">Commercial industrial customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">energyServiceScheduler</p>
+               </th>
+               <td>
+                  <p class="comment">Customer as energy service scheduler.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">energyServiceSupplier</p>
+               </th>
+               <td>
+                  <p class="comment">Customer as energy service supplier.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">enterprise</p>
+               </th>
+               <td>
+                  <p class="comment">Enterprise customer</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">internalUse</p>
+               </th>
+               <td>
+                  <p class="comment">Internal use customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">other</p>
+               </th>
+               <td>
+                  <p class="comment">Other kind of customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">pumpingLoad</p>
+               </th>
+               <td>
+                  <p class="comment">Pumping load customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">regionalOperator</p>
+               </th>
+               <td>
+                  <p class="comment">Regional Operator customer</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">residential</p>
+               </th>
+               <td>
+                  <p class="comment">Residential customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">residentialAndCommercial</p>
+               </th>
+               <td>
+                  <p class="comment">Residential and commercial customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">residentialAndStreetlight</p>
+               </th>
+               <td>
+                  <p class="comment">Residential and streetlight customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">residentialFarmService</p>
+               </th>
+               <td>
+                  <p class="comment">Residential farm service customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">residentialStreetlightOthers</p>
+               </th>
+               <td>
+                  <p class="comment">Residential streetlight or other related customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">subsidiary</p>
+               </th>
+               <td>
+                  <p class="comment">Subsidiary customer</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">windMachine</p>
+               </th>
+               <td>
+                  <p class="comment">Wind machine customer.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Compound Types</h1>
+      <div id="Status" class="group">
+         <a href="#Status">
+            <h2 class="abstract">Status</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Current status information relevant to an entity.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Status.dateTime">dateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time for which status 'value' applies.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason code or explanation for why an object went to the current status 'value'.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.remark">remark</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Pertinent information regarding the current 'value', as free form text.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.value">value</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Status value at 'dateTime'; prior status changes may have been kept in instances of activity records associated with the object to which this status applies.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Datatypes</h1>
+      <div id="Money" class="group">
+         <a href="#Money">
+            <h2 class="domain">Money</h2>
+         </a>
+         <p class="package"/>
+         <p class="comment">Amount of money.</p>
+         <p class="declaration">XSD type: <span class="xsdtype">decimal</span>
+         </p>
+      </div>
+   </body>
+</html>

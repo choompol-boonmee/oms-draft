@@ -1,0 +1,1235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:a="http://langdale.com.au/2005/Message#"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <title>Profile Documentation</title>
+      <style type="text/css">
+/* typography: fonts */
+body { font-family: arial, sans-serif; }
+
+.name, .type, .cardinality, .superclass, .xsdtype, .namespace { font-family: courier, monospace; }
+
+
+/* typography: emphasis */
+h1 { color: white; background: gray;}
+
+h2, h3 { color: gray; text-decoration: none;}
+
+h2.abstract, h2.enumerated, h2.domain {font-style: italic } 
+
+p.note { background-color: #ddd }
+
+p.declaration { color: gray }
+
+:link { color: purple; }
+
+.xsdtype { color: black; font-weight: bold; }
+
+.namespace { color: black }
+
+.package { font-size: x-large; color: gray }
+
+
+/* borders */
+div.group {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	
+}
+
+th, td {
+	border-top-style : solid;
+	border-top-width : 1px;
+	border-color: gray;
+ }
+
+
+/* spacing and alignment */
+body {padding: 5px; }
+
+h1 { padding: 5px;}
+
+div.group {
+	margin-top: 10px;
+	padding: 5px;
+	position: relative;
+}
+th, td {
+	text-align : left;
+	vertical-align : top;
+}
+th, td.type { width: 15em; overflow: visible; }
+
+p.cardinality { width: 4em; }
+
+p.package { position: absolute; right: 10px; top: 0px}				
+</style>
+   </head>
+   <body>
+      <h1>Profile Documentation</h1>
+      <p/>
+      <p class="declaration">
+					Profile namespace:
+					<span class="namespace">http://pea.co.th/cim/profile/AMI_OMS#</span>
+      </p>
+      <h1>Concrete Classes</h1>
+      <div id="EndDeviceAction" class="group">
+         <a href="#EndDeviceAction">
+            <h2 class="concrete">EndDeviceAction</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Action/command performed by an end device on a device other than the end device.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceAction.command">command</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Command text.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceAction.startDateTime">startDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Start date and time for action of this control.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="EndDeviceEvent" class="group">
+         <a href="#EndDeviceEvent">
+            <h2 class="concrete">EndDeviceEvent</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Event detected by a device function associated with the end device.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceEvent.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceEvent.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceEvent.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceEvent.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceEvent.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason for event resulting in this activity record, typically supplied when user initiated.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceEvent.severity">severity</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Severity level of event resulting in this activity record.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceEvent.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Type of event resulting in this activity record.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceEvent.EndDevice">EndDevice</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDevice">EndDevice</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">End device that reported this end device event.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceEvent.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Information on consequence of event resulting in this activity record.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Abstract Classes</h1>
+      <div id="EndDevice" class="group">
+         <a href="#EndDevice">
+            <h2 class="abstract">EndDevice</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Asset container that performs one or more end device functions. One type of end device is a meter which can perform metering, load management, connect/disconnect, accounting functions, etc. Some end devices, such as ones monitoring and controlling air conditioners, refrigerators, pool pumps may be connected to a meter. All end devices may have communication capability defined by the associated communication function(s). An end device may be owned by a consumer, a service provider, utility or otherwise.</p>
+         <p class="comment">There may be a related end device function that identifies a sensor or control point within a metering application or communications systems (e.g., water, gas, electricity).</p>
+         <p class="comment">Some devices may use an optical port that conforms to the ANSI C12.18 standard for communications.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.amrSystem">amrSystem</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Automated meter reading (AMR) or other communication system responsible for communications to this end device.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.initialCondition">initialCondition</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Condition of asset at last baseline. Examples include new, rebuilt, overhaul required, other. Refer to inspection data for information on the most current condition of the asset.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.initialLossOfLife">initialLossOfLife</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PerCent">PerCent</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Percentage of initial life expectancy that has been lost as of the last life expectancy baseline. Represents</p>
+                  <p class="comment">(initial life expectancy - current life expectancy) / initial life expectancy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.installCode">installCode</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Installation code.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.inUseState">inUseState</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#InUseStateKind">InUseStateKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Indication of whether asset is currently deployed (in use), ready to be put into use or not available for use.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.kind">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetKind">AssetKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of asset. Used in description of asset components in asset instance templates.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.EndDeviceControls">EndDeviceControls</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceControl">EndDeviceControl</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All end device controls sending commands to this end device.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.EndDeviceEvents">EndDeviceEvents</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceEvent">EndDeviceEvent</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All events reported by this end device.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.EndDeviceFunctions">EndDeviceFunctions</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceFunction">EndDeviceFunction</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All end device functions this end device performs.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.EndDeviceInfo">EndDeviceInfo</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceInfo">EndDeviceInfo</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">End device data.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="EndDeviceControl" class="group">
+         <a href="#EndDeviceControl">
+            <h2 class="abstract">EndDeviceControl</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Instructs an end device (or an end device group) to perform a specified action.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceControl.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason for the control action that allows to determine how to continue processing. For example, disconnect meter command may require different processing by the receiving system if it has been issued for a network-related reason (protection) or for a payment-related reason.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceControl.EndDeviceAction">EndDeviceAction</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceAction">EndDeviceAction</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">End device action issued by this end device control.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceControl.EndDeviceControlType">EndDeviceControlType</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceControlType">EndDeviceControlType</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Type of this end device control.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="EndDeviceFunction" class="group">
+         <a href="#EndDeviceFunction">
+            <h2 class="abstract">EndDeviceFunction</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Function performed by an end device such as a meter, communication equipment, controllers, etc.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceFunction.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceFunction.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceFunction.enabled">enabled</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if the function is enabled.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceFunction.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="EndDeviceInfo" class="group">
+         <a href="#EndDeviceInfo">
+            <h2 class="abstract">EndDeviceInfo</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">End device data.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceInfo.isSolidState">isSolidState</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">If true, this is a solid state end device (as opposed to a mechanical or electromechanical device).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceInfo.phaseCount">phaseCount</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">Number of potential phases the end device supports, typically 0, 1 or 3.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceInfo.ratedCurrent">ratedCurrent</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CurrentFlow">CurrentFlow</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Rated current.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceInfo.ratedVoltage">ratedVoltage</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Voltage">Voltage</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Rated voltage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceInfo.capability">capability</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceCapability">EndDeviceCapability</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Inherent capabilities of the device (i.e., the functions it supports).</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Meter" class="group">
+         <a href="#Meter">
+            <h2 class="abstract">Meter</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Physical asset that performs the metering role of the usage point. Used for measuring consumption and detection of events.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Meter.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Meter.connectionCategory">connectionCategory</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">A code used to specify the connection category, e.g. low voltage, where the meter operates.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Meter.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Meter.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Meter.EndDeviceEvents">EndDeviceEvents</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceEvent">EndDeviceEvent</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All events reported by this end device.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Meter.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Status of this asset.</p>
+               </td>
+            </tr>
+         </table>
+         <h3>Inherited Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">amrSystem</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.amrSystem">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">initialCondition</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.initialCondition">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">initialLossOfLife</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PerCent">PerCent</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.initialLossOfLife">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">installCode</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.installCode">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">inUseState</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#InUseStateKind">InUseStateKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.inUseState">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetKind">AssetKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.kind">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">EndDeviceControls</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceControl">EndDeviceControl</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.EndDeviceControls">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">EndDeviceEvents</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceEvent">EndDeviceEvent</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.EndDeviceEvents">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">EndDeviceFunctions</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceFunction">EndDeviceFunction</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.EndDeviceFunctions">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">EndDeviceInfo</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceInfo">EndDeviceInfo</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#EndDevice.EndDeviceInfo">EndDevice</a>
+                  </p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Register" class="group">
+         <a href="#Register">
+            <h2 class="abstract">Register</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">A device that indicates or records units of the commodity or other quantity measured.</p>
+      </div>
+      <h1>Enumerations</h1>
+      <div id="AssetKind" class="group">
+         <a href="#AssetKind">
+            <h2 class="enumerated">AssetKind</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Kinds of assets or asset components.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">breakerAirBlastBreaker</p>
+               </th>
+               <td>
+                  <p class="comment">Air blast circuit breaker.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerBulkOilBreaker</p>
+               </th>
+               <td>
+                  <p class="comment">Bulk oil circuit breaker.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerInsulatingStackAssembly</p>
+               </th>
+               <td>
+                  <p class="comment">Breaker insulating stack assembly (for live tank breaker).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerMinimumOilBreaker</p>
+               </th>
+               <td>
+                  <p class="comment">Minimum oil circuit breaker.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerSF6DeadTankBreaker</p>
+               </th>
+               <td>
+                  <p class="comment">SF6 dead tank breaker.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerSF6LiveTankBreaker</p>
+               </th>
+               <td>
+                  <p class="comment">SF6 live tank breaker.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerTankAssembly</p>
+               </th>
+               <td>
+                  <p class="comment">Breaker tank assembly.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">other</p>
+               </th>
+               <td>
+                  <p class="comment">Other type of Asset. The type attribute may provide more details in this case.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">transformer</p>
+               </th>
+               <td>
+                  <p class="comment">Transformer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">transformerTank</p>
+               </th>
+               <td>
+                  <p class="comment">Transformer tank.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Compound Types</h1>
+      <div id="EndDeviceCapability" class="group">
+         <a href="#EndDeviceCapability">
+            <h2 class="abstract">EndDeviceCapability</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Inherent capabilities of an end device (i.e., the functions it supports).</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceCapability.communication">communication</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if communication function is supported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceCapability.connectDisconnect">connectDisconnect</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if connect and disconnect function is supported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceCapability.electricMetering">electricMetering</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if electric metering function is supported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceCapability.metrology">metrology</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if metrology function is supported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceCapability.onRequestRead">onRequestRead</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if on request read function is supported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceCapability.outageHistory">outageHistory</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if outage history function is supported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceCapability.relaysProgramming">relaysProgramming</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if relays programming function is supported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceCapability.reverseFlow">reverseFlow</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if reverse flow function is supported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceCapability.temperatureCompensation">temperatureCompensation</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if device performs temperature compensation for metered quantities.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Status" class="group">
+         <a href="#Status">
+            <h2 class="abstract">Status</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Current status information relevant to an entity.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Status.dateTime">dateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time for which status 'value' applies.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason code or explanation for why an object went to the current status 'value'.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.remark">remark</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Pertinent information regarding the current 'value', as free form text.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.value">value</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Status value at 'dateTime'; prior status changes may have been kept in instances of activity records associated with the object to which this status applies.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Datatypes</h1>
+      <div id="CurrentFlow" class="group">
+         <a href="#CurrentFlow">
+            <h2 class="domain">CurrentFlow</h2>
+         </a>
+         <p class="package"/>
+         <p class="comment">Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC.</p>
+         <p class="declaration">XSD type: <span class="xsdtype">float</span>
+         </p>
+      </div>
+      <div id="PerCent" class="group">
+         <a href="#PerCent">
+            <h2 class="domain">PerCent</h2>
+         </a>
+         <p class="package"/>
+         <p class="comment">Percentage on a defined base.   For example, specify as 100 to indicate at the defined base.</p>
+         <p class="declaration">XSD type: <span class="xsdtype">float</span>
+         </p>
+      </div>
+      <div id="Voltage" class="group">
+         <a href="#Voltage">
+            <h2 class="domain">Voltage</h2>
+         </a>
+         <p class="package"/>
+         <p class="comment">Electrical voltage, can be both AC and DC.</p>
+         <p class="declaration">XSD type: <span class="xsdtype">float</span>
+         </p>
+      </div>
+   </body>
+</html>

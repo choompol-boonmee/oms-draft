@@ -1,0 +1,3218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:a="http://langdale.com.au/2005/Message#"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <title>Profile Documentation</title>
+      <style type="text/css">
+/* typography: fonts */
+body { font-family: arial, sans-serif; }
+
+.name, .type, .cardinality, .superclass, .xsdtype, .namespace { font-family: courier, monospace; }
+
+
+/* typography: emphasis */
+h1 { color: white; background: gray;}
+
+h2, h3 { color: gray; text-decoration: none;}
+
+h2.abstract, h2.enumerated, h2.domain {font-style: italic } 
+
+p.note { background-color: #ddd }
+
+p.declaration { color: gray }
+
+:link { color: purple; }
+
+.xsdtype { color: black; font-weight: bold; }
+
+.namespace { color: black }
+
+.package { font-size: x-large; color: gray }
+
+
+/* borders */
+div.group {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	
+}
+
+th, td {
+	border-top-style : solid;
+	border-top-width : 1px;
+	border-color: gray;
+ }
+
+
+/* spacing and alignment */
+body {padding: 5px; }
+
+h1 { padding: 5px;}
+
+div.group {
+	margin-top: 10px;
+	padding: 5px;
+	position: relative;
+}
+th, td {
+	text-align : left;
+	vertical-align : top;
+}
+th, td.type { width: 15em; overflow: visible; }
+
+p.cardinality { width: 4em; }
+
+p.package { position: absolute; right: 10px; top: 0px}				
+</style>
+   </head>
+   <body>
+      <h1>Profile Documentation</h1>
+      <p/>
+      <p class="declaration">
+					Profile namespace:
+					<span class="namespace">http://pea.co.th/cim/profile/EAM_OMS#</span>
+      </p>
+      <h1>Concrete Classes</h1>
+      <div id="Asset" class="group">
+         <a href="#Asset">
+            <h2 class="concrete">Asset</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Tangible resource of the utility, including power system equipment, various end devices, cabinets, buildings, etc. For electrical network equipment, the role of the asset is defined through PowerSystemResource and its subclasses, defined mainly in the Wires model (refer to IEC61970-301 and model package IEC61970::Wires). Asset description places emphasis on the physical characteristics of the equipment fulfilling that role.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.initialCondition">initialCondition</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Condition of asset at last baseline. Examples include new, rebuilt, overhaul required, other. Refer to inspection data for information on the most current condition of the asset.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.initialLossOfLife">initialLossOfLife</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PerCent">PerCent</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Percentage of initial life expectancy that has been lost as of the last life expectancy baseline. Represents</p>
+                  <p class="comment">(initial life expectancy - current life expectancy) / initial life expectancy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.inUseState">inUseState</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#InUseStateKind">InUseStateKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Indication of whether asset is currently deployed (in use), ready to be put into use or not available for use.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.kind">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetKind">AssetKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of asset. Used in description of asset components in asset instance templates.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.lifecycleState">lifecycleState</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetLifecycleStateKind">AssetLifecycleStateKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Current lifecycle state of asset.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.serialNumber">serialNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Serial number of this asset.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Utility-specific classification of Asset and its subtypes, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.ActivityRecords">ActivityRecords</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ActivityRecord">ActivityRecord</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All activity records created for this asset.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.AssetDeployment">AssetDeployment</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetDeployment">AssetDeployment</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">This asset's deployment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.Incident">Incident</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Incident">Incident</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.inUseDate">inUseDate</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#InUseDate">InUseDate</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">In use dates for this asset.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.Location">Location</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Location">Location</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Location of this asset.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.Measurements">Measurements</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Measurement">Measurement</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Measurement related to this asset.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.Names">Names</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Name">Name</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All names of this identified object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Status of this asset.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Asset.WorkTasks">WorkTasks</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#WorkTask">WorkTask</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All non-replacement work tasks performed on this asset.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="AssetHealthEvent" class="group">
+         <a href="#AssetHealthEvent">
+            <h2 class="concrete">AssetHealthEvent</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">An asset health-related event that is created by an analytic. The event is a record of a change in asset health.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.actionRecommendation">actionRecommendation</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Recommendation for action.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.actionTimeline">actionTimeline</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">duration</p>
+               </td>
+               <td>
+                  <p class="comment">Time horizon for action.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.effectiveDateTime">effectiveDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">The date and time when the event is effective.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason for event resulting in this activity record, typically supplied when user initiated.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.severity">severity</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Severity level of event resulting in this activity record.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Type of event resulting in this activity record.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetHealthEvent.Assets">Assets</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Asset">Asset</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All assets for which this activity record has been created.</p>
+               </td>
+            </tr>
+         </table>
+         <h3>Inherited Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#ActivityRecord.createdDateTime">ActivityRecord</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#ActivityRecord.reason">ActivityRecord</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">severity</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#ActivityRecord.severity">ActivityRecord</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#ActivityRecord.type">ActivityRecord</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#ActivityRecord.status">ActivityRecord</a>
+                  </p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Abstract Classes</h1>
+      <div id="ActivityRecord" class="group">
+         <a href="#ActivityRecord">
+            <h2 class="abstract">ActivityRecord</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Records activity for an entity at a point in time; activity may be for an event that has already occurred or for a planned activity.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason for event resulting in this activity record, typically supplied when user initiated.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.severity">severity</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Severity level of event resulting in this activity record.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Type of event resulting in this activity record.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ActivityRecord.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Information on consequence of event resulting in this activity record.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Analytic" class="group">
+         <a href="#Analytic">
+            <h2 class="abstract">Analytic</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">An algorithm or calculation for making an assessment about an asset or asset grouping for lifecycle decision making.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Analytic.bestValue">bestValue</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">float</p>
+               </td>
+               <td>
+                  <p class="comment">Value that indicates best possible numeric value.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Analytic.kind">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AnalyticKind">AnalyticKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of analytic this analytic is.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Analytic.scaleKind">scaleKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ScaleKind">ScaleKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The scoring scale kind.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Analytic.worstValue">worstValue</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">float</p>
+               </td>
+               <td>
+                  <p class="comment">Value that indicates worst possible numeric value.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Analytic.AnalyticScore">AnalyticScore</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AnalyticScore">AnalyticScore</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Analytic score produced by this analytic.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Analytic.Asset">Asset</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Asset">Asset</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Asset on which this analytic can be performed.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Analytic.AssetHealthEvent">AssetHealthEvent</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetHealthEvent">AssetHealthEvent</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Asset health event which can be generated by this analytic.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="AnalyticScore" class="group">
+         <a href="#AnalyticScore">
+            <h2 class="abstract">AnalyticScore</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">An indicative scoring by an analytic that can be used to characterize the health of or the risk associated with one or more assets.  The analytic score reflects the results of an execution of an analytic against an asset or group of assets.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="AnalyticScore.calculationDateTime">calculationDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Timestamp of when the score was calculated.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AnalyticScore.effectiveDateTime">effectiveDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date-time for when the score applies.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AnalyticScore.value">value</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">float</p>
+               </td>
+               <td>
+                  <p class="comment">Asset health score value.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="AssetContainer" class="group">
+         <a href="#AssetContainer">
+            <h2 class="abstract">AssetContainer</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Asset that is aggregation of other assets such as conductors, transformers, switchgear, land, fences, buildings, equipment, vehicles, etc.</p>
+         <h3>Inherited Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.mRID">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.aliasName">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.description">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">initialCondition</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.initialCondition">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">initialLossOfLife</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PerCent">PerCent</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.initialLossOfLife">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">inUseState</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#InUseStateKind">InUseStateKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.inUseState">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetKind">AssetKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.kind">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">lifecycleState</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetLifecycleStateKind">AssetLifecycleStateKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.lifecycleState">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.name">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">serialNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.serialNumber">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.type">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ActivityRecords</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ActivityRecord">ActivityRecord</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.ActivityRecords">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">AssetDeployment</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetDeployment">AssetDeployment</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.AssetDeployment">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">Incident</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Incident">Incident</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.Incident">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">inUseDate</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#InUseDate">InUseDate</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.inUseDate">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">Location</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Location">Location</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.Location">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">Measurements</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Measurement">Measurement</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.Measurements">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">Names</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Name">Name</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.Names">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.status">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">WorkTasks</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#WorkTask">WorkTask</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.WorkTasks">Asset</a>
+                  </p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="AssetDeployment" class="group">
+         <a href="#AssetDeployment">
+            <h2 class="abstract">AssetDeployment</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Deployment of asset deployment in a power system resource role.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="AssetDeployment.deploymentState">deploymentState</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#DeploymentStateKind">DeploymentStateKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Current deployment state of asset.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetDeployment.facilityKind">facilityKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#FacilityKind">FacilityKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of facility (like substation or pole or building or plant or service center) at which asset deployed.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetDeployment.likelihoodOfFailure">likelihoodOfFailure</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">Likelihood of asset failure on a scale of 1(low) to 100 (high).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AssetDeployment.transformerApplication">transformerApplication</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#TransformerApplicationKind">TransformerApplicationKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Type of network role transformer is playing in this deployment (applies to transformer assets only).</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Crew" class="group">
+         <a href="#Crew">
+            <h2 class="abstract">Crew</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Group of people with specific skills, tools, and vehicles.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.CrewMembers">CrewMembers</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CrewMember">CrewMember</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All members of this crew.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.CrewType">CrewType</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CrewType">CrewType</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Type of this crew.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Crew.Outage">Outage</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Outage">Outage</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The outage that is assigned to the crew.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="CrewMember" class="group">
+         <a href="#CrewMember">
+            <h2 class="abstract">CrewMember</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Member of a crew.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="CrewMember.Person">Person</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Person">Person</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Person having this role.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="CrewType" class="group">
+         <a href="#CrewType">
+            <h2 class="abstract">CrewType</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Custom description of the type of crew. This may be used to determine the type of work the crew can be assigned to. Examples include repair, tree trimming, switching, etc.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="CrewType.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewType.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewType.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CrewType.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Equipment" class="group">
+         <a href="#Equipment">
+            <h2 class="abstract">Equipment</h2>
+         </a>
+         <p class="package">Core</p>
+         <p class="comment">The parts of a power system that are physical devices, electronic or mechanical.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Equipment.Assets">Assets</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Asset">Asset</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All assets represented by this power system resource. For example, multiple conductor assets are electrically modelled as a single AC line segment.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Fault" class="group">
+         <a href="#Fault">
+            <h2 class="abstract">Fault</h2>
+         </a>
+         <p class="package">Faults</p>
+         <p class="comment">Abnormal condition causing current flow through conducting equipment, such as caused by equipment failure or short circuits from objects not typically modelled (for example, a tree falling on a line).</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Fault.FaultyEquipment">FaultyEquipment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Equipment">Equipment</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Equipment carrying this fault.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Measurement" class="group">
+         <a href="#Measurement">
+            <h2 class="abstract">Measurement</h2>
+         </a>
+         <p class="package">Meas</p>
+         <p class="comment">A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement.</p>
+         <p class="comment">The PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leaves, e.g. Substation-VoltageLevel-Bay-Switch-Measurement.</p>
+         <p class="comment">Some Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (VT) or potential transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment.</p>
+         <p class="comment">If both a Terminal and PSR are associated, and the PSR is of type ConductingEquipment, the associated Terminal should belong to that ConductingEquipment instance.</p>
+         <p class="comment">When the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Measurement.measurementType">measurementType</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.</p>
+                  <p class="comment">When the measurementType is set to "Specialization", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Measurement.phases">phases</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PhaseCode">PhaseCode</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Indicates to which phases the measurement applies and avoids the need to use 'measurementType' to also encode phase information (which would explode the types). The phase information in Measurement, along with 'measurementType' and 'phases' uniquely defines a Measurement for a device, based on normal network phase. Their meaning will not change when the computed energizing phasing is changed due to jumpers or other reasons.</p>
+                  <p class="comment">If the attribute is missing three phases (ABC) shall be assumed.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Measurement.unitMultiplier">unitMultiplier</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#UnitMultiplier">UnitMultiplier</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The unit multiplier of the measured quantity.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Measurement.unitSymbol">unitSymbol</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#UnitSymbol">UnitSymbol</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The unit of measure of the measured quantity.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="MeasurementValue" class="group">
+         <a href="#MeasurementValue">
+            <h2 class="abstract">MeasurementValue</h2>
+         </a>
+         <p class="package">Meas</p>
+         <p class="comment">The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="MeasurementValue.sensorAccuracy">sensorAccuracy</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PerCent">PerCent</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeasurementValue.timeStamp">timeStamp</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">The time when the value was last updated.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeasurementValue.value">value</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">float</p>
+               </td>
+               <td>
+                  <p class="comment">The value to supervise.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeasurementValue.value">value</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">The value to supervise. The value is positive.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="MeasurementValueQuality" class="group">
+         <a href="#MeasurementValueQuality">
+            <h2 class="abstract">MeasurementValueQuality</h2>
+         </a>
+         <p class="package">Meas</p>
+         <p class="comment">Measurement quality flags. Bits 0-10 are defined for substation automation in IEC 61850-7-3. Bits 11-15 are reserved for future expansion by that document. Bits 16-31 are reserved for EMS applications.</p>
+      </div>
+      <div id="Name" class="group">
+         <a href="#Name">
+            <h2 class="abstract">Name</h2>
+         </a>
+         <p class="package">Core</p>
+         <p class="comment">The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b&gt;not&lt;/b&gt; to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Name.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Any free text that name the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Name.IdentifiedObject">IdentifiedObject</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#IdentifiedObject">IdentifiedObject</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Identified object that this name designates.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Name.NameType">NameType</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#NameType">NameType</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Type of this name.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="NameType" class="group">
+         <a href="#NameType">
+            <h2 class="abstract">NameType</h2>
+         </a>
+         <p class="package">Core</p>
+         <p class="comment">Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName as defined in CIM version 14. The definition from CIM14 is:</p>
+         <p class="comment">The localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="NameType.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Description of the name type.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="NameType.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Name of the name type.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Outage" class="group">
+         <a href="#Outage">
+            <h2 class="abstract">Outage</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Document describing details of an active or planned outage in a part of the electrical network.</p>
+         <p class="comment">A non-planned outage may be created upon:</p>
+         <p class="comment">- a breaker trip,</p>
+         <p class="comment">- a fault indicator status change,</p>
+         <p class="comment">- a meter event indicating customer outage,</p>
+         <p class="comment">- a reception of one or more customer trouble calls, or</p>
+         <p class="comment">- an operator command, reflecting information obtained from the field crew.</p>
+         <p class="comment">Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.</p>
+         <p class="comment">A planned outage may be created upon:</p>
+         <p class="comment">- a request for service, maintenance or construction work in the field, or</p>
+         <p class="comment">- an operator-defined outage for what-if/contingency network analysis.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.communityDescriptor">communityDescriptor</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">a name to denote the community - this could be a name or a code of some kind.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.customersRestored">customersRestored</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">number of customers that have been restored in the area.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.metersAffected">metersAffected</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.originalCustomersServed">originalCustomersServed</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">the total number of customers that are served in the area (both outaged and not outaged).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.originalMetersAffected">originalMetersAffected</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.outageKind">outageKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#OutageStatusKind">OutageStatusKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Defines if the outage has been verified or is only estimated</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.statusKind">statusKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CrewStatusKind">CrewStatusKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">defines the status of the crew as in dispatched or arrived, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.utilityDisclaimer">utilityDisclaimer</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">This contains an disclaimers the utility would like to place on the data provided to any stakeholder.  This may be different for different stakeholders.  This should possibly be an attribute under the Organization class but it is placed here for now.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.Equipments">Equipments</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Equipment">Equipment</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All equipments associated with this outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.Faults">Faults</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Fault">Fault</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All faults involved in this outage.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Person" class="group">
+         <a href="#Person">
+            <h2 class="abstract">Person</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">General purpose information for name and other information to contact people.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Person.mName">mName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Middle name(s) or initial(s).</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="ProcedureDataSet" class="group">
+         <a href="#ProcedureDataSet">
+            <h2 class="abstract">ProcedureDataSet</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">A data set recorded each time a procedure is executed. Observed results are captured in associated measurement values and/or values for properties relevant to the type of procedure performed.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.completedDateTime">completedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time procedure was completed.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.conditionAfter">conditionAfter</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Condition of asset just following maintenance procedure.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.conditionBefore">conditionBefore</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Description of the condition of the asset just prior to maintenance being performed.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.effect">effect</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Effect of problem.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.failureMode">failureMode</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Failuer mode, for example: Failure to Insulate; Failure to conduct; Failure to contain oil; Failure to provide ground plane; Other.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.finalCause">finalCause</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Cause of problem determined during diagnosis.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.finalCode">finalCode</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Code for diagnosed probem type.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.finalOrigin">finalOrigin</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Origin of problem determined during diagnosis.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.finalRemark">finalRemark</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Remarks pertaining to findings during problem diagnosis.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.maintCode">maintCode</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Code for the type of maintenance performed.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.phaseCode">phaseCode</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PhaseCode">PhaseCode</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Phase(s) diagnosed.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.rootCause">rootCause</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Root cause of problem determined during diagnosis.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.MeasurementValue">MeasurementValue</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#MeasurementValue">MeasurementValue</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Measurement value related to this procedure data set.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.Procedure">Procedure</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Procedure">Procedure</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Procedure capturing this data set.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ProcedureDataSet.TransformerObservations">TransformerObservations</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#TransformerObservation">TransformerObservation</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+         </table>
+      </div>
+      <div id="SwitchingPlan" class="group">
+         <a href="#SwitchingPlan">
+            <h2 class="abstract">SwitchingPlan</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">A sequence of grouped or atomic steps intended to:</p>
+         <p class="comment">- de-energise equipment or part of the network for safe work, and/or</p>
+         <p class="comment">- bring back in service previously de-energised equipment or part of the network.</p>
+      </div>
+      <div id="WorkAsset" class="group">
+         <a href="#WorkAsset">
+            <h2 class="abstract">WorkAsset</h2>
+         </a>
+         <p class="package">Work</p>
+         <p class="comment">Asset used to perform work.</p>
+         <h3>Inherited Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.mRID">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.aliasName">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.description">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">initialCondition</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.initialCondition">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">initialLossOfLife</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PerCent">PerCent</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.initialLossOfLife">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">inUseState</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#InUseStateKind">InUseStateKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.inUseState">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetKind">AssetKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.kind">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">lifecycleState</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetLifecycleStateKind">AssetLifecycleStateKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.lifecycleState">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.name">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">serialNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.serialNumber">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.type">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ActivityRecords</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ActivityRecord">ActivityRecord</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.ActivityRecords">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">AssetDeployment</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AssetDeployment">AssetDeployment</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.AssetDeployment">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">Incident</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Incident">Incident</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.Incident">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">inUseDate</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#InUseDate">InUseDate</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.inUseDate">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">Location</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Location">Location</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.Location">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">Measurements</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Measurement">Measurement</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.Measurements">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">Names</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Name">Name</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.Names">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.status">Asset</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">WorkTasks</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#WorkTask">WorkTask</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Asset.WorkTasks">Asset</a>
+                  </p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="WorkTask" class="group">
+         <a href="#WorkTask">
+            <h2 class="abstract">WorkTask</h2>
+         </a>
+         <p class="package">Work</p>
+         <p class="comment">A task within a set of work.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="WorkTask.Assets">Assets</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Asset">Asset</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All assets on which this non-replacement work task is performed.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkTask.Crews">Crews</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Crew">Crew</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All crews participating in this work task.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="WorkTask.ProcedureDataSet">ProcedureDataSet</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ProcedureDataSet">ProcedureDataSet</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Procedure data set associated with this work task.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Enumerations</h1>
+      <div id="AnalyticKind" class="group">
+         <a href="#AnalyticKind">
+            <h2 class="enumerated">AnalyticKind</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Possible kinds of analytics.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">agingAnalytic</p>
+               </th>
+               <td>
+                  <p class="comment">Analytic evaluates aging.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">faultAnalytic</p>
+               </th>
+               <td>
+                  <p class="comment">Analytic evaluates fault.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">healthAnalytic</p>
+               </th>
+               <td>
+                  <p class="comment">Analytic evaluates asset health.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">other</p>
+               </th>
+               <td>
+                  <p class="comment">Analytic evaluates other factor.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">replacementAnalytic</p>
+               </th>
+               <td>
+                  <p class="comment">Analytic evaluates need for replacement.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">riskAnalytic</p>
+               </th>
+               <td>
+                  <p class="comment">Analytic evaluates risk.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="AssetKind" class="group">
+         <a href="#AssetKind">
+            <h2 class="enumerated">AssetKind</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Kinds of assets or asset components.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">breakerAirBlastBreaker</p>
+               </th>
+               <td>
+                  <p class="comment">Air blast circuit breaker.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerBulkOilBreaker</p>
+               </th>
+               <td>
+                  <p class="comment">Bulk oil circuit breaker.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerInsulatingStackAssembly</p>
+               </th>
+               <td>
+                  <p class="comment">Breaker insulating stack assembly (for live tank breaker).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerMinimumOilBreaker</p>
+               </th>
+               <td>
+                  <p class="comment">Minimum oil circuit breaker.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerSF6DeadTankBreaker</p>
+               </th>
+               <td>
+                  <p class="comment">SF6 dead tank breaker.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerSF6LiveTankBreaker</p>
+               </th>
+               <td>
+                  <p class="comment">SF6 live tank breaker.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">breakerTankAssembly</p>
+               </th>
+               <td>
+                  <p class="comment">Breaker tank assembly.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">other</p>
+               </th>
+               <td>
+                  <p class="comment">Other type of Asset. The type attribute may provide more details in this case.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">transformer</p>
+               </th>
+               <td>
+                  <p class="comment">Transformer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">transformerTank</p>
+               </th>
+               <td>
+                  <p class="comment">Transformer tank.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="AssetLifecycleStateKind" class="group">
+         <a href="#AssetLifecycleStateKind">
+            <h2 class="enumerated">AssetLifecycleStateKind</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Lifecycle states an asset can be in.</p>
+         <p class="comment">While the possible lifecycle states are standardized, the allowed transitions are not - they are intended to be defined by the business process requirements of local implementations.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">disposedOf</p>
+               </th>
+               <td>
+                  <p class="comment">Asset disposed of.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">manufactured</p>
+               </th>
+               <td>
+                  <p class="comment">Asset manufactured.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">purchased</p>
+               </th>
+               <td>
+                  <p class="comment">Asset purchased.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">received</p>
+               </th>
+               <td>
+                  <p class="comment">Asset received.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">retired</p>
+               </th>
+               <td>
+                  <p class="comment">Asset retired.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="InUseStateKind" class="group">
+         <a href="#InUseStateKind">
+            <h2 class="enumerated">InUseStateKind</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Possible 'in use' states that an asset can be in.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">inUse</p>
+               </th>
+               <td>
+                  <p class="comment">Asset is deployed (in use) or is being put into use.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">notReadyForUse</p>
+               </th>
+               <td>
+                  <p class="comment">Asset is not ready to be put into use.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">readyForUse</p>
+               </th>
+               <td>
+                  <p class="comment">Asset is ready to be put into use.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="PhaseCode" class="group">
+         <a href="#PhaseCode">
+            <h2 class="enumerated">PhaseCode</h2>
+         </a>
+         <p class="package">Core</p>
+         <p class="comment">An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.</p>
+         <p class="comment">Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.</p>
+         <p class="comment">The integer values are from IEC 61968-9 to support revenue metering applications.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">A</p>
+               </th>
+               <td>
+                  <p class="comment">Phase A.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">AB</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A and B.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ABC</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A, B, and C.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ABCN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A, B, C, and N.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ABN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A, B, and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">AC</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A and C.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ACN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A, C and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">AN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">B</p>
+               </th>
+               <td>
+                  <p class="comment">Phase B.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">BC</p>
+               </th>
+               <td>
+                  <p class="comment">Phases B and C.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">BCN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases B, C, and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">BN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases B and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">C</p>
+               </th>
+               <td>
+                  <p class="comment">Phase C.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">CN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases C and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">N</p>
+               </th>
+               <td>
+                  <p class="comment">Neutral phase.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">X</p>
+               </th>
+               <td>
+                  <p class="comment">Unknown non-neutral phase.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">XN</p>
+               </th>
+               <td>
+                  <p class="comment">Unknown non-neutral phase plus neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">XY</p>
+               </th>
+               <td>
+                  <p class="comment">Two unknown non-neutral phases.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">XYN</p>
+               </th>
+               <td>
+                  <p class="comment">Two unknown non-neutral phases plus neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">none</p>
+               </th>
+               <td>
+                  <p class="comment">No phases specified.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="RetiredReasonKind" class="group">
+         <a href="#RetiredReasonKind">
+            <h2 class="enumerated">RetiredReasonKind</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Reason asset retired.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">environmental</p>
+               </th>
+               <td>
+                  <p class="comment">Retired due to environmental reasons.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">excessiveMaintenance</p>
+               </th>
+               <td>
+                  <p class="comment">Retired due to excessive maintainance issues.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">facilitiesUpgrade</p>
+               </th>
+               <td>
+                  <p class="comment">Retired due to facility upgrade.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">failed</p>
+               </th>
+               <td>
+                  <p class="comment">Retired because of failure.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">obsolescence</p>
+               </th>
+               <td>
+                  <p class="comment">Retired due to obsolescence.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">other</p>
+               </th>
+               <td>
+                  <p class="comment">Retired due to other reasons.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">sold</p>
+               </th>
+               <td>
+                  <p class="comment">Retired and sold.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="ScaleKind" class="group">
+         <a href="#ScaleKind">
+            <h2 class="enumerated">ScaleKind</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Kinds of scaling.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">exponential</p>
+               </th>
+               <td>
+                  <p class="comment">Exponential scale.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">linear</p>
+               </th>
+               <td>
+                  <p class="comment">Linear scale.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Compound Types</h1>
+      <div id="AcceptanceTest" class="group">
+         <a href="#AcceptanceTest">
+            <h2 class="abstract">AcceptanceTest</h2>
+         </a>
+         <p class="package">Assets</p>
+         <p class="comment">Acceptance test for assets.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="AcceptanceTest.dateTime">dateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time the asset was last tested using the 'type' of test and yielding the current status in 'success' attribute.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AcceptanceTest.success">success</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">True if asset has passed acceptance test and may be placed in or is in service. It is set to false if asset is removed from service and is required to be tested again before being placed back in service, possibly in a new location. Since asset may go through multiple tests during its lifecycle, the date of each acceptance test may be recorded in 'Asset.ActivityRecord.status.dateTime'.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AcceptanceTest.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Type of test or group of tests that was conducted on 'dateTime'.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Status" class="group">
+         <a href="#Status">
+            <h2 class="abstract">Status</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Current status information relevant to an entity.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Status.dateTime">dateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time for which status 'value' applies.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason code or explanation for why an object went to the current status 'value'.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.remark">remark</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Pertinent information regarding the current 'value', as free form text.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.value">value</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Status value at 'dateTime'; prior status changes may have been kept in instances of activity records associated with the object to which this status applies.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Datatypes</h1>
+      <div id="PerCent" class="group">
+         <a href="#PerCent">
+            <h2 class="domain">PerCent</h2>
+         </a>
+         <p class="package"/>
+         <p class="comment">Percentage on a defined base.   For example, specify as 100 to indicate at the defined base.</p>
+         <p class="declaration">XSD type: <span class="xsdtype">float</span>
+         </p>
+      </div>
+   </body>
+</html>

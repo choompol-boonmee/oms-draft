@@ -1,0 +1,3273 @@
+@prefix msg:     <http://langdale.com.au/2005/Message#> .
+@prefix :        <http://pea.co.th/cim/profile/MobileApp_OMS#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix uml:     <http://langdale.com.au/2005/UML#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+
+<http://langdale.com.au/2007/Buildlet#html>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#java>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#legacy-rdfs>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#part100-ed2.xsd>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#rtf>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#ttl>
+      a       msg:Flag .
+
+<http://langdale.com.au/2007/Buildlet#xsd>
+      a       msg:Flag .
+
+<http://pea.co.th/cim/profile/MobileApp_OMS>
+      a       owl:Ontology ;
+      rdfs:label "MobileApp_OMS_Profile" ;
+      owl:imports <http://iec.ch/TC57/CIM100> .
+
+:CoordinateSystem
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#CoordinateSystem> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#CoordinateSystem.crsUrn>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "crsUrn" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#CoordinateSystem.crsUrn>
+              ] .
+
+:Crew
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Crew> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Crew.CrewMembers>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "aliasName" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Crew.CrewType>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "CrewType" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#CrewType> ;
+                          owl:unionOf (:CrewType)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Crew.CrewType>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Crew.SwitchingAction>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "SwitchingAction" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#SwitchingAction> ;
+                          owl:unionOf (:SwitchingAction)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Crew.SwitchingAction>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Crew.WorkTasks>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "WorkTasks" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkTask> ;
+                          owl:unionOf (:WorkTask)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Crew.WorkTasks>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "CrewMembers" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#CrewMember> ;
+                          owl:unionOf (:CrewMember)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Crew.CrewMembers>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Crew.status>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "status" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Status> ;
+                          owl:unionOf (:Status)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Crew.status>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:CrewMember
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#CrewMember> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Person" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Person> ;
+                          owl:unionOf (:Person)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PersonRole.Person>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "ReleasedSafetyDocuments" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#SafetyDocument> ;
+                          owl:unionOf (:SafetyDocument)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#FieldSafetySupervisor.ReleasedSafetyDocuments>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PersonRole.Person>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "IssuedSafetyDocuments" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#SafetyDocument> ;
+                          owl:unionOf (:SafetyDocument)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#FieldSafetySupervisor.IssuedSafetyDocuments>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "aliasName" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] .
+
+:CrewStatusKind
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#CrewStatusKind> .
+
+:CrewType
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#CrewType> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "aliasName" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] .
+
+:DateTimeInterval
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#DateTimeInterval> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#DateTimeInterval.start>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "start" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#DateTimeInterval.start>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#DateTimeInterval.end>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "end" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#DateTimeInterval.end>
+              ] .
+
+:DesignLocation
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#DesignLocation> .
+
+:Incident
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Incident> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "title" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "cause" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Incident.cause>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "aliasName" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "comment" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Incident.cause>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "subject" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] .
+
+:Location
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Location> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.CoordinateSystem>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.direction>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "direction" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.direction>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "CoordinateSystem" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#CoordinateSystem> ;
+                          owl:unionOf (:CoordinateSystem)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.CoordinateSystem>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "PositionPoints" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#PositionPoint> ;
+                          owl:unionOf (:PositionPoint)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.PositionPoints>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.geoInfoReference>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "geoInfoReference" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.geoInfoReference>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.PositionPoints>
+              ] .
+
+:Outage
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Outage> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "actualPeriod" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#DateTimeInterval> ;
+                          owl:unionOf (:DateTimeInterval)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.actualPeriod>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "subject" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Equipments>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.communityDescriptor>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "EstimatedRestorationTime" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#EstimatedRestorationTime>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.EstimatedRestorationTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "summary" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ServicePointOutageSummary>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.summary>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.statusKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "outageKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutageStatusKind> ;
+                          owl:unionOf (:OutageStatusKind)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.outageKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "utilityDisclaimer" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.utilityDisclaimer>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Faults>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.metersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Crew>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.EnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.actualPeriod>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.EstimatedRestorationTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.summary>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.outageKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "title" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "OutageIsolationEquipment" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ConductingEquipment>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.OutageIsolationEquipment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.customersRestored>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.utilityDisclaimer>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "originalMetersAffected" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalMetersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "EnergizedUsagePoint" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#UsagePoint>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.EnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "customersRestored" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.customersRestored>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.estimatedPeriod>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "OutageArea" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutageArea>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.OutageArea>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "lastModifiedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "DeEnergizedUsagePoint" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#UsagePoint>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.DeEnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "revisionNumber" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.revisionNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalMetersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "originalCustomersServed" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalCustomersServed>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Equipments" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Equipment>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Equipments>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "estimatedPeriod" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#DateTimeInterval>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.estimatedPeriod>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "statusKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#CrewStatusKind> ;
+                          owl:unionOf (:CrewStatusKind)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.statusKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Faults" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Fault>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Faults>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "communityDescriptor" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.communityDescriptor>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "createdDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.OutageArea>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalCustomersServed>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.DeEnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.OutageIsolationEquipment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.revisionNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "metersAffected" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.metersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Crew" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Crew> ;
+                          owl:unionOf (:Crew)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Crew>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:OutageOrder
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutageOrder> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Location" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Location> ;
+                          owl:unionOf (:Location)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutageOrder.Location>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "title" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutageOrder.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "comment" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutageOrder.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutageOrder.Location>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutageOrder.OutagePlan>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "OutagePlan" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutagePlan> ;
+                          owl:unionOf (:OutagePlan)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutageOrder.OutagePlan>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "comment" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "createdDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "subject" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.createdDateTime>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:OutagePlan
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutagePlan> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutagePlan.cancelledDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutagePlan.purpose>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "purpose" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutagePlan.purpose>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "cancelledDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutagePlan.cancelledDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutagePlan.approvedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "approvedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#OutagePlan.approvedDateTime>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:OutageStatusKind
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutageStatusKind> .
+
+:Person
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Person> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Person.mName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mName" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Person.mName>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:PlannedOutage
+      a       owl:Class ;
+      rdfs:subClassOf :Outage , <http://iec.ch/TC57/CIM100#PlannedOutage> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "communityDescriptor" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.communityDescriptor>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.ActivityRecord>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "customersRestored" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.customersRestored>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.Approver>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "utilityDisclaimer" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.utilityDisclaimer>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "OutageArea" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutageArea>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.OutageArea>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.metersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "originalCustomersServed" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalCustomersServed>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "DeEnergizedUsagePoint" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#UsagePoint>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.DeEnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "createdDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PlannedOutage.FieldDispatchHistory>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "ActivityRecord" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ActivityRecord>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.ActivityRecord>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.Issuer>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.communityDescriptor>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "OutagePlan" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutagePlan>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PlannedOutage.OutagePlan>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "outageKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutageStatusKind>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.outageKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Faults" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Fault>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Faults>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "statusKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#CrewStatusKind>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.statusKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Incident" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Incident>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Incident>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "subject" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.customersRestored>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.utilityDisclaimer>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PlannedOutage.reason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalCustomersServed>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.DeEnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Crew" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Crew>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Crew>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "SwitchingPlans" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#SwitchingPlan>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.SwitchingPlans>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "EnergizedUsagePoint" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#UsagePoint>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.EnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "lastModifiedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PlannedOutage.OutagePlan>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.outageKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "revisionNumber" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.revisionNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Author" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Author>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.Author>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.statusKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Incident>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "reason" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PlannedOutage.reason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.SwitchingPlans>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "title" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Crew>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalMetersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.EnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Faults>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.revisionNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.Author>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Approver" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Approver>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.Approver>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Issuer" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Issuer>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.Issuer>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "metersAffected" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.metersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "FieldDispatchHistory" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#FieldDispatchHistory>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PlannedOutage.FieldDispatchHistory>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "originalMetersAffected" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalMetersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.OutageArea>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:PositionPoint
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#PositionPoint> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PositionPoint.yPosition>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "yPosition" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PositionPoint.yPosition>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PositionPoint.sequenceNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "sequenceNumber" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PositionPoint.sequenceNumber>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PositionPoint.xPosition>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "xPosition" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#PositionPoint.xPosition>
+              ] .
+
+:SafetyDocument
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#SafetyDocument> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SafetyDocument.issuedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "releasedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SafetyDocument.releasedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SafetyDocument.releasedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "comment" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "issuedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SafetyDocument.issuedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] .
+
+:ServiceRequestKind
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#ServiceRequestKind> .
+
+:Status
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Status> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.dateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.value>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "value" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.value>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "dateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.dateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.remark>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.reason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "reason" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.reason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "remark" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Status.remark>
+              ] .
+
+:Switch
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#Switch> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Switch.normalOpen>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "ratedCurrent" ;
+                          owl:equivalentClass <http://iec.ch/TC57/CIM100#CurrentFlow>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Switch.ratedCurrent>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Switch.ratedCurrent>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "aliasName" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "open" ;
+                          owl:equivalentClass xsd:boolean
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Switch.open>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Switch.open>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "normalOpen" ;
+                          owl:equivalentClass xsd:boolean
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Switch.normalOpen>
+              ] .
+
+:SwitchingAction
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#SwitchingAction> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "issuedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchingAction.issuedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "kind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#SwitchActionKind>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchAction.kind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchingAction.issuedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "OperatedSwitch" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Switch> ;
+                          owl:unionOf (:Switch)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchAction.OperatedSwitch>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "PlannedOutage" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Outage> ;
+                          owl:unionOf (:Outage)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchAction.PlannedOutage>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "plannedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchingAction.plannedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "executedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchingAction.executedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchingAction.plannedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchingAction.executedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "phases" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#PhaseCode>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchingAction.phases>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#SwitchingAction.phases>
+              ] .
+
+:SwitchingEvent
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#SwitchingEvent> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "createdDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "severity" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.severity>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.reason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "reason" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.reason>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#ActivityRecord.severity>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:TroubleOrder
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#TroubleOrder> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "createdDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.electronicAddress>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleOrder.WorkTask>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "electronicAddress" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ElectronicAddress>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.electronicAddress>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "lastModifiedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "subject" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "title" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleOrder.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "comment" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleOrder.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "WorkTask" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkTask> ;
+                          owl:unionOf (:WorkTask)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleOrder.WorkTask>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleOrder.TroubleTicket>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "TroubleTicket" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#TroubleTicket>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleOrder.TroubleTicket>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:TroubleReportingKind
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#TroubleReportingKind> .
+
+:TroubleTicket
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#TroubleTicket> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.firstResponderStatus>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Location" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Location> ;
+                          owl:unionOf (:Location)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.Location>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "firstResponderStatus" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.firstResponderStatus>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.Incident>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Incident" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Incident> ;
+                          owl:unionOf (:Incident)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.Incident>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.dateTimeOfReport>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.multiplePremises>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "multiplePremises" ;
+                          owl:equivalentClass xsd:boolean
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.multiplePremises>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.Location>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "reportingKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#TroubleReportingKind> ;
+                          owl:unionOf (:TroubleReportingKind)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.reportingKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.resolvedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "resolvedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.resolvedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.reportingKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.troubleCode>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "troubleCode" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.troubleCode>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "dateTimeOfReport" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.dateTimeOfReport>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.comment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "comment" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#TroubleTicket.comment>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:UnplannedOutage
+      a       owl:Class ;
+      rdfs:subClassOf :Outage , <http://iec.ch/TC57/CIM100#UnplannedOutage> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.OutageArea>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.DeEnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "reportedStartTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.reportedStartTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "EstimatedRestorationTime" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#EstimatedRestorationTime>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.EstimatedRestorationTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.TroubleOrder>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalMetersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Faults" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Fault>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Faults>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "utilityDisclaimer" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.utilityDisclaimer>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "customersRestored" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.customersRestored>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Crew>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "summary" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ServicePointOutageSummary>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.summary>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.Incident>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalCustomersServed>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "DeEnergizedUsagePoint" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#UsagePoint>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.DeEnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "metersAffected" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.metersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "TroubleOrder" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#TroubleOrder>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.TroubleOrder>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "actualPeriod" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#DateTimeInterval>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.actualPeriod>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Equipments" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Equipment>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Equipments>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "causeKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutageCauseKind>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.causeKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "communityDescriptor" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.communityDescriptor>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "statusKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#CrewStatusKind>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.statusKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.utilityDisclaimer>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "estimatedPeriod" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#DateTimeInterval>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.estimatedPeriod>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.reportedStartTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.customersRestored>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.summary>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Faults>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.metersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "createdDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.FieldDispatchHistory>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "OutageIsolationEquipment" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ConductingEquipment>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.OutageIsolationEquipment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "EnergizedUsagePoint" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#UsagePoint>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.EnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.actualPeriod>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Equipments>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "subject" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.causeKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.communityDescriptor>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.statusKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "title" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "cause" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.cause>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "TroubleTicket" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#TroubleTicket>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.TroubleTicket>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "outageKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutageStatusKind>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.outageKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.estimatedPeriod>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.EstimatedRestorationTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.createdDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Incident>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.EnergizedUsagePoint>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "lastModifiedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "OutageArea" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#OutageArea>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.OutageArea>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.subject>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.OutageIsolationEquipment>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.outageKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "originalMetersAffected" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalMetersAffected>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.cause>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.TroubleTicket>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Document.title>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Incident" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Incident>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Incident>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Crew" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Crew>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.Crew>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "FieldDispatchHistory" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#FieldDispatchHistory>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.FieldDispatchHistory>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "Incident" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#Incident>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#UnplannedOutage.Incident>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "originalCustomersServed" ;
+                          owl:equivalentClass xsd:integer
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Outage.originalCustomersServed>
+              ] ;
+      uml:hasStereotype uml:concrete .
+
+:WorkActivityRecord
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkActivityRecord> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkActivityRecord.percentComplete>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "percentComplete" ;
+                          owl:equivalentClass <http://iec.ch/TC57/CIM100#PerCent>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkActivityRecord.percentComplete>
+              ] .
+
+:WorkAsset
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkAsset> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "mRID" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "description" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.description>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "name" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.name>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "aliasName" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#IdentifiedObject.mRID>
+              ] .
+
+:WorkLocation
+      a       owl:Class ;
+      rdfs:subClassOf :Location , <http://iec.ch/TC57/CIM100#WorkLocation> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "PositionPoints" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#PositionPoint> ;
+                          owl:unionOf (:PositionPoint)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.PositionPoints>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.CoordinateSystem>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.direction>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "CoordinateSystem" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#CoordinateSystem> ;
+                          owl:unionOf (:CoordinateSystem)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.CoordinateSystem>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "direction" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.direction>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.geoInfoReference>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "geoInfoReference" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.geoInfoReference>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "type" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.type>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#Location.PositionPoints>
+              ] .
+
+:WorkStatusKind
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkStatusKind> .
+
+:WorkTask
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkTask> ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "statusKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkStatusKind> ;
+                          owl:unionOf (:WorkStatusKind)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#BaseWork.statusKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "materiallCost" ;
+                          owl:equivalentClass <http://iec.ch/TC57/CIM100#Money>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.materiallCost>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#BaseWork.kind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "contractorCost" ;
+                          owl:equivalentClass <http://iec.ch/TC57/CIM100#Money>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.contractorCost>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "estimatedCompletionTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.estimatedCompletionTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.schedOverride>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.crewETA>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "taskKind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkTaskKind> ;
+                          owl:unionOf (:WorkTaskKind)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.taskKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "instruction" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.instruction>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#BaseWork.WorkLocation>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.startedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "completedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.completedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.laborCost>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "kind" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#ServiceRequestKind> ;
+                          owl:unionOf (:ServiceRequestKind)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#BaseWork.kind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "laborHours" ;
+                          owl:equivalentClass <http://iec.ch/TC57/CIM100#Hours>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.laborHours>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.toolCost>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "crewETA" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.crewETA>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#BaseWork.statusKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.materiallCost>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.contractorCost>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.estimatedCompletionTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "WorkActivityRecords" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkActivityRecord> ;
+                          owl:unionOf (:WorkActivityRecord)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#BaseWork.WorkActivityRecords>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "schedOverride" ;
+                          owl:equivalentClass xsd:string
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.schedOverride>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "startedDateTime" ;
+                          owl:equivalentClass xsd:dateTime
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.startedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#BaseWork.WorkActivityRecords>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.taskKind>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.instruction>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       owl:Class ;
+                          rdfs:label "WorkLocation" ;
+                          rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkLocation> ;
+                          owl:unionOf (:WorkLocation)
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#BaseWork.WorkLocation>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "laborCost" ;
+                          owl:equivalentClass <http://iec.ch/TC57/CIM100#Money>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.laborCost>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.laborHours>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:minCardinality "1"^^xsd:int ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.completedDateTime>
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom
+                        [ a       rdfs:Datatype ;
+                          rdfs:label "toolCost" ;
+                          owl:equivalentClass <http://iec.ch/TC57/CIM100#Money>
+                        ] ;
+                owl:onProperty <http://iec.ch/TC57/CIM100#WorkTask.toolCost>
+              ] .
+
+:WorkTaskKind
+      a       owl:Class ;
+      rdfs:subClassOf <http://iec.ch/TC57/CIM100#WorkTaskKind> .
+
+owl:Thing
+      a       owl:Class .

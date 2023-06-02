@@ -1,0 +1,1215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:a="http://langdale.com.au/2005/Message#"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <title>Profile Documentation</title>
+      <style type="text/css">
+/* typography: fonts */
+body { font-family: arial, sans-serif; }
+
+.name, .type, .cardinality, .superclass, .xsdtype, .namespace { font-family: courier, monospace; }
+
+
+/* typography: emphasis */
+h1 { color: white; background: gray;}
+
+h2, h3 { color: gray; text-decoration: none;}
+
+h2.abstract, h2.enumerated, h2.domain {font-style: italic } 
+
+p.note { background-color: #ddd }
+
+p.declaration { color: gray }
+
+:link { color: purple; }
+
+.xsdtype { color: black; font-weight: bold; }
+
+.namespace { color: black }
+
+.package { font-size: x-large; color: gray }
+
+
+/* borders */
+div.group {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	
+}
+
+th, td {
+	border-top-style : solid;
+	border-top-width : 1px;
+	border-color: gray;
+ }
+
+
+/* spacing and alignment */
+body {padding: 5px; }
+
+h1 { padding: 5px;}
+
+div.group {
+	margin-top: 10px;
+	padding: 5px;
+	position: relative;
+}
+th, td {
+	text-align : left;
+	vertical-align : top;
+}
+th, td.type { width: 15em; overflow: visible; }
+
+p.cardinality { width: 4em; }
+
+p.package { position: absolute; right: 10px; top: 0px}				
+</style>
+   </head>
+   <body>
+      <h1>Profile Documentation</h1>
+      <p/>
+      <p class="declaration">
+					Profile namespace:
+					<span class="namespace">http://pea.co.th/cim/profile/OutageMap_OMS#</span>
+      </p>
+      <h1>Concrete Classes</h1>
+      <div id="Fault" class="group">
+         <a href="#Fault">
+            <h2 class="concrete">Fault</h2>
+         </a>
+         <p class="package">Faults</p>
+         <p class="comment">Abnormal condition causing current flow through conducting equipment, such as caused by equipment failure or short circuits from objects not typically modelled (for example, a tree falling on a line).</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Fault.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Fault.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Fault.kind">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PhaseConnectedFaultKind">PhaseConnectedFaultKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The kind of phase fault.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Fault.lengthFromTerminal1">lengthFromTerminal1</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Length">Length</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The length to the place where the fault is located starting from terminal with sequence number 1 of the faulted line segment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Fault.occurredDateTime">occurredDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">The date and time at which the fault occurred.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Fault.phases">phases</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PhaseCode">PhaseCode</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The phases participating in the fault. The fault connections into these phases are further specified by the type of fault.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Fault.FaultCauseTypes">FaultCauseTypes</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#FaultCauseType">FaultCauseType</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All types of fault cause.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Fault.FaultyEquipment">FaultyEquipment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Equipment">Equipment</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Equipment carrying this fault.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Fault.Location">Location</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Location">Location</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Location of this fault.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="OutageArea" class="group">
+         <a href="#OutageArea">
+            <h2 class="concrete">OutageArea</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">This defines the area covered by the Outage.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="OutageArea.earliestReportedTime">earliestReportedTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">This is the reported time of the first outage report</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageArea.metersServed">metersServed</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">defines the number of meters served in the defined area.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutageArea.outageAreaKind">outageAreaKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#AreaKind">AreaKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">defines the type of area that has the outage - county, state, zipcode, etc.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Abstract Classes</h1>
+      <div id="ConductingEquipment" class="group">
+         <a href="#ConductingEquipment">
+            <h2 class="abstract">ConductingEquipment</h2>
+         </a>
+         <p class="package">Core</p>
+         <p class="comment">The parts of the AC power system that are designed to carry current or that are conductively connected through terminals.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="ConductingEquipment.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ConductingEquipment.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+         </table>
+         <h3>Inherited Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">Faults</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..unbounded</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Fault">Fault</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Equipment.Faults">Equipment</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">Location</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Location">Location</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#Equipment.Location">Equipment</a>
+                  </p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Equipment" class="group">
+         <a href="#Equipment">
+            <h2 class="abstract">Equipment</h2>
+         </a>
+         <p class="package">Core</p>
+         <p class="comment">The parts of a power system that are physical devices, electronic or mechanical.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Equipment.Faults">Faults</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Fault">Fault</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All faults on this equipment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Equipment.Location">Location</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Location">Location</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Location of this power system resource.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="EstimatedRestorationTime" class="group">
+         <a href="#EstimatedRestorationTime">
+            <h2 class="abstract">EstimatedRestorationTime</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">The Estimated Restoration Time (ERT) for a single outage</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EstimatedRestorationTime.confidenceKind">confidenceKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ERTConfidenceKind">ERTConfidenceKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">provides the confidence level that this ERT can be accomplished.  This may be changed/updated as needed.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EstimatedRestorationTime.ert">ert</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">estimated time the outage will be restored</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EstimatedRestorationTime.ertSource">ertSource</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">defines the source that provided the ERT value.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="FaultCauseType" class="group">
+         <a href="#FaultCauseType">
+            <h2 class="abstract">FaultCauseType</h2>
+         </a>
+         <p class="package">Faults</p>
+         <p class="comment">Type of cause of the fault.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="FaultCauseType.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="FaultCauseType.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="FaultCauseType.ConfigurationEvent">ConfigurationEvent</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ConfigurationEvent">ConfigurationEvent</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All configuration events created for this fault cause type.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Location" class="group">
+         <a href="#Location">
+            <h2 class="abstract">Location</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Location.direction">direction</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">(if applicable) Direction that allows field crews to quickly find a given asset. For a given location, such as a street address, this is the relative direction in which to find the asset. For example, a streetlight may be located at the 'NW' (northwest) corner of the customer's site, or a usage point may be located on the second floor of an apartment building.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Location.geoInfoReference">geoInfoReference</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">(if applicable) Reference to geographical information source, often external to the utility.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Location.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Classification by utility's corporate standards and practices, relative to the location itself (e.g., geographical, functional accounting, etc., not a given property that happens to exist at that location).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Location.CoordinateSystem">CoordinateSystem</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CoordinateSystem">CoordinateSystem</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Coordinate system used to describe position points of this location.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Location.PositionPoints">PositionPoints</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PositionPoint">PositionPoint</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Sequence of position points describing this location, expressed in coordinate system 'Location.CoordinateSystem'.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Outage" class="group">
+         <a href="#Outage">
+            <h2 class="abstract">Outage</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Document describing details of an active or planned outage in a part of the electrical network.</p>
+         <p class="comment">A non-planned outage may be created upon:</p>
+         <p class="comment">- a breaker trip,</p>
+         <p class="comment">- a fault indicator status change,</p>
+         <p class="comment">- a meter event indicating customer outage,</p>
+         <p class="comment">- a reception of one or more customer trouble calls, or</p>
+         <p class="comment">- an operator command, reflecting information obtained from the field crew.</p>
+         <p class="comment">Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.</p>
+         <p class="comment">A planned outage may be created upon:</p>
+         <p class="comment">- a request for service, maintenance or construction work in the field, or</p>
+         <p class="comment">- an operator-defined outage for what-if/contingency network analysis.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.communityDescriptor">communityDescriptor</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">a name to denote the community - this could be a name or a code of some kind.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.customersRestored">customersRestored</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">number of customers that have been restored in the area.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.metersAffected">metersAffected</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.originalCustomersServed">originalCustomersServed</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">the total number of customers that are served in the area (both outaged and not outaged).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.originalMetersAffected">originalMetersAffected</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.outageKind">outageKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#OutageStatusKind">OutageStatusKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Defines if the outage has been verified or is only estimated</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.statusKind">statusKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CrewStatusKind">CrewStatusKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">defines the status of the crew as in dispatched or arrived, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.utilityDisclaimer">utilityDisclaimer</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">This contains an disclaimers the utility would like to place on the data provided to any stakeholder.  This may be different for different stakeholders.  This should possibly be an attribute under the Organization class but it is placed here for now.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.actualPeriod">actualPeriod</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#DateTimeInterval">DateTimeInterval</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Actual outage period; end of the period corresponds to the actual restoration time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.DeEnergizedUsagePoint">DeEnergizedUsagePoint</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#UsagePoint">UsagePoint</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">all deenergized useage points associated with the outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.EnergizedUsagePoint">EnergizedUsagePoint</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#UsagePoint">UsagePoint</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All energized usage points associated with this outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.Equipments">Equipments</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Equipment">Equipment</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All equipments associated with this outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.estimatedPeriod">estimatedPeriod</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#DateTimeInterval">DateTimeInterval</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Estimated outage period for a planned outage. The start of the period is the start of the planned outage and the end of the period corresponds to the end of the planned outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.EstimatedRestorationTime">EstimatedRestorationTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EstimatedRestorationTime">EstimatedRestorationTime</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The estimated time that the power will be restored after an outage</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.OutageArea">OutageArea</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#OutageArea">OutageArea</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The outage area where the outage occured.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Outage.OutageIsolationEquipment">OutageIsolationEquipment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ConductingEquipment">ConductingEquipment</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The equipment that isolates this outage</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="UsagePoint" class="group">
+         <a href="#UsagePoint">
+            <h2 class="abstract">UsagePoint</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Logical or physical point in the network to which readings or events may be attributed. Used at the place where a physical or virtual meter may be located; however, it is not required that a meter be present.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="UsagePoint.phaseCode">phaseCode</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PhaseCode">PhaseCode</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Phase code. Number of wires and specific nominal phases can be deduced from enumeration literal values. For example, ABCN is three-phase, four-wire, s12n (splitSecondary12N) is single-phase, three-wire, and s1n and s2n are single-phase, two-wire.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UsagePoint.EndDevices">EndDevices</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDevice">EndDevice</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All end devices at this usage point.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UsagePoint.Equipments">Equipments</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Equipment">Equipment</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All equipment connecting this usage point to the electrical grid.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Enumerations</h1>
+      <div id="AreaKind" class="group">
+         <a href="#AreaKind">
+            <h2 class="enumerated">AreaKind</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Enumeration for the type of area defined; e.g., county, state, parish, zipcode, etc.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">borough</p>
+               </th>
+               <td>
+                  <p class="comment">Enumeration for the type of area defined for the borough</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">county</p>
+               </th>
+               <td>
+                  <p class="comment">Enumeration for the type of area defined for the county</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">parish</p>
+               </th>
+               <td>
+                  <p class="comment">Enumeration for the type of area defined for the parish</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">serviceArea</p>
+               </th>
+               <td>
+                  <p class="comment">Enumeration for the type of area defined for the service area</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">state</p>
+               </th>
+               <td>
+                  <p class="comment">Enumeration for the type of area defined for the state</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">township</p>
+               </th>
+               <td>
+                  <p class="comment">Enumeration for the type of area defined for the township</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ward</p>
+               </th>
+               <td>
+                  <p class="comment">Enumeration for the type of area defined for the ward</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">zipcode</p>
+               </th>
+               <td>
+                  <p class="comment">Enumeration for the type of area defined for the zipcode</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="CrewStatusKind" class="group">
+         <a href="#CrewStatusKind">
+            <h2 class="enumerated">CrewStatusKind</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Defines the current status of the Crew - assigned, arrived, etc.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">arrived</p>
+               </th>
+               <td>
+                  <p class="comment">the crew is on site at the outage location</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">assigned</p>
+               </th>
+               <td>
+                  <p class="comment">the crew has been assigned to work on a task</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">awaitingCrewAssignment</p>
+               </th>
+               <td>
+                  <p class="comment">Indicates that the work is awaiting one or more crews to be assigned</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">enroute</p>
+               </th>
+               <td>
+                  <p class="comment">the crew has been dispatched to work on an outage</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">fieldComplete</p>
+               </th>
+               <td>
+                  <p class="comment">the crew has corrected the outage in the field.  The equipment or other devices may not be energized at this time.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="ERTConfidenceKind" class="group">
+         <a href="#ERTConfidenceKind">
+            <h2 class="enumerated">ERTConfidenceKind</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">The estimated restoration time (ERT) is the amount of time estimated to correct the outage and can have a confidence factor applied such as high or low confidence that the ERT will be accomplished.  This confidence factor may be updated as needed during the outage period - just as the actual ERT can be updated.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">high</p>
+               </th>
+               <td>
+                  <p class="comment">there is a high confidence that the ERT will be accomplished</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">low</p>
+               </th>
+               <td>
+                  <p class="comment">there is a low confidence that the ERT will be accomplished.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="OutageStatusKind" class="group">
+         <a href="#OutageStatusKind">
+            <h2 class="enumerated">OutageStatusKind</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">This defines if the outage have been predicted or confirmed</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">closed</p>
+               </th>
+               <td>
+                  <p class="comment">The outage has been fully restored, the crews have been released and the outage is shown as closed</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">confirmed</p>
+               </th>
+               <td>
+                  <p class="comment">the outage has been verified</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">partiallyRestored</p>
+               </th>
+               <td>
+                  <p class="comment">Some of the usage points affected by the outage have been restored but other usage points are still out of power.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">predicted</p>
+               </th>
+               <td>
+                  <p class="comment">the outage may not be real since it has not been verified - it is only thought to be an outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">restored</p>
+               </th>
+               <td>
+                  <p class="comment">All usage points associated with the outage have been restored</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="PhaseConnectedFaultKind" class="group">
+         <a href="#PhaseConnectedFaultKind">
+            <h2 class="enumerated">PhaseConnectedFaultKind</h2>
+         </a>
+         <p class="package">Faults</p>
+         <p class="comment">The type of fault connection among phases.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">lineOpen</p>
+               </th>
+               <td>
+                  <p class="comment">The fault is when the conductor path is broken between two terminals. Additional coexisting faults may be required if the broken conductor also causes connections to grounds or other lines or phases.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">lineToGround</p>
+               </th>
+               <td>
+                  <p class="comment">The fault connects the indicated phases to ground. The line to line fault impedance is not used and assumed infinite. The full ground impedance is connected between each phase specified in the fault and ground, but not between the phases.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">lineToLine</p>
+               </th>
+               <td>
+                  <p class="comment">The fault connects the specified phases together without a connection to ground. The ground impedance of this fault is ignored. The line to line impedance is connected between each of the phases specified in the fault. For example three times for a three phase fault, one time for a two phase fault.  A single phase fault should not be specified.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">lineToLineToGround</p>
+               </th>
+               <td>
+                  <p class="comment">The fault connects the indicated phases to ground and to each other. The line to line impedance is connected between each of the phases specified in the fault in a full mesh. For example three times for a three phase fault, one time for a two phase fault. A single phase fault should not be specified. The full ground impedance is connected between each phase specified in the fault and ground.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Compound Types</h1>
+      <div id="DateTimeInterval" class="group">
+         <a href="#DateTimeInterval">
+            <h2 class="abstract">DateTimeInterval</h2>
+         </a>
+         <p class="package">Domain</p>
+         <p class="comment">Interval between two date and time points, where the interval includes the start time but excludes end time.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="DateTimeInterval.end">end</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">End date and time of this interval.  The end date and time where the interval is defined up to, but excluded.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="DateTimeInterval.start">start</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Start date and time of this interval.  The start date and time is included in the defined interval.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Datatypes</h1>
+      <div id="Length" class="group">
+         <a href="#Length">
+            <h2 class="domain">Length</h2>
+         </a>
+         <p class="package"/>
+         <p class="comment">Unit of length. It shall be a positive value or zero.</p>
+         <p class="declaration">XSD type: <span class="xsdtype">float</span>
+         </p>
+      </div>
+   </body>
+</html>

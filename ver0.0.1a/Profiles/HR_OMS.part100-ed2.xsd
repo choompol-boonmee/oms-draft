@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:m="http://pea.co.th/cim/profile/HR_OMS#"
+           xmlns:part100="http://iec.ch/TC57/2021/schema/message"
+           xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://pea.co.th/cim/profile/HR_OMS#"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation/>
+   <xs:import namespace="http://iec.ch/TC57/2021/schema/message"
+              schemaLocation="AbstractPayloadType.xsd"/>
+   <xs:element name="HR_OMS_Profile"
+               type="m:HR_OMS_Profile"
+               substitutionGroup="part100:AbstractPayload"/>
+   <xs:complexType name="HR_OMS_Profile">
+      <xs:complexContent>
+         <xs:extension base="part100:AbstractPayloadType">
+            <xs:sequence>
+               <xs:element name="Crew" type="m:Crew" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="CrewMember"
+                           type="m:CrewMember"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="Appointment"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Appointment">
+      <xs:annotation>
+         <xs:documentation>Meeting time and location.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="ConfigurationEvent"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConfigurationEvent">
+      <xs:annotation>
+         <xs:documentation>Used to report details on creation, change or deletion of an entity or its configuration.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="CoordinateSystem"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CoordinateSystem">
+      <xs:annotation>
+         <xs:documentation>Coordinate reference system.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="crsUrn"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CoordinateSystem.crsUrn">
+            <xs:annotation>
+               <xs:documentation>A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'.</xs:documentation>
+               <xs:documentation>An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc:def:crs:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry web site http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would be urn:ogc:def:crs:EPSG::4.3.2.6</xs:documentation>
+               <xs:documentation>A profile should limit this code to a set of allowed URNs agreed to by all sending and receiving parties.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Crew" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew">
+      <xs:annotation>
+         <xs:documentation>Group of people with specific skills, tools, and vehicles.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="CrewMembers"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:CrewMember"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew.CrewMembers">
+            <xs:annotation>
+               <xs:documentation>All members of this crew.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="CrewType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CrewType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew.CrewType">
+            <xs:annotation>
+               <xs:documentation>Type of this crew.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Location"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Location"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew.Location">
+            <xs:annotation>
+               <xs:documentation>The location this crew is assigned to.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="status"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew.status">
+            <xs:annotation>
+               <xs:documentation>Status of this crew.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CrewMember"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CrewMember">
+      <xs:annotation>
+         <xs:documentation>Member of a crew.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Names"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Name"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Person"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Person"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PersonRole.Person">
+            <xs:annotation>
+               <xs:documentation>Person having this role.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CrewType"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CrewType">
+      <xs:annotation>
+         <xs:documentation>Custom description of the type of crew. This may be used to determine the type of work the crew can be assigned to. Examples include repair, tree trimming, switching, etc.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ElectronicAddress"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ElectronicAddress">
+      <xs:annotation>
+         <xs:documentation>Electronic address information.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="email1"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ElectronicAddress.email1">
+            <xs:annotation>
+               <xs:documentation>Primary email address.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="email2"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ElectronicAddress.email2">
+            <xs:annotation>
+               <xs:documentation>Alternate email address.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="radio"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ElectronicAddress.radio">
+            <xs:annotation>
+               <xs:documentation>Radio address.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Location"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location">
+      <xs:annotation>
+         <xs:documentation>The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="direction"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.direction">
+            <xs:annotation>
+               <xs:documentation>(if applicable) Direction that allows field crews to quickly find a given asset. For a given location, such as a street address, this is the relative direction in which to find the asset. For example, a streetlight may be located at the 'NW' (northwest) corner of the customer's site, or a usage point may be located on the second floor of an apartment building.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geoInfoReference"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.geoInfoReference">
+            <xs:annotation>
+               <xs:documentation>(if applicable) Reference to geographical information source, often external to the utility.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="type"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.type">
+            <xs:annotation>
+               <xs:documentation>Classification by utility's corporate standards and practices, relative to the location itself (e.g., geographical, functional accounting, etc., not a given property that happens to exist at that location).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="CoordinateSystem"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CoordinateSystem"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.CoordinateSystem">
+            <xs:annotation>
+               <xs:documentation>Coordinate system used to describe position points of this location.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="PositionPoints"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:PositionPoint"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.PositionPoints">
+            <xs:annotation>
+               <xs:documentation>Sequence of position points describing this location, expressed in coordinate system 'Location.CoordinateSystem'.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Name" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name">
+      <xs:annotation>
+         <xs:documentation>The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b&gt;not&lt;/b&gt; to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.name">
+            <xs:annotation>
+               <xs:documentation>Any free text that name the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="IdentifiedObject"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.IdentifiedObject">
+            <xs:annotation>
+               <xs:documentation>Identified object that this name designates.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="NameType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:NameType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.NameType">
+            <xs:annotation>
+               <xs:documentation>Type of this name.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NameType"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameType">
+      <xs:annotation>
+         <xs:documentation>Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName as defined in CIM version 14. The definition from CIM14 is:</xs:documentation>
+         <xs:documentation>The localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameType.description">
+            <xs:annotation>
+               <xs:documentation>Description of the name type.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameType.name">
+            <xs:annotation>
+               <xs:documentation>Name of the name type.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="NameTypeAuthority"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:NameTypeAuthority"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameType.NameTypeAuthority">
+            <xs:annotation>
+               <xs:documentation>Authority responsible for managing names of this type.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NameTypeAuthority"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameTypeAuthority">
+      <xs:annotation>
+         <xs:documentation>Authority responsible for creation and management of names of a given type; typically an organization or an enterprise system.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameTypeAuthority.description">
+            <xs:annotation>
+               <xs:documentation>Description of the name type authority.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameTypeAuthority.name">
+            <xs:annotation>
+               <xs:documentation>Name of the name type authority.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Person" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person">
+      <xs:annotation>
+         <xs:documentation>General purpose information for name and other information to contact people.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="firstName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.firstName">
+            <xs:annotation>
+               <xs:documentation>Person's first name.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="lastName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.lastName">
+            <xs:annotation>
+               <xs:documentation>Person's last (family, sir) name.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="mName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.mName">
+            <xs:annotation>
+               <xs:documentation>Middle name(s) or initial(s).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="prefix"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.prefix">
+            <xs:annotation>
+               <xs:documentation>A prefix or title for the person's name, such as Miss, Mister, Doctor, etc.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="specialNeed"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.specialNeed">
+            <xs:annotation>
+               <xs:documentation>Special service needs for the person (contact) are described; examples include life support, etc.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="electronicAddress"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ElectronicAddress"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.electronicAddress">
+            <xs:annotation>
+               <xs:documentation>Electronic address.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="landlinePhone"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:TelephoneNumber"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.landlinePhone">
+            <xs:annotation>
+               <xs:documentation>Landline phone number.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="mobilePhone"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:TelephoneNumber"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.mobilePhone">
+            <xs:annotation>
+               <xs:documentation>Mobile phone number.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="PositionPoint"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint">
+      <xs:annotation>
+         <xs:documentation>Set of spatial coordinates that determine a point, defined in the coordinate system specified in 'Location.CoordinateSystem'. Use a single position point instance to describe a point-oriented location. Use a sequence of position points to describe a line-oriented object (physical location of non-point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone - in this case, have first and last position point with the same values).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="sequenceNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint.sequenceNumber">
+            <xs:annotation>
+               <xs:documentation>Zero-relative sequence number of this point within a series of points.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="xPosition"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint.xPosition">
+            <xs:annotation>
+               <xs:documentation>X axis position.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="yPosition"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint.yPosition">
+            <xs:annotation>
+               <xs:documentation>Y axis position.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="TelephoneNumber"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#TelephoneNumber">
+      <xs:annotation>
+         <xs:documentation>Telephone number.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="localNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TelephoneNumber.localNumber">
+            <xs:annotation>
+               <xs:documentation>Main (local) part of this telephone number.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
