@@ -1,0 +1,1980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:m="http://pea.co.th/cim/profile/WMS_OMS#"
+           xmlns:part100="http://iec.ch/TC57/2021/schema/message"
+           xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://pea.co.th/cim/profile/WMS_OMS#"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation/>
+   <xs:import namespace="http://iec.ch/TC57/2021/schema/message"
+              schemaLocation="AbstractPayloadType.xsd"/>
+   <xs:element name="WMS_OMS_Profile"
+               type="m:WMS_OMS_Profile"
+               substitutionGroup="part100:AbstractPayload"/>
+   <xs:complexType name="WMS_OMS_Profile">
+      <xs:complexContent>
+         <xs:extension base="part100:AbstractPayloadType">
+            <xs:sequence>
+               <xs:element name="ActivityRecord"
+                           type="m:ActivityRecord"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="Crew" type="m:Crew" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Fault" type="m:Fault" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element name="Outage"
+                           type="m:Outage"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="OutageArea"
+                           type="m:OutageArea"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="OutagePlan"
+                           type="m:OutagePlan"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="PlannedOutage"
+                           type="m:PlannedOutage"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="SwitchAction"
+                           type="m:SwitchAction"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="SwitchingPlan"
+                           type="m:SwitchingPlan"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="TroubleOrder"
+                           type="m:TroubleOrder"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="TroubleTicket"
+                           type="m:TroubleTicket"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ActivityRecord"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivityRecord">
+      <xs:annotation>
+         <xs:documentation>Records activity for an entity at a point in time; activity may be for an event that has already occurred or for a planned activity.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="createdDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivityRecord.createdDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="reason"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivityRecord.reason">
+            <xs:annotation>
+               <xs:documentation>Reason for event resulting in this activity record, typically supplied when user initiated.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="severity"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivityRecord.severity">
+            <xs:annotation>
+               <xs:documentation>Severity level of event resulting in this activity record.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="type"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivityRecord.type">
+            <xs:annotation>
+               <xs:documentation>Type of event resulting in this activity record.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="AreaKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#AreaKind">
+      <xs:annotation>
+         <xs:documentation>Enumeration for the type of area defined; e.g., county, state, parish, zipcode, etc.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="borough">
+            <xs:annotation>
+               <xs:documentation>Enumeration for the type of area defined for the borough</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="county">
+            <xs:annotation>
+               <xs:documentation>Enumeration for the type of area defined for the county</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="parish">
+            <xs:annotation>
+               <xs:documentation>Enumeration for the type of area defined for the parish</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="serviceArea">
+            <xs:annotation>
+               <xs:documentation>Enumeration for the type of area defined for the service area</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="state">
+            <xs:annotation>
+               <xs:documentation>Enumeration for the type of area defined for the state</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="township">
+            <xs:annotation>
+               <xs:documentation>Enumeration for the type of area defined for the township</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ward">
+            <xs:annotation>
+               <xs:documentation>Enumeration for the type of area defined for the ward</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="zipcode">
+            <xs:annotation>
+               <xs:documentation>Enumeration for the type of area defined for the zipcode</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="ConductingEquipment"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment">
+      <xs:annotation>
+         <xs:documentation>The parts of the AC power system that are designed to carry current or that are conductively connected through terminals.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:Equipment">
+            <xs:sequence>
+               <xs:element name="mRID"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+                  <xs:annotation>
+                     <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+                     <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="aliasName"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+                  <xs:annotation>
+                     <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+                     <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="description"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+                  <xs:annotation>
+                     <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+                  <xs:annotation>
+                     <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="AssetDatasheet"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.AssetDatasheet">
+                  <xs:annotation>
+                     <xs:documentation>Datasheet information for this power system resource.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Assets"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Assets">
+                  <xs:annotation>
+                     <xs:documentation>All assets represented by this power system resource. For example, multiple conductor assets are electrically modelled as a single AC line segment.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Clearances"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Clearances">
+                  <xs:annotation>
+                     <xs:documentation>All clearances applicable to this power system resource.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="ConfigurationEvent"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.ConfigurationEvent">
+                  <xs:annotation>
+                     <xs:documentation>All configuration events created for this Power System resource.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Controls"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Controls">
+                  <xs:annotation>
+                     <xs:documentation>The controller outputs used to actually govern a regulating device, e.g. the magnetization of a synchronous machine or capacitor bank breaker actuator.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="DiagramObjects"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.DiagramObjects">
+                  <xs:annotation>
+                     <xs:documentation>The diagram objects that are associated with the domain object.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="GenericAction"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.GenericAction">
+                  <xs:annotation>
+                     <xs:documentation>The generic action that is performed on the power system resource</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="InstanceSet"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.InstanceSet">
+                  <xs:annotation>
+                     <xs:documentation>Dataset containing the data objects.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Location"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+                  <xs:annotation>
+                     <xs:documentation>Location of this power system resource.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Measurements"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Measurements">
+                  <xs:annotation>
+                     <xs:documentation>The measurements associated with this power system resource.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Names"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+                  <xs:annotation>
+                     <xs:documentation>All names of this identified object.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="OperatingShare"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.OperatingShare">
+                  <xs:annotation>
+                     <xs:documentation>The operating shares of this power system resource.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="OperationalTags"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.OperationalTags">
+                  <xs:annotation>
+                     <xs:documentation>All operational tags placed on this power system resource.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="PropertiesCIMDataObject"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.PropertiesCIMDataObject">
+                  <xs:annotation>
+                     <xs:documentation>The single CIM data object in the appropriate dataset context.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="PSREvents"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.PSREvents">
+                  <xs:annotation>
+                     <xs:documentation>All events associated with this power system resource.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="PSRType"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.PSRType">
+                  <xs:annotation>
+                     <xs:documentation>Custom classification for this power system resource.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="ReportingGroup"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.ReportingGroup">
+                  <xs:annotation>
+                     <xs:documentation>Reporting groups to which this power system resource belongs.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="TargetingCIMDataObject"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.TargetingCIMDataObject">
+                  <xs:annotation>
+                     <xs:documentation>Data objects registered.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="VerificationAction"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           type="m:VerificationAction"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.VerificationAction">
+                  <xs:annotation>
+                     <xs:documentation>The verification action that is performed on the power system resource</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="Crew" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew">
+      <xs:annotation>
+         <xs:documentation>Group of people with specific skills, tools, and vehicles.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="CrewMembers"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew.CrewMembers">
+            <xs:annotation>
+               <xs:documentation>All members of this crew.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="CrewType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew.CrewType">
+            <xs:annotation>
+               <xs:documentation>Type of this crew.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="status"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew.status">
+            <xs:annotation>
+               <xs:documentation>Status of this crew.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="WorkAssets"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew.WorkAssets">
+            <xs:annotation>
+               <xs:documentation>All work assets used by this crew.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="WorkTasks"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Crew.WorkTasks">
+            <xs:annotation>
+               <xs:documentation>All work tasks this crew participates in.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="DateTimeInterval"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#DateTimeInterval">
+      <xs:annotation>
+         <xs:documentation>Interval between two date and time points, where the interval includes the start time but excludes end time.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="end"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#DateTimeInterval.end">
+            <xs:annotation>
+               <xs:documentation>End date and time of this interval.  The end date and time where the interval is defined up to, but excluded.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="start"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#DateTimeInterval.start">
+            <xs:annotation>
+               <xs:documentation>Start date and time of this interval.  The start date and time is included in the defined interval.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ElectronicAddress"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ElectronicAddress">
+      <xs:annotation>
+         <xs:documentation>Electronic address information.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="email1"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ElectronicAddress.email1">
+            <xs:annotation>
+               <xs:documentation>Primary email address.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Equipment"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Equipment">
+      <xs:annotation>
+         <xs:documentation>The parts of a power system that are physical devices, electronic or mechanical.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="inService"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Equipment.inService">
+            <xs:annotation>
+               <xs:documentation>Specifies the availability of the equipment. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="normallyInService"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Equipment.normallyInService">
+            <xs:annotation>
+               <xs:documentation>Specifies the availability of the equipment under normal operating conditions. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Names"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Name"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Fault" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Fault">
+      <xs:annotation>
+         <xs:documentation>Abnormal condition causing current flow through conducting equipment, such as caused by equipment failure or short circuits from objects not typically modelled (for example, a tree falling on a line).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="kind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PhaseConnectedFaultKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Fault.kind">
+            <xs:annotation>
+               <xs:documentation>The kind of phase fault.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="occurredDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Fault.occurredDateTime">
+            <xs:annotation>
+               <xs:documentation>The date and time at which the fault occurred.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="phases"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Fault.phases">
+            <xs:annotation>
+               <xs:documentation>The phases participating in the fault. The fault connections into these phases are further specified by the type of fault.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="FaultCauseTypes"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:FaultCauseType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Fault.FaultCauseTypes">
+            <xs:annotation>
+               <xs:documentation>All types of fault cause.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="FaultyEquipment"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Equipment"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Fault.FaultyEquipment">
+            <xs:annotation>
+               <xs:documentation>Equipment carrying this fault.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="FaultCauseType"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#FaultCauseType">
+      <xs:annotation>
+         <xs:documentation>Type of cause of the fault.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="FieldDispatchHistory"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#FieldDispatchHistory">
+      <xs:annotation>
+         <xs:documentation>The history of field dispatch statuses for this work.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="Crew"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Crew"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FieldDispatchHistory.Crew">
+            <xs:annotation>
+               <xs:documentation>The crew that has this field dispatch history.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="PlannedOutage"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PlannedOutage"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FieldDispatchHistory.PlannedOutage">
+            <xs:annotation>
+               <xs:documentation>The planned outage that has the field dispatch history.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="UnplannedOutage"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FieldDispatchHistory.UnplannedOutage">
+            <xs:annotation>
+               <xs:documentation>The unplanned outage that has the field dispatch history.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Incident"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Incident">
+      <xs:annotation>
+         <xs:documentation>Description of a problem in the field that may be reported in a trouble ticket or come from another source. It may have to do with an outage.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="cause"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Incident.cause">
+            <xs:annotation>
+               <xs:documentation>Cause of this incident.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="comment"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.comment">
+            <xs:annotation>
+               <xs:documentation>Free text comment.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="createdDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.createdDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time that this document was created.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="subject"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.subject">
+            <xs:annotation>
+               <xs:documentation>Document subject.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="title"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.title">
+            <xs:annotation>
+               <xs:documentation>Document title.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Name" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name">
+      <xs:annotation>
+         <xs:documentation>The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b&gt;not&lt;/b&gt; to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.name">
+            <xs:annotation>
+               <xs:documentation>Any free text that name the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="IdentifiedObject"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.IdentifiedObject">
+            <xs:annotation>
+               <xs:documentation>Identified object that this name designates.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="NameType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:NameType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.NameType">
+            <xs:annotation>
+               <xs:documentation>Type of this name.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NameType"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameType">
+      <xs:annotation>
+         <xs:documentation>Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName as defined in CIM version 14. The definition from CIM14 is:</xs:documentation>
+         <xs:documentation>The localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="Outage" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage">
+      <xs:annotation>
+         <xs:documentation>Document describing details of an active or planned outage in a part of the electrical network.</xs:documentation>
+         <xs:documentation>A non-planned outage may be created upon:</xs:documentation>
+         <xs:documentation>- a breaker trip,</xs:documentation>
+         <xs:documentation>- a fault indicator status change,</xs:documentation>
+         <xs:documentation>- a meter event indicating customer outage,</xs:documentation>
+         <xs:documentation>- a reception of one or more customer trouble calls, or</xs:documentation>
+         <xs:documentation>- an operator command, reflecting information obtained from the field crew.</xs:documentation>
+         <xs:documentation>Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.</xs:documentation>
+         <xs:documentation>A planned outage may be created upon:</xs:documentation>
+         <xs:documentation>- a request for service, maintenance or construction work in the field, or</xs:documentation>
+         <xs:documentation>- an operator-defined outage for what-if/contingency network analysis.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="cause"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnplannedOutage.cause">
+            <xs:annotation>
+               <xs:documentation>The cause of this outage.  This is the cause that is used to present to external entities.  That is, the cause is weather, equipment failure, etc.</xs:documentation>
+               <xs:documentation>Note: At present, this is a free string text; it could be replaced with an enumeration in the future.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="causeKind"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnplannedOutage.causeKind">
+            <xs:annotation>
+               <xs:documentation>The possible cause that could be associated with this unplanned outage.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="createdDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.createdDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time that this document was created.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="customersRestored"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.customersRestored">
+            <xs:annotation>
+               <xs:documentation>number of customers that have been restored in the area.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="lastModifiedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="metersAffected"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.metersAffected">
+            <xs:annotation>
+               <xs:documentation>The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="originalCustomersServed"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.originalCustomersServed">
+            <xs:annotation>
+               <xs:documentation>the total number of customers that are served in the area (both outaged and not outaged).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="originalMetersAffected"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.originalMetersAffected">
+            <xs:annotation>
+               <xs:documentation>The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="outageKind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.outageKind">
+            <xs:annotation>
+               <xs:documentation>Defines if the outage has been verified or is only estimated</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="reason"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PlannedOutage.reason">
+            <xs:annotation>
+               <xs:documentation>The reason for the planned outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="reportedStartTime"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnplannedOutage.reportedStartTime">
+            <xs:annotation>
+               <xs:documentation>The earliest start time of the Outage - as reported by some system or individual</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="statusKind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.statusKind">
+            <xs:annotation>
+               <xs:documentation>defines the status of the crew as in dispatched or arrived, etc.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="subject"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.subject">
+            <xs:annotation>
+               <xs:documentation>Document subject.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="title"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.title">
+            <xs:annotation>
+               <xs:documentation>Document title.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="type"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.type">
+            <xs:annotation>
+               <xs:documentation>Utility-specific classification of this document, according to its corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ActivityRecord"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:ActivityRecord"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.ActivityRecord">
+            <xs:annotation>
+               <xs:documentation>The activity record for a document</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="actualPeriod"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:DateTimeInterval"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.actualPeriod">
+            <xs:annotation>
+               <xs:documentation>Actual outage period; end of the period corresponds to the actual restoration time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="DeEnergizedUsagePoint"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:UsagePoint"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.DeEnergizedUsagePoint">
+            <xs:annotation>
+               <xs:documentation>all deenergized useage points associated with the outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="docStatus"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Status"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.docStatus">
+            <xs:annotation>
+               <xs:documentation>Status of this document. For status of subject matter this document represents (e.g., Agreement, Work), use 'status' attribute.</xs:documentation>
+               <xs:documentation>Example values for 'docStatus.status' are draft, approved, cancelled, etc.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="electronicAddress"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ElectronicAddress"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.electronicAddress">
+            <xs:annotation>
+               <xs:documentation>Electronic address.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="EnergizedUsagePoint"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:UsagePoint"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.EnergizedUsagePoint">
+            <xs:annotation>
+               <xs:documentation>All energized usage points associated with this outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Equipments"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Equipment"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.Equipments">
+            <xs:annotation>
+               <xs:documentation>All equipments associated with this outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="estimatedPeriod"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:DateTimeInterval"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.estimatedPeriod">
+            <xs:annotation>
+               <xs:documentation>Estimated outage period for a planned outage. The start of the period is the start of the planned outage and the end of the period corresponds to the end of the planned outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Faults"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Fault"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.Faults">
+            <xs:annotation>
+               <xs:documentation>All faults involved in this outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="FieldDispatchHistory"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="m:FieldDispatchHistory"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnplannedOutage.FieldDispatchHistory">
+            <xs:annotation>
+               <xs:documentation>The dispatch history associated with the unplanned outage</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="FieldDispatchHistory"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="m:FieldDispatchHistory"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PlannedOutage.FieldDispatchHistory">
+            <xs:annotation>
+               <xs:documentation>The dispatch history associated with the planned outage</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Incident"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="m:Incident"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnplannedOutage.Incident">
+            <xs:annotation>
+               <xs:documentation>The incidents that are associated with the unplanned outage</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Incident"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Incident"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.Incident">
+            <xs:annotation>
+               <xs:documentation>Incident reported in trouble call that results in this outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="OutageArea"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:OutageArea"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.OutageArea">
+            <xs:annotation>
+               <xs:documentation>The outage area where the outage occured.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="OutageIsolationEquipment"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:ConductingEquipment"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.OutageIsolationEquipment">
+            <xs:annotation>
+               <xs:documentation>The equipment that isolates this outage</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="OutagePlan"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="m:OutagePlan"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PlannedOutage.OutagePlan">
+            <xs:annotation>
+               <xs:documentation>Outage plan for executing a planned outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="PlannedSwitchActions"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:SwitchAction"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.PlannedSwitchActions">
+            <xs:annotation>
+               <xs:documentation>All switch actions to apply within the scope of this planned outage. Each such action groups switches to which the action is to apply in order to produce the desired network state considered as outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="status"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Status"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.status">
+            <xs:annotation>
+               <xs:documentation>Status of subject matter (e.g., Agreement, Work) this document represents. For status of the document itself, use 'docStatus' attribute.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="summary"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ServicePointOutageSummary"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.summary">
+            <xs:annotation>
+               <xs:documentation>Summary counts of service points (customers) affected by this outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="SwitchingPlans"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:SwitchingPlan"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage.SwitchingPlans">
+            <xs:annotation>
+               <xs:documentation>All switching plans that lead to supply restoration due to this outage. Only one will be retained for execution.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="TroubleOrder"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="m:TroubleOrder"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnplannedOutage.TroubleOrder">
+            <xs:annotation>
+               <xs:documentation>The trouble order that is associated to the unplanned outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="TroubleTicket"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="m:TroubleTicket"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnplannedOutage.TroubleTicket">
+            <xs:annotation>
+               <xs:documentation>The ticket called in by the customer that describes the trouble</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OutageArea"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#OutageArea">
+      <xs:annotation>
+         <xs:documentation>This defines the area covered by the Outage.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="earliestReportedTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#OutageArea.earliestReportedTime">
+            <xs:annotation>
+               <xs:documentation>This is the reported time of the first outage report</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="metersServed"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#OutageArea.metersServed">
+            <xs:annotation>
+               <xs:documentation>defines the number of meters served in the defined area.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="outageAreaKind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:AreaKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#OutageArea.outageAreaKind">
+            <xs:annotation>
+               <xs:documentation>defines the type of area that has the outage - county, state, zipcode, etc.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OutagePlan"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#OutagePlan">
+      <xs:annotation>
+         <xs:documentation>Document containing the definition of planned outages of equipment and/or usage points. It will reference switching plans that are used to execute the planned outage.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="approvedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#OutagePlan.approvedDateTime">
+            <xs:annotation>
+               <xs:documentation>The date and time the outage plan was approved</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="cancelledDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#OutagePlan.cancelledDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and Time the planned outage was canceled.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="comment"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.comment">
+            <xs:annotation>
+               <xs:documentation>Free text comment.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="purpose"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#OutagePlan.purpose">
+            <xs:annotation>
+               <xs:documentation>Purpose of  this outage plan, such as whether it is to replace equipment or perform maintenance or repairs or to reconfigure network topology.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="subject"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.subject">
+            <xs:annotation>
+               <xs:documentation>Document subject.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="title"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.title">
+            <xs:annotation>
+               <xs:documentation>Document title.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="PhaseConnectedFaultKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#PhaseConnectedFaultKind">
+      <xs:annotation>
+         <xs:documentation>The type of fault connection among phases.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="lineOpen">
+            <xs:annotation>
+               <xs:documentation>The fault is when the conductor path is broken between two terminals. Additional coexisting faults may be required if the broken conductor also causes connections to grounds or other lines or phases.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="lineToGround">
+            <xs:annotation>
+               <xs:documentation>The fault connects the indicated phases to ground. The line to line fault impedance is not used and assumed infinite. The full ground impedance is connected between each phase specified in the fault and ground, but not between the phases.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="lineToLine">
+            <xs:annotation>
+               <xs:documentation>The fault connects the specified phases together without a connection to ground. The ground impedance of this fault is ignored. The line to line impedance is connected between each of the phases specified in the fault. For example three times for a three phase fault, one time for a two phase fault.  A single phase fault should not be specified.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="lineToLineToGround">
+            <xs:annotation>
+               <xs:documentation>The fault connects the indicated phases to ground and to each other. The line to line impedance is connected between each of the phases specified in the fault in a full mesh. For example three times for a three phase fault, one time for a two phase fault. A single phase fault should not be specified. The full ground impedance is connected between each phase specified in the fault and ground.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="PlannedOutage"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PlannedOutage">
+      <xs:annotation/>
+      <xs:complexContent>
+         <xs:extension base="m:Outage">
+            <xs:sequence>
+               <xs:element name="mRID"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+                  <xs:annotation>
+                     <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+                     <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="description"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+                  <xs:annotation>
+                     <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="reason"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PlannedOutage.reason">
+                  <xs:annotation>
+                     <xs:documentation>The reason for the planned outage.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="OutagePlan"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PlannedOutage.OutagePlan">
+                  <xs:annotation>
+                     <xs:documentation>Outage plan for executing a planned outage.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ServicePointOutageSummary"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ServicePointOutageSummary">
+      <xs:annotation>
+         <xs:documentation>Summary counts of service points affected by an outage. These counts are sometimes referred to as total and critical customer count.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="criticalCount"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ServicePointOutageSummary.criticalCount">
+            <xs:annotation>
+               <xs:documentation>Number of critical service (delivery) points affected by an outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="totalCount"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ServicePointOutageSummary.totalCount">
+            <xs:annotation>
+               <xs:documentation>Number of all service (delivery) points affected by an outage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Status" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Status">
+      <xs:annotation>
+         <xs:documentation>Current status information relevant to an entity.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="dateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Status.dateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time for which status 'value' applies.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="reason"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Status.reason">
+            <xs:annotation>
+               <xs:documentation>Reason code or explanation for why an object went to the current status 'value'.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="remark"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Status.remark">
+            <xs:annotation>
+               <xs:documentation>Pertinent information regarding the current 'value', as free form text.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="value"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Status.value">
+            <xs:annotation>
+               <xs:documentation>Status value at 'dateTime'; prior status changes may have been kept in instances of activity records associated with the object to which this status applies.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="SwitchAction"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchAction">
+      <xs:annotation>
+         <xs:documentation>Action on switch as a switching step.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="executedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchingAction.executedDateTime">
+            <xs:annotation>
+               <xs:documentation>Actual date and time of this switching step.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="kind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:SwitchActionKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchAction.kind">
+            <xs:annotation>
+               <xs:documentation>Switching action to perform.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="phases"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchingAction.phases">
+            <xs:annotation>
+               <xs:documentation>Phases of the Switching Action</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="plannedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchingAction.plannedDateTime">
+            <xs:annotation>
+               <xs:documentation>Planned date and time of this switching step.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="SwitchActionKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchActionKind">
+      <xs:annotation>
+         <xs:documentation>Kind of action on switch.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="close">
+            <xs:annotation>
+               <xs:documentation>Close the switch.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="disableReclosing">
+            <xs:annotation>
+               <xs:documentation>Disable (automatic) switch reclosing.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="enableReclosing">
+            <xs:annotation>
+               <xs:documentation>Enable (automatic) switch reclosing.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="open">
+            <xs:annotation>
+               <xs:documentation>Open the switch.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="SwitchingPlan"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchingPlan">
+      <xs:annotation>
+         <xs:documentation>A sequence of grouped or atomic steps intended to:</xs:documentation>
+         <xs:documentation>- de-energise equipment or part of the network for safe work, and/or</xs:documentation>
+         <xs:documentation>- bring back in service previously de-energised equipment or part of the network.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="approvedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchingPlan.approvedDateTime">
+            <xs:annotation>
+               <xs:documentation>The date and time the switching plan was approved</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="createdDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.createdDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time that this document was created.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="lastModifiedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="purpose"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchingPlan.purpose">
+            <xs:annotation>
+               <xs:documentation>Purpose of  this plan, such as whether it is to move the state from normal to some abnormal condition, or to restore the normal state after an abnormal condition, or to perform some kind of optimisation such as correction of overload, voltage control, etc.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="subject"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.subject">
+            <xs:annotation>
+               <xs:documentation>Document subject.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="title"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.title">
+            <xs:annotation>
+               <xs:documentation>Document title.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="TroubleOrder"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleOrder">
+      <xs:annotation>
+         <xs:documentation>Trouble order sends an incident to a crew to initiate a response to an unplanned outage.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="comment"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleOrder.comment">
+            <xs:annotation>
+               <xs:documentation>Free-form comment associated with the trouble order.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Approver"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.Approver">
+            <xs:annotation>
+               <xs:documentation>Approver of this document.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="docStatus"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.docStatus">
+            <xs:annotation>
+               <xs:documentation>Status of this document. For status of subject matter this document represents (e.g., Agreement, Work), use 'status' attribute.</xs:documentation>
+               <xs:documentation>Example values for 'docStatus.status' are draft, approved, cancelled, etc.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="plannedExecutionInterval"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleOrder.plannedExecutionInterval">
+            <xs:annotation>
+               <xs:documentation>The planned start and end time for the trouble order.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="status"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.status">
+            <xs:annotation>
+               <xs:documentation>Status of subject matter (e.g., Agreement, Work) this document represents. For status of the document itself, use 'docStatus' attribute.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="TroubleReportingKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleReportingKind">
+      <xs:annotation>
+         <xs:documentation>Kind of trouble reporting.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="app">
+            <xs:annotation/>
+         </xs:enumeration>
+         <xs:enumeration value="call">
+            <xs:annotation>
+               <xs:documentation>Trouble call received by customer service representative.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="email">
+            <xs:annotation>
+               <xs:documentation>Trouble reported by email.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ivr">
+            <xs:annotation>
+               <xs:documentation>Trouble reported through interactive voice response system.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="letter">
+            <xs:annotation>
+               <xs:documentation>Trouble reported by letter.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="other">
+            <xs:annotation>
+               <xs:documentation>Trouble reported by other means.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="sms">
+            <xs:annotation/>
+         </xs:enumeration>
+         <xs:enumeration value="web">
+            <xs:annotation/>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="TroubleTicket"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleTicket">
+      <xs:annotation/>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="comment"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleTicket.comment">
+            <xs:annotation>
+               <xs:documentation>Free-form comment associated with the trouble call for example, "customer reported a large flash", etc.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dateTimeOfReport"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleTicket.dateTimeOfReport">
+            <xs:annotation>
+               <xs:documentation>Date and time the trouble has been reported.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="firstResponderStatus"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleTicket.firstResponderStatus">
+            <xs:annotation>
+               <xs:documentation>Indicates whether the first responder such as police, fire department etc.has been notified and whether they are on site or en route.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="multiplePremises"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleTicket.multiplePremises">
+            <xs:annotation>
+               <xs:documentation>Set to true if the outage report indicated that other neighbors are also out of power.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="reportingKind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:TroubleReportingKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleTicket.reportingKind">
+            <xs:annotation>
+               <xs:documentation>Indicates how the customer reported trouble.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="resolvedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleTicket.resolvedDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time this trouble ticket has been resolved.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="troubleCode"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TroubleTicket.troubleCode">
+            <xs:annotation>
+               <xs:documentation>Trouble code (e.g., power down, flickering lights, partial power, etc).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="docStatus"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.docStatus">
+            <xs:annotation>
+               <xs:documentation>Status of this document. For status of subject matter this document represents (e.g., Agreement, Work), use 'status' attribute.</xs:documentation>
+               <xs:documentation>Example values for 'docStatus.status' are draft, approved, cancelled, etc.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="status"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.status">
+            <xs:annotation>
+               <xs:documentation>Status of subject matter (e.g., Agreement, Work) this document represents. For status of the document itself, use 'docStatus' attribute.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="UsagePoint"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#UsagePoint">
+      <xs:annotation>
+         <xs:documentation>Logical or physical point in the network to which readings or events may be attributed. Used at the place where a physical or virtual meter may be located; however, it is not required that a meter be present.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="estimatedLoad"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CurrentFlow"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UsagePoint.estimatedLoad">
+            <xs:annotation>
+               <xs:documentation>Estimated load.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="phaseCode"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UsagePoint.phaseCode">
+            <xs:annotation>
+               <xs:documentation>Phase code. Number of wires and specific nominal phases can be deduced from enumeration literal values. For example, ABCN is three-phase, four-wire, s12n (splitSecondary12N) is single-phase, three-wire, and s1n and s2n are single-phase, two-wire.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="ratedCurrent"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CurrentFlow"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UsagePoint.ratedCurrent">
+            <xs:annotation>
+               <xs:documentation>Current flow that this usage point is configured to deliver.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedPower"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UsagePoint.ratedPower">
+            <xs:annotation>
+               <xs:documentation>Active power that this usage point is configured to deliver.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="EndDevices"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UsagePoint.EndDevices">
+            <xs:annotation>
+               <xs:documentation>All end devices at this usage point.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="VerificationAction"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#VerificationAction">
+      <xs:annotation>
+         <xs:documentation>Verification of a switch position or other condition as a switching step</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="executedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchingAction.executedDateTime">
+            <xs:annotation>
+               <xs:documentation>Actual date and time of this switching step.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="phases"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchingAction.phases">
+            <xs:annotation>
+               <xs:documentation>Phases of the Switching Action</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="verificationCondition"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#VerificationAction.verificationCondition">
+            <xs:annotation>
+               <xs:documentation>freeform description of the condition to be verified</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="CurrentFlow"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#CurrentFlow">
+      <xs:annotation>
+         <xs:documentation>Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="ActivePower"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivePower">
+      <xs:annotation>
+         <xs:documentation>Product of RMS value of the voltage and the RMS value of the in-phase component of the current.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,1177 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns="http://pea.co.th/cim/profile/SCADA_OMS#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:msg="http://langdale.com.au/2005/Message#"
+    xmlns:uml="http://langdale.com.au/2005/UML#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://pea.co.th/cim/profile/SCADA_OMS" > 
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Switch.switchOnDate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da6"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Switch.switchOnDate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da6">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>switchOnDate</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Switch.ratedCurrent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da9"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Switch.ratedCurrent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da9">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>ratedCurrent</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://iec.ch/TC57/CIM100#CurrentFlow"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7daa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Switch.open"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dab">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dac"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Switch.open"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dac">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>open</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dad">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Switch.normalOpen"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dae">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7daf"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Switch.normalOpen"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7daf">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>normalOpen</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db0">
+    <rdf:first rdf:resource="#Switch"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db1">
+    <rdf:first rdf:resource="#SwitchActionKind"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchAction.OperatedSwitch"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db4"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchAction.OperatedSwitch"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>OperatedSwitch</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Switch"/>
+    <owl:unionOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchAction.kind"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db7"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchAction.kind"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>kind</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchActionKind"/>
+    <owl:unionOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db8">
+    <rdf:first rdf:resource="#DateTimeInterval"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingOrder.plannedExecutionInterval"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dba">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dbb"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingOrder.plannedExecutionInterval"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dbb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>plannedExecutionInterval</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#DateTimeInterval"/>
+    <owl:unionOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dbc">
+    <rdf:first rdf:resource="#SwitchingStep"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dbd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.SwitchingStep"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dbe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dbf"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.SwitchingStep"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dbf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>SwitchingStep</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchingStep"/>
+    <owl:unionOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dbc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78dc">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.ABC"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78dd"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78dd">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.AB"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78de"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78de">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.A"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78df"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78df">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.BN"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e0">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.BC"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e1">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.ABCN"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e2">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.CN"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e3">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.AN"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e4">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.AC"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e5">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.B"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78e6">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.ABN"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7903"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7903">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.ACN"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7957"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7957">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.BCN"/>
+    <rdf:rest rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7958"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7958">
+    <rdf:first rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode.C"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7a81">
+    <rdf:first rdf:resource="#PhaseCode"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e98">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#ActivityRecord.type"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e99">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9a"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#ActivityRecord.type"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9a">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>type</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#ActivityRecord.severity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9d"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#ActivityRecord.severity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9d">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>severity</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#ActivityRecord.reason"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea0"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#ActivityRecord.reason"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea0">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>reason</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#ActivityRecord.createdDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea3"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#ActivityRecord.createdDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea3">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>createdDateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.plannedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea6"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.plannedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea6">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>plannedDateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.phases"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea9"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.phases"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>phases</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7a81"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eaa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.issuedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eab">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eac"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.issuedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eac">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>issuedDateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ead">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.executedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eae">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eaf"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.executedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eaf">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>executedDateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#DateTimeInterval.start"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb2"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#DateTimeInterval.start"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb2">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>start</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#DateTimeInterval.end"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb5"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#DateTimeInterval.end"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb5">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>end</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb6">
+    <rdf:first rdf:resource="#DateTimeInterval"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#OutagePlan.purpose"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb9"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#OutagePlan.purpose"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb9">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>purpose</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eba">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#OutagePlan.cancelledDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ebb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ebc"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#OutagePlan.cancelledDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ebc">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>cancelledDateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ebd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#OutagePlan.approvedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ebe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ebf"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#OutagePlan.approvedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ebf">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>approvedDateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#OutagePlan.plannedPeriod"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec2"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#OutagePlan.plannedPeriod"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>plannedPeriod</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#DateTimeInterval"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec3">
+    <rdf:first rdf:resource="#OutagePlan"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.plannedPeriod"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec6"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.plannedPeriod"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>plannedPeriod</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#DateTimeInterval"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.OutagePlan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec9"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.OutagePlan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>OutagePlan</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#OutagePlan"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eca">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.purpose"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ecb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ecc"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.purpose"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ecc">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>purpose</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ecd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.cancelledDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ece">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ecf"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.cancelledDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ecf">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>cancelledDateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.approvedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed2"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.approvedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed2">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>approvedDateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed3">
+    <rdf:first rdf:resource="#Status"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed4">
+    <rdf:first rdf:resource="#Person"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#PersonRole.Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed7"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#PersonRole.Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Person"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed8">
+    <rdf:first rdf:resource="#Issuer"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Status.value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eda">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7edb"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Status.value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7edb">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>value</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7edc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Status.remark"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7edd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ede"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Status.remark"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ede">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>remark</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7edf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Status.reason"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee1"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Status.reason"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee1">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>reason</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Status.dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee4"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Status.dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee4">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>dateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee5">
+    <rdf:first rdf:resource="#Status"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee6">
+    <rdf:first rdf:resource="#Person"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#PersonRole.Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee9"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#PersonRole.Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Person"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eea">
+    <rdf:first rdf:resource="#Author"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eeb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Person.mName"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eec">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eed"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Person.mName"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eed">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>mName</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eee">
+    <rdf:first rdf:resource="#Person"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#PersonRole.Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef1"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#PersonRole.Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Person"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef2">
+    <rdf:first rdf:resource="#Approver"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#IdentifiedObject.description"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef5"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#IdentifiedObject.description"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef5">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>description</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.status"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef8"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.status"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>status</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Status"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.docStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7efa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7efb"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.docStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7efb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>docStatus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Status"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7efc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.Issuer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7efd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7efe"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.Issuer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7efe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Issuer</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Issuer"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eff">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.Author"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f00">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f01"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.Author"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Author</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Author"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eea"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f02">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.Approver"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f03">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f04"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.Approver"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f04">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Approver</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Approver"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f05">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.title"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f06">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f07"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.title"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f07">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>title</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f08">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.revisionNumber"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f09">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0a"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.revisionNumber"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0a">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>revisionNumber</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0d"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0d">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>lastModifiedDateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.createdDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f10"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.createdDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f10">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>createdDateTime</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f11">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.authorName"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f13"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Document.authorName"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f13">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>authorName</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f14">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Location.direction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f15">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f16"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#Location.direction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f16">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>direction</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f17">
+    <rdf:first rdf:resource="#Location"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f18">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingOrder.Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f19">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1a"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingOrder.Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Location</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Location"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f17"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1d"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1d">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>mRID</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingOrder.comment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f20"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingOrder.comment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f20">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label>comment</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f25">
+    <rdf:first rdf:resource="#SwitchingEvent"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f26">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.SwitchingEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f27">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f28"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction.SwitchingEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f28">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>SwitchingEvent</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchingEvent"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f25"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f29">
+    <rdf:first rdf:resource="#SwitchingAction"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.SwitchingAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2c"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan.SwitchingAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>SwitchingAction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f29"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2d">
+    <rdf:first rdf:resource="#SwitchingPlan"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingOrder.SwitchingPlan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f30"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM100#SwitchingOrder.SwitchingPlan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f30">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>SwitchingPlan</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan"/>
+    <owl:unionOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#draft-2020-12.schema.json">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#html">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#java">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#legacy-rdfs">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#part100-ed2.xsd">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#rtf">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#simple-owl">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#ttl">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#xml">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#xsd">
+    <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>Profile</rdfs:label>
+    <owl:imports rdf:resource="http://iec.ch/TC57/CIM100"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Approver">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eef"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef0"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Approver"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Author">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee7"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee8"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Author"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#DateTimeInterval">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb0"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb1"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb3"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb4"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#DateTimeInterval"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Issuer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed5"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed6"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Issuer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Location">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f14"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f15"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#OutagePlan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb7"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eb8"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eba"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ebb"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ebd"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ebe"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec0"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec1"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#OutagePlan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eeb"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eec"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PhaseCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#PhaseCode"/>
+    <owl:oneOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-78dc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed9"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eda"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7edc"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7edd"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7edf"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee0"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee2"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ee3"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Status"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Switch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da4"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da5"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da7"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7da8"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7daa"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dab"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dad"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dae"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#Switch"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SwitchAction">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db2"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db3"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db5"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db6"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchAction"/>
+    <rdfs:subClassOf rdf:resource="#SwitchingAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SwitchActionKind">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchActionKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SwitchingAction">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dbd"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dbe"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea4"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea5"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea7"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea8"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eaa"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eab"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ead"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eae"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f26"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f27"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchingAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SwitchingEvent">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e98"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e99"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9b"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9c"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9e"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7e9f"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea1"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ea2"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchingEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SwitchingOrder">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7db9"/>
+    <rdfs:subClassOf rdf:nodeID="X23X4838685Xa3X1883cf0da7fXa3X-7dba"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef3"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef4"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef6"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef7"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ef9"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7efa"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7efc"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7efd"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eff"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f00"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f02"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f03"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f05"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f06"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f08"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f09"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0b"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0c"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0e"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f0f"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f11"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f12"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f18"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f19"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1b"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1c"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1e"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f1f"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2e"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2f"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchingOrder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SwitchingPlan">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec4"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec5"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec7"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ec8"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7eca"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ecb"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ecd"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ece"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed0"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7ed1"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2a"/>
+    <rdfs:subClassOf rdf:nodeID="X23X6d794daXa3X18837287859Xa3X-7f2b"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchingPlan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SwitchingStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM100#SwitchingStep"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

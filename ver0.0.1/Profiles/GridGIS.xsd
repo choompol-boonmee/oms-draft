@@ -1,0 +1,1760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:m="http://pea.co.th/cim/profile/GridGIS#"
+           xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://pea.co.th/cim/profile/GridGIS#"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation/>
+   <xs:element name="Profile" type="m:Profile"/>
+   <xs:complexType name="Profile">
+      <xs:sequence>
+         <xs:element name="ACLineSegment"
+                     type="m:ACLineSegment"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="Breaker"
+                     type="m:Breaker"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="BusbarSection"
+                     type="m:BusbarSection"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="ConnectivityNode"
+                     type="m:ConnectivityNode"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="Customer"
+                     type="m:Customer"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="Disconnector"
+                     type="m:Disconnector"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="EnergyConnection"
+                     type="m:EnergyConnection"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="EnergySource"
+                     type="m:EnergySource"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="EquipmentContainer"
+                     type="m:EquipmentContainer"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="Fuse" type="m:Fuse" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="GeographicalRegion"
+                     type="m:GeographicalRegion"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="Meter" type="m:Meter" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="PowerTransformer"
+                     type="m:PowerTransformer"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="Recloser"
+                     type="m:Recloser"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="RegulatingCondEq"
+                     type="m:RegulatingCondEq"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="SubGeographicalRegion"
+                     type="m:SubGeographicalRegion"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="Substation"
+                     type="m:Substation"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="Switch"
+                     type="m:Switch"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="Terminal"
+                     type="m:Terminal"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="VoltageLevel"
+                     type="m:VoltageLevel"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ACLineSegment"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ACLineSegment">
+      <xs:annotation>
+         <xs:documentation>A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.</xs:documentation>
+         <xs:documentation>For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.</xs:documentation>
+         <xs:documentation>The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="length"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Length"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Conductor.length">
+            <xs:annotation>
+               <xs:documentation>Segment length for calculating line section capabilities.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="r"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Resistance"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ACLineSegment.r">
+            <xs:annotation>
+               <xs:documentation>Positive sequence series resistance of the entire line section.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="x"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Reactance"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ACLineSegment.x">
+            <xs:annotation>
+               <xs:documentation>Positive sequence series reactance of the entire line section.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ACLineSegmentPhases"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:ACLineSegmentPhase"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ACLineSegment.ACLineSegmentPhases">
+            <xs:annotation>
+               <xs:documentation>The line segment phases which belong to the line segment.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Location"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Location"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+            <xs:annotation>
+               <xs:documentation>Location of this power system resource.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Names"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="Terminals"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Terminal"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+            <xs:annotation>
+               <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ACLineSegmentPhase"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ACLineSegmentPhase">
+      <xs:annotation>
+         <xs:documentation>Represents a single wire of an alternating current line segment.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="phase"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:SinglePhaseKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ACLineSegmentPhase.phase">
+            <xs:annotation>
+               <xs:documentation>The phase connection of the wire at both ends.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="sequenceNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ACLineSegmentPhase.sequenceNumber">
+            <xs:annotation>
+               <xs:documentation>Number designation for this line segment phase. Each line segment phase within a line segment should have a unique sequence number. This is useful for unbalanced modelling to bind the mathematical model (PhaseImpedanceData of PerLengthPhaseImpedance) with the connectivity model (this class) and the physical model (WirePosition) without tight coupling.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BaseVoltage"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#BaseVoltage">
+      <xs:annotation>
+         <xs:documentation>Defines a system base voltage which is referenced.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nominalVoltage"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Voltage"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#BaseVoltage.nominalVoltage">
+            <xs:annotation>
+               <xs:documentation>The power system resource's base voltage.  Shall be a positive value and not zero.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Names"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Name"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Breaker"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Breaker">
+      <xs:annotation>
+         <xs:documentation>A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="breakingCapacity"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CurrentFlow"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProtectedSwitch.breakingCapacity">
+            <xs:annotation>
+               <xs:documentation>The maximum fault current a breaking device can break safely under prescribed conditions of use.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="normalOpen"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch.normalOpen">
+            <xs:annotation>
+               <xs:documentation>The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="open"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch.open">
+            <xs:annotation>
+               <xs:documentation>The attribute tells if the switch is considered open when used as input to topology processing.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Location"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Location"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+            <xs:annotation>
+               <xs:documentation>Location of this power system resource.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Terminals"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Terminal"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+            <xs:annotation>
+               <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BusbarSection"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#BusbarSection">
+      <xs:annotation>
+         <xs:documentation>A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation.</xs:documentation>
+         <xs:documentation>Voltage measurements are typically obtained from voltage transformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="Location"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Location"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+            <xs:annotation>
+               <xs:documentation>Location of this power system resource.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Terminals"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Terminal"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+            <xs:annotation>
+               <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ConnectivityNode"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConnectivityNode">
+      <xs:annotation>
+         <xs:documentation>Connectivity nodes are points where terminals of AC conducting equipment are connected together with zero impedance.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CoordinateSystem"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CoordinateSystem">
+      <xs:annotation>
+         <xs:documentation>Coordinate reference system.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="crsUrn"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CoordinateSystem.crsUrn">
+            <xs:annotation>
+               <xs:documentation>A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'.</xs:documentation>
+               <xs:documentation>An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc:def:crs:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry web site http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would be urn:ogc:def:crs:EPSG::4.3.2.6</xs:documentation>
+               <xs:documentation>A profile should limit this code to a set of allowed URNs agreed to by all sending and receiving parties.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Customer"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Customer">
+      <xs:annotation>
+         <xs:documentation>Organisation receiving services from service supplier.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="CustomerAccounts"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:CustomerAccount"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Customer.CustomerAccounts">
+            <xs:annotation>
+               <xs:documentation>All accounts of this customer.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Person"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Person"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Customer.Person">
+            <xs:annotation>
+               <xs:documentation>The person representing the customer</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CustomerAccount"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CustomerAccount">
+      <xs:annotation>
+         <xs:documentation>Assignment of a group of products and services purchased by the customer through a customer agreement, used as a mechanism for customer billing and payment. It contains common information from the various types of customer agreements to create billings (invoices) for a customer and receive payment.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Names"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Name"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="status"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.status">
+            <xs:annotation>
+               <xs:documentation>Status of subject matter (e.g., Agreement, Work) this document represents. For status of the document itself, use 'docStatus' attribute.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Disconnector"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Disconnector">
+      <xs:annotation>
+         <xs:documentation>A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:Switch">
+            <xs:sequence>
+               <xs:element name="mRID"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+                  <xs:annotation>
+                     <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+                     <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+                  <xs:annotation>
+                     <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="normalOpen"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:boolean"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch.normalOpen">
+                  <xs:annotation>
+                     <xs:documentation>The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="open"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:boolean"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch.open">
+                  <xs:annotation>
+                     <xs:documentation>The attribute tells if the switch is considered open when used as input to topology processing.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="retained"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:boolean"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch.retained">
+                  <xs:annotation>
+                     <xs:documentation>Branch is retained in the topological solution.  The flow through retained switches will normally be calculated in power flow.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Location"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:Location"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+                  <xs:annotation>
+                     <xs:documentation>Location of this power system resource.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Names"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           type="m:Name"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+                  <xs:annotation>
+                     <xs:documentation>All names of this identified object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Terminals"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           type="m:Terminal"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+                  <xs:annotation>
+                     <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ElectronicAddress"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ElectronicAddress">
+      <xs:annotation>
+         <xs:documentation>Electronic address information.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="EnergyConnection"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConnection">
+      <xs:annotation>
+         <xs:documentation>A connection of energy generation or consumption on the power system model.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Location"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Location"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+            <xs:annotation>
+               <xs:documentation>Location of this power system resource.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Names"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Name"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Terminals"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Terminal"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+            <xs:annotation>
+               <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="EnergySource"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergySource">
+      <xs:annotation>
+         <xs:documentation>A generic equivalent for an energy supplier on a transmission or distribution voltage level.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:EnergyConnection">
+            <xs:sequence>
+               <xs:element name="activePower"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:ActivePower"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergySource.activePower">
+                  <xs:annotation>
+                     <xs:documentation>High voltage source active injection. Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+                     <xs:documentation>Starting value for steady state solutions.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="reactivePower"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:ReactivePower"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergySource.reactivePower">
+                  <xs:annotation>
+                     <xs:documentation>High voltage source reactive injection. Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+                     <xs:documentation>Starting value for steady state solutions.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Location"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:Location"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+                  <xs:annotation>
+                     <xs:documentation>Location of this power system resource.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Terminals"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           type="m:Terminal"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+                  <xs:annotation>
+                     <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="Equipment"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Equipment">
+      <xs:annotation>
+         <xs:documentation>The parts of a power system that are physical devices, electronic or mechanical.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Names"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Name"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="EquipmentContainer"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#EquipmentContainer">
+      <xs:annotation>
+         <xs:documentation>A modelling construct to provide a root class for containing equipment.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="ConnectivityNodes"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:ConnectivityNode"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConnectivityNodeContainer.ConnectivityNodes">
+            <xs:annotation>
+               <xs:documentation>Connectivity nodes which belong to this connectivity node container.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Equipments"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Equipment"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EquipmentContainer.Equipments">
+            <xs:annotation>
+               <xs:documentation>Contained equipment.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Location"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Location"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+            <xs:annotation>
+               <xs:documentation>Location of this power system resource.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Fuse" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Fuse">
+      <xs:annotation>
+         <xs:documentation>An overcurrent protective device with a circuit opening fusible part that is heated and severed by the passage of overcurrent through it. A fuse is considered a switching device because it breaks current.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:Switch">
+            <xs:sequence>
+               <xs:element name="mRID"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+                  <xs:annotation>
+                     <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+                     <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+                  <xs:annotation>
+                     <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="normalOpen"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:boolean"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch.normalOpen">
+                  <xs:annotation>
+                     <xs:documentation>The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="retained"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:boolean"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch.retained">
+                  <xs:annotation>
+                     <xs:documentation>Branch is retained in the topological solution.  The flow through retained switches will normally be calculated in power flow.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Location"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:Location"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+                  <xs:annotation>
+                     <xs:documentation>Location of this power system resource.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Names"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           type="m:Name"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+                  <xs:annotation>
+                     <xs:documentation>All names of this identified object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Terminals"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           type="m:Terminal"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+                  <xs:annotation>
+                     <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="GeographicalRegion"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeographicalRegion">
+      <xs:annotation>
+         <xs:documentation>A geographical region of a power system network model.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Names"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Name"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Regions"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:SubGeographicalRegion"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeographicalRegion.Regions">
+            <xs:annotation>
+               <xs:documentation>All sub-geographical regions within this geographical region.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Location"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location">
+      <xs:annotation>
+         <xs:documentation>The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="CoordinateSystem"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CoordinateSystem"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.CoordinateSystem">
+            <xs:annotation>
+               <xs:documentation>Coordinate system used to describe position points of this location.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="PositionPoints"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:PositionPoint"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.PositionPoints">
+            <xs:annotation>
+               <xs:documentation>Sequence of position points describing this location, expressed in coordinate system 'Location.CoordinateSystem'.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Meter" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Meter">
+      <xs:annotation>
+         <xs:documentation>Physical asset that performs the metering role of the usage point. Used for measuring consumption and detection of events.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Customer"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Customer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EndDevice.Customer">
+            <xs:annotation>
+               <xs:documentation>Customer owning this end device.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:choice minOccurs="0"
+                    maxOccurs="unbounded"
+                    sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="Name"
+                        minOccurs="1"
+                        maxOccurs="1"
+                        type="m:Name"
+                        sawsdl:modelReference="">
+               <xs:annotation/>
+            </xs:element>
+            <xs:element name="Name"
+                        minOccurs="1"
+                        maxOccurs="1"
+                        type="m:Name"
+                        sawsdl:modelReference="">
+               <xs:annotation/>
+            </xs:element>
+            <xs:element name="Name"
+                        minOccurs="1"
+                        maxOccurs="1"
+                        type="m:Name"
+                        sawsdl:modelReference="">
+               <xs:annotation/>
+            </xs:element>
+            <xs:element name="Name"
+                        minOccurs="1"
+                        maxOccurs="1"
+                        type="m:Name"
+                        sawsdl:modelReference="">
+               <xs:annotation/>
+            </xs:element>
+            <xs:element name="Name"
+                        minOccurs="1"
+                        maxOccurs="1"
+                        type="m:Name"
+                        sawsdl:modelReference="">
+               <xs:annotation/>
+            </xs:element>
+            <xs:element name="Name"
+                        minOccurs="1"
+                        maxOccurs="1"
+                        type="m:Name"
+                        sawsdl:modelReference="">
+               <xs:annotation/>
+            </xs:element>
+         </xs:choice>
+         <xs:element name="UsagePoint"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:UsagePoint"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EndDevice.UsagePoint">
+            <xs:annotation>
+               <xs:documentation>Usage point to which this end device belongs.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Name" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name">
+      <xs:annotation>
+         <xs:documentation>The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b&gt;not&lt;/b&gt; to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.name">
+            <xs:annotation>
+               <xs:documentation>Any free text that name the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="NameType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.NameType">
+            <xs:annotation>
+               <xs:documentation>Type of this name.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Person" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person">
+      <xs:annotation>
+         <xs:documentation>General purpose information for name and other information to contact people.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.mName">
+            <xs:annotation>
+               <xs:documentation>Middle name(s) or initial(s).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="electronicAddress"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ElectronicAddress"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.electronicAddress">
+            <xs:annotation>
+               <xs:documentation>Electronic address.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="landlinePhone"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:TelephoneNumber"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.landlinePhone">
+            <xs:annotation>
+               <xs:documentation>Landline phone number.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="mobilePhone"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:TelephoneNumber"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Person.mobilePhone">
+            <xs:annotation>
+               <xs:documentation>Mobile phone number.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="PhaseCode"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#PhaseCode">
+      <xs:annotation>
+         <xs:documentation>An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.</xs:documentation>
+         <xs:documentation>Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.</xs:documentation>
+         <xs:documentation>The integer values are from IEC 61968-9 to support revenue metering applications.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="A">
+            <xs:annotation>
+               <xs:documentation>Phase A.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AB">
+            <xs:annotation>
+               <xs:documentation>Phases A and B.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ABC">
+            <xs:annotation>
+               <xs:documentation>Phases A, B, and C.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ABCN">
+            <xs:annotation>
+               <xs:documentation>Phases A, B, C, and N.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ABN">
+            <xs:annotation>
+               <xs:documentation>Phases A, B, and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AC">
+            <xs:annotation>
+               <xs:documentation>Phases A and C.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ACN">
+            <xs:annotation>
+               <xs:documentation>Phases A, C and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AN">
+            <xs:annotation>
+               <xs:documentation>Phases A and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="B">
+            <xs:annotation>
+               <xs:documentation>Phase B.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BC">
+            <xs:annotation>
+               <xs:documentation>Phases B and C.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BCN">
+            <xs:annotation>
+               <xs:documentation>Phases B, C, and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BN">
+            <xs:annotation>
+               <xs:documentation>Phases B and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="C">
+            <xs:annotation>
+               <xs:documentation>Phase C.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CN">
+            <xs:annotation>
+               <xs:documentation>Phases C and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="N">
+            <xs:annotation>
+               <xs:documentation>Neutral phase.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="PositionPoint"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint">
+      <xs:annotation>
+         <xs:documentation>Set of spatial coordinates that determine a point, defined in the coordinate system specified in 'Location.CoordinateSystem'. Use a single position point instance to describe a point-oriented location. Use a sequence of position points to describe a line-oriented object (physical location of non-point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone - in this case, have first and last position point with the same values).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="sequenceNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint.sequenceNumber">
+            <xs:annotation>
+               <xs:documentation>Zero-relative sequence number of this point within a series of points.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="xPosition"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint.xPosition">
+            <xs:annotation>
+               <xs:documentation>X axis position.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="yPosition"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint.yPosition">
+            <xs:annotation>
+               <xs:documentation>Y axis position.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="PowerTransformer"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformer">
+      <xs:annotation>
+         <xs:documentation>An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).</xs:documentation>
+         <xs:documentation>A power transformer may be composed of separate transformer tanks that need not be identical.</xs:documentation>
+         <xs:documentation>A power transformer can be modelled with or without tanks and is intended for use in both balanced and unbalanced representations.   A power transformer typically has two terminals, but may have one (grounding), three or more terminals.</xs:documentation>
+         <xs:documentation>The inherited association ConductingEquipment.BaseVoltage should not be used.  The association from TransformerEnd to BaseVoltage should be used instead.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="Location"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Location"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+            <xs:annotation>
+               <xs:documentation>Location of this power system resource.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="PowerTransformerEnd"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformer.PowerTransformerEnd">
+            <xs:annotation>
+               <xs:documentation>The ends of this power transformer.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="Terminals"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+            <xs:annotation>
+               <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="PowerTransformerEnd"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformerEnd">
+      <xs:annotation>
+         <xs:documentation>A PowerTransformerEnd is associated with each Terminal of a PowerTransformer.</xs:documentation>
+         <xs:documentation>The impedance values r, r0, x, and x0 of a PowerTransformerEnd represents a star equivalent as follows.</xs:documentation>
+         <xs:documentation>1) for a two Terminal PowerTransformer the high voltage (TransformerEnd.endNumber=1) PowerTransformerEnd has non zero values on r, r0, x, and x0 while the low voltage (TransformerEnd.endNumber=2) PowerTransformerEnd has zero values for r, r0, x, and x0.  Parameters are always provided, even if the PowerTransformerEnds have the same rated voltage.  In this case, the parameters are provided at the PowerTransformerEnd which has TransformerEnd.endNumber equal to 1.</xs:documentation>
+         <xs:documentation>2) for a three Terminal PowerTransformer the three PowerTransformerEnds represent a star equivalent with each leg in the star represented by r, r0, x, and x0 values.</xs:documentation>
+         <xs:documentation>3) For a three Terminal transformer each PowerTransformerEnd shall have g, g0, b and b0 values corresponding to the no load losses distributed on the three PowerTransformerEnds. The total no load loss shunt impedances may also be placed at one of the PowerTransformerEnds, preferably the end numbered 1, having the shunt values on end 1.  This is the preferred way.</xs:documentation>
+         <xs:documentation>4) for a PowerTransformer with more than three Terminals the PowerTransformerEnd impedance values cannot be used. Instead use the TransformerMeshImpedance or split the transformer into multiple PowerTransformers.</xs:documentation>
+         <xs:documentation>Each PowerTransformerEnd must be contained by a PowerTransformer. Because a PowerTransformerEnd (or any other object) can not be contained by more than one parent, a PowerTransformerEnd can not have an association to an EquipmentContainer (Substation, VoltageLevel, etc).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="PowerTransformer"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PowerTransformer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformerEnd.PowerTransformer">
+            <xs:annotation>
+               <xs:documentation>The power transformer of this power transformer end.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Terminal"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Terminal"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TransformerEnd.Terminal">
+            <xs:annotation>
+               <xs:documentation>Terminal of the power transformer to which this transformer end belongs.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Recloser"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Recloser">
+      <xs:annotation>
+         <xs:documentation>Pole-mounted fault interrupter with built-in phase and ground relays, current transformer (CT), and supplemental controls.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="breakingCapacity"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CurrentFlow"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProtectedSwitch.breakingCapacity">
+            <xs:annotation>
+               <xs:documentation>The maximum fault current a breaking device can break safely under prescribed conditions of use.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="open"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch.open">
+            <xs:annotation>
+               <xs:documentation>The attribute tells if the switch is considered open when used as input to topology processing.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Location"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+            <xs:annotation>
+               <xs:documentation>Location of this power system resource.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="Terminals"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+            <xs:annotation>
+               <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="RegulatingCondEq"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingCondEq">
+      <xs:annotation>
+         <xs:documentation>A type of conducting equipment that can regulate a quantity (i.e. voltage or flow) at a specific point in the network.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:EnergyConnection">
+            <xs:sequence>
+               <xs:element name="controlEnabled"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:boolean"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingCondEq.controlEnabled">
+                  <xs:annotation>
+                     <xs:documentation>Specifies the regulation status of the equipment.  True is regulating, false is not regulating.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Location"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:Location"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+                  <xs:annotation>
+                     <xs:documentation>Location of this power system resource.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="RegulatingControl"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:RegulatingControl"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingCondEq.RegulatingControl">
+                  <xs:annotation>
+                     <xs:documentation>The regulating control scheme in which this equipment participates.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Terminals"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           type="m:Terminal"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+                  <xs:annotation>
+                     <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="RegulatingControl"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl">
+      <xs:annotation>
+         <xs:documentation>Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.</xs:documentation>
+         <xs:documentation>Remote bus voltage control is possible by specifying the controlled terminal located at some place remote from the controlling equipment.</xs:documentation>
+         <xs:documentation>The specified terminal shall be associated with the connectivity node of the controlled point.  The most specific subtype of RegulatingControl shall be used in case such equipment participate in the control, e.g. TapChangerControl for tap changers.</xs:documentation>
+         <xs:documentation>For flow control, load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment.</xs:documentation>
+         <xs:documentation>The attribute minAllowedTargetValue and maxAllowedTargetValue are required in the following cases:</xs:documentation>
+         <xs:documentation>- For a power generating module operated in power factor control mode to specify maximum and minimum power factor values;</xs:documentation>
+         <xs:documentation>- Whenever it is necessary to have an off center target voltage for the tap changer regulator. For instance, due to long cables to off shore wind farms and the need to have a simpler setup at the off shore transformer platform, the voltage is controlled from the land at the connection point for the off shore wind farm. Since there usually is a voltage rise along the cable, there is typical and overvoltage of up 3-4 kV compared to the on shore station. Thus in normal operation the tap changer on the on shore station is operated with a target set point, which is in the lower parts of the dead band.</xs:documentation>
+         <xs:documentation>The attributes minAllowedTargetValue and maxAllowedTargetValue are not related to the attribute targetDeadband and thus they are not treated as an alternative of the targetDeadband. They are needed due to limitations in the local substation controller. The attribute targetDeadband is used to prevent the power flow from move the tap position in circles (hunting) that is to be used regardless of the attributes minAllowedTargetValue and maxAllowedTargetValue.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="discrete"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.discrete">
+            <xs:annotation>
+               <xs:documentation>The regulation is performed in a discrete mode. This applies to equipment with discrete controls, e.g. tap changers and shunt compensators.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="enabled"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.enabled">
+            <xs:annotation>
+               <xs:documentation>The flag tells if regulation is enabled.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="SinglePhaseKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#SinglePhaseKind">
+      <xs:annotation>
+         <xs:documentation>Enumeration of single phase identifiers. Allows designation of single phases for both transmission and distribution equipment, circuits and loads.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="A">
+            <xs:annotation>
+               <xs:documentation>Phase A.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="B">
+            <xs:annotation>
+               <xs:documentation>Phase B.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="C">
+            <xs:annotation>
+               <xs:documentation>Phase C.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="N">
+            <xs:annotation>
+               <xs:documentation>Neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="SubGeographicalRegion"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#SubGeographicalRegion">
+      <xs:annotation>
+         <xs:documentation>A subset of a geographical region of a power system network model.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Names"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Name"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Region"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:GeographicalRegion"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SubGeographicalRegion.Region">
+            <xs:annotation>
+               <xs:documentation>The geographical region which this sub-geographical region is within.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Substations"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Substation"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SubGeographicalRegion.Substations">
+            <xs:annotation>
+               <xs:documentation>The substations in this sub-geographical region.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Substation"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Substation">
+      <xs:annotation>
+         <xs:documentation>A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:EquipmentContainer">
+            <xs:sequence>
+               <xs:element name="mRID"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+                  <xs:annotation>
+                     <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+                     <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+                  <xs:annotation>
+                     <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Location"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+                  <xs:annotation>
+                     <xs:documentation>Location of this power system resource.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Names"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           type="m:Name"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+                  <xs:annotation>
+                     <xs:documentation>All names of this identified object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="Switch" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch">
+      <xs:annotation>
+         <xs:documentation>A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches. The ACDCTerminal.connected at the two sides of the switch shall not be considered for assessing switch connectivity, i.e. only Switch.open, .normalOpen and .locked are relevant.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="normalOpen"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch.normalOpen">
+            <xs:annotation>
+               <xs:documentation>The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="open"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Switch.open">
+            <xs:annotation>
+               <xs:documentation>The attribute tells if the switch is considered open when used as input to topology processing.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Location"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Location"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+            <xs:annotation>
+               <xs:documentation>Location of this power system resource.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Terminals"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Terminal"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Terminals">
+            <xs:annotation>
+               <xs:documentation>Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="TelephoneNumber"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#TelephoneNumber">
+      <xs:annotation>
+         <xs:documentation>Telephone number.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="localNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TelephoneNumber.localNumber">
+            <xs:annotation>
+               <xs:documentation>Main (local) part of this telephone number.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Terminal"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Terminal">
+      <xs:annotation>
+         <xs:documentation>An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="phases"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PhaseCode"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Terminal.phases">
+            <xs:annotation>
+               <xs:documentation>Represents the normal network phasing condition. If the attribute is missing, three phases (ABC) shall be assumed, except for terminals of grounding classes (specializations of EarthFaultCompensator, GroundDisconnector, and Ground) which will be assumed to be N. Therefore, phase code ABCN is explicitly declared when needed, e.g. for star point grounding equipment.</xs:documentation>
+               <xs:documentation>The phase code on terminals connecting same ConnectivityNode or same TopologicalNode as well as for equipment between two terminals shall be consistent.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ConnectivityNode"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ConnectivityNode"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Terminal.ConnectivityNode">
+            <xs:annotation>
+               <xs:documentation>The connectivity node to which this terminal connects with zero impedance.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="UnitMultiplier"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnitMultiplier">
+      <xs:annotation>
+         <xs:documentation>The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.</xs:documentation>
+         <xs:documentation>For example, if a unit symbol is "m2Pers" and the multiplier is "k", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol "�" represents the derived unit "m2Pers", then applying the multiplier "k" can be conceptualized simply as "k�".</xs:documentation>
+         <xs:documentation>For example, the SI unit for mass is "kg" and not "g".  If the unit symbol is defined as "kg", then the multiplier is applied to "kg" as a whole and does not replace the "k" in front of the "g". In this case, the multiplier of "m" would be used with the unit symbol of "kg" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the "kg" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the "kg" were replaced by a symbol "�", then it is easier to conceptualize the multiplier "m" as creating the proper unit "m�", and not the forbidden unit "mkg".</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="k">
+            <xs:annotation>
+               <xs:documentation>Kilo 10**3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="UsagePoint"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#UsagePoint">
+      <xs:annotation>
+         <xs:documentation>Logical or physical point in the network to which readings or events may be attributed. Used at the place where a physical or virtual meter may be located; however, it is not required that a meter be present.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Equipments"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:EnergyConnection"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#UsagePoint.Equipments">
+            <xs:annotation>
+               <xs:documentation>All equipment connecting this usage point to the electrical grid.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="VoltageLevel"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#VoltageLevel">
+      <xs:annotation>
+         <xs:documentation>A collection of equipment at one common system voltage forming a switchgear. The equipment typically consists of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:EquipmentContainer">
+            <xs:sequence>
+               <xs:element name="mRID"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+                  <xs:annotation>
+                     <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+                     <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="description"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+                  <xs:annotation>
+                     <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+                  <xs:annotation>
+                     <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="BaseVoltage"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:BaseVoltage"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#VoltageLevel.BaseVoltage">
+                  <xs:annotation>
+                     <xs:documentation>The base voltage used for all equipment within the voltage level.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="Names"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+                  <xs:annotation>
+                     <xs:documentation>All names of this identified object.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:simpleType name="ReactivePower"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#ReactivePower">
+      <xs:annotation>
+         <xs:documentation>Product of RMS value of the voltage and the RMS value of the quadrature component of the current.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Length" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Length">
+      <xs:annotation>
+         <xs:documentation>Unit of length. It shall be a positive value or zero.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Reactance"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reactance">
+      <xs:annotation>
+         <xs:documentation>Reactance (imaginary part of impedance), at rated frequency.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Voltage"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Voltage">
+      <xs:annotation>
+         <xs:documentation>Electrical voltage, can be both AC and DC.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="CurrentFlow"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#CurrentFlow">
+      <xs:annotation>
+         <xs:documentation>Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="ActivePower"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivePower">
+      <xs:annotation>
+         <xs:documentation>Product of RMS value of the voltage and the RMS value of the in-phase component of the current.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Resistance"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Resistance">
+      <xs:annotation>
+         <xs:documentation>Resistance (real part of impedance).</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+</xs:schema>

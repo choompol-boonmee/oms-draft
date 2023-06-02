@@ -1,0 +1,1481 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:msg="http://langdale.com.au/2005/Message#"
+    xmlns:uml="http://langdale.com.au/2005/UML#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:j.0="http://iec.ch/TC57/CIM100#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://iec.ch/TC57/CIM100">
+  <owl:Ontology rdf:about="">
+    <rdfs:label>Profile</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Issuer">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PersonRole"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="PersonRole.Person"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Person"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#PersonRole.Person"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:ID="Package_Common"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>Person who issued the document and is responsible for its content.</rdfs:comment>
+    <rdfs:label>Issuer</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SwitchAction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SwitchingAction"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Switch"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchAction.OperatedSwitch"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>SwitchAction</rdfs:label>
+    <rdfs:comment>Action on switch as a switching step.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchAction.OperatedSwitch"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="SwitchActionKind"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchAction.kind"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:ID="Package_Operations"/>
+    </rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchAction.kind"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Location">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Location.direction"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Location.direction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Common"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.</rdfs:comment>
+    <rdfs:label>Location</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SwitchingOrder">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Issuer"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="Document.Issuer"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Document.revisionNumber"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Operations"/>
+    </rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="IdentifiedObject.mRID"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Document.title"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="Document.status"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="IdentifiedObject.description"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Document.lastModifiedDateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Document.authorName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Approver"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="Document.Approver"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Document.revisionNumber"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="Document.Author"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Transmits a switching plan to a crew in order for the plan to be executed.</rdfs:comment>
+    <rdfs:label>SwitchingOrder</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Location"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchingOrder.Location"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Status"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="Document.docStatus"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Document.createdDateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="SwitchingPlan"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchingOrder.SwitchingPlan"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="DateTimeInterval"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchingOrder.plannedExecutionInterval"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Status"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Document.status"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="SwitchingOrder.comment"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Document.title"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#IdentifiedObject.mRID"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Document.Approver"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Document.docStatus"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Document.authorName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#IdentifiedObject.description"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchingOrder.Location"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Document.createdDateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Document.lastModifiedDateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchingOrder.SwitchingPlan"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Author"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Document.Author"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchingOrder.plannedExecutionInterval"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#SwitchingOrder.comment"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#Document.Issuer"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#SwitchActionKind">
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Operations"/>
+    </rdfs:isDefinedBy>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
+    <rdfs:comment>Kind of action on switch.</rdfs:comment>
+    <rdfs:label>SwitchActionKind</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#DateTimeInterval">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="DateTimeInterval.start"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#DateTimeInterval.start"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="DateTimeInterval.end"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#DateTimeInterval.end"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:ID="Package_Domain"/>
+    </rdfs:isDefinedBy>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#compound"/>
+    <rdfs:comment>Interval between two date and time points, where the interval includes the start time but excludes end time.</rdfs:comment>
+    <rdfs:label>DateTimeInterval</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#SwitchingPlan">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchingPlan.OutagePlan"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="OutagePlan"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchingPlan.OutagePlan"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#DateTimeInterval"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchingPlan.plannedPeriod"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchingPlan.plannedPeriod"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="SwitchingPlan.cancelledDateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#SwitchingPlan.cancelledDateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>SwitchingPlan</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="SwitchingPlan.purpose"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchingPlan.SwitchingAction"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#SwitchingAction"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchingPlan.SwitchingAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="SwitchingPlan.approvedDateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#SwitchingPlan.approvedDateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>A sequence of grouped or atomic steps intended to:&#xD;
+- de-energise equipment or part of the network for safe work, and/or&#xD;
+- bring back in service previously de-energised equipment or part of the network.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#SwitchingPlan.purpose"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Operations"/>
+    </rdfs:isDefinedBy>
+  </owl:Class>
+  <owl:Class rdf:about="#Person">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Person.mName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Person.mName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Common"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>General purpose information for name and other information to contact people.</rdfs:comment>
+    <rdfs:label>Person</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="PhaseCode">
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:ID="Package_Core"/>
+    </rdfs:isDefinedBy>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
+    <rdfs:comment>An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.&#xD;
+Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.&#xD;
+The integer values are from IEC 61968-9 to support revenue metering applications.</rdfs:comment>
+    <rdfs:label>PhaseCode</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Status">
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Common"/>
+    </rdfs:isDefinedBy>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#compound"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Status.reason"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Status.remark"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Status.value"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Current status information relevant to an entity.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Status.dateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Status.remark"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Status.reason"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>Status</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Status.value"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Status.dateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#OutagePlan">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="OutagePlan.cancelledDateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Operations"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>Document containing the definition of planned outages of equipment and/or usage points. It will reference switching plans that are used to execute the planned outage.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#OutagePlan.cancelledDateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="OutagePlan.purpose"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>OutagePlan</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#OutagePlan.purpose"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="OutagePlan.approvedDateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="OutagePlan.plannedPeriod"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#OutagePlan.approvedDateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#DateTimeInterval"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#OutagePlan.plannedPeriod"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Approver">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PersonRole"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#PersonRole.Person"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#PersonRole.Person"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Common"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>Person who accepted/signed or rejected the document.</rdfs:comment>
+    <rdfs:label>Approver</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#PersonRole">
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Common"/>
+    </rdfs:isDefinedBy>
+    <rdfs:label>PersonRole</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#SwitchingAction">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="SwitchingEvent"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchingAction.SwitchingEvent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="SwitchingAction.plannedDateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchingAction.SwitchingEvent"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="SwitchingAction.executedDateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Atomic switching action.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#SwitchingAction.executedDateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#PhaseCode"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchingAction.phases"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="SwitchingAction.SwitchingStep"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="SwitchingStep"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchingAction.SwitchingStep"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>SwitchingAction</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#SwitchingAction.phases"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Operations"/>
+    </rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="SwitchingAction.issuedDateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#SwitchingAction.issuedDateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#SwitchingAction.plannedDateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#SwitchingEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="ActivityRecord.createdDateTime"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Event indicating the completion (success or fail) of any switching action (jumper action, cut action, tag action, etc).  The switching action may or may not be a consequential event in response to a request to complete the action.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="ActivityRecord.type"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>SwitchingEvent</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="ActivityRecord.severity"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="ActivityRecord.reason"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Operations"/>
+    </rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ActivityRecord.createdDateTime"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ActivityRecord.reason"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ActivityRecord.type"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ActivityRecord.severity"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Author">
+    <rdfs:subClassOf rdf:resource="#PersonRole"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#PersonRole.Person"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Person"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#PersonRole.Person"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Common"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>Person who created document or activity record.</rdfs:comment>
+    <rdfs:label>Author</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#SwitchingStep">
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_Operations"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>Atomic switching step; can be part of a switching step group, or part of a switching plan.</rdfs:comment>
+    <rdfs:label>SwitchingStep</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Switch">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Switch.ratedCurrent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Switch.ratedCurrent"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>Switch</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Switch.switchOnDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Switch.switchOnDate"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Switch.open"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Switch.normalOpen"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Switch.open"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#Switch.normalOpen"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:ID="Package_Wires"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches. The ACDCTerminal.connected at the two sides of the switch shall not be considered for assessing switch connectivity, i.e. only Switch.open, .normalOpen and .locked are relevant.</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#Document.Issuer">
+    <rdfs:comment>Issuer of this document.</rdfs:comment>
+    <rdfs:label>Issuer</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchingOrder.Location">
+    <rdfs:comment>Location of this switching order.</rdfs:comment>
+    <rdfs:label>Location</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchingAction.phases">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Phases of the Switching Action</rdfs:comment>
+    <rdfs:label>phases</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchAction.kind">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Switching action to perform.</rdfs:comment>
+    <rdfs:label>kind</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchingPlan.plannedPeriod">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>the planned start and end times for the switching plan.</rdfs:comment>
+    <rdfs:label>plannedPeriod</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchingAction.SwitchingStep">
+    <rdfs:comment>The switching step that is associated to the switching action.</rdfs:comment>
+    <rdfs:label>SwitchingStep</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchingOrder.plannedExecutionInterval">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The planned start and end time for the switching order.</rdfs:comment>
+    <rdfs:label>plannedExecutionInterval</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Document.Author">
+    <rdfs:comment>Author of this document.</rdfs:comment>
+    <rdfs:label>Author</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchingPlan.SwitchingAction">
+    <rdfs:comment>The switching actions that are associated with the switching plan.</rdfs:comment>
+    <rdfs:label>SwitchingAction</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchingOrder.SwitchingPlan">
+    <rdfs:comment>The switching plan that is defined in the switching order.</rdfs:comment>
+    <rdfs:label>SwitchingPlan</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Document.Approver">
+    <rdfs:comment>Approver of this document.</rdfs:comment>
+    <rdfs:label>Approver</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#OutagePlan.plannedPeriod">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>planned start and end time of the planned outage.</rdfs:comment>
+    <rdfs:label>plannedPeriod</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchAction.OperatedSwitch">
+    <rdfs:comment>Switch that is the object of this switch action.</rdfs:comment>
+    <rdfs:label>OperatedSwitch</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Document.status">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Status of subject matter (e.g., Agreement, Work) this document represents. For status of the document itself, use 'docStatus' attribute.</rdfs:comment>
+    <rdfs:label>status</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchingAction.SwitchingEvent">
+    <rdfs:comment>The switching event that the switching action is performed on</rdfs:comment>
+    <rdfs:label>SwitchingEvent</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#SwitchingPlan.OutagePlan">
+    <rdfs:comment>The outage plan for which the switching plan is defined.</rdfs:comment>
+    <rdfs:label>OutagePlan</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#PersonRole.Person">
+    <rdfs:comment>Person having this role.</rdfs:comment>
+    <rdfs:label>Person</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Document.docStatus">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Status of this document. For status of subject matter this document represents (e.g., Agreement, Work), use 'status' attribute.&#xD;
+Example values for 'docStatus.status' are draft, approved, cancelled, etc.</rdfs:comment>
+    <rdfs:label>docStatus</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#ActivityRecord.reason">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Reason for event resulting in this activity record, typically supplied when user initiated.</rdfs:comment>
+    <rdfs:label>reason</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Switch.normalOpen">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen.</rdfs:comment>
+    <rdfs:label>normalOpen</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Switch.switchOnDate">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The date and time when the switch was last switched on.</rdfs:comment>
+    <rdfs:label>switchOnDate</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#IdentifiedObject.mRID">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.&#xD;
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</rdfs:comment>
+    <rdfs:label>mRID</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#OutagePlan.purpose">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Purpose of  this outage plan, such as whether it is to replace equipment or perform maintenance or repairs or to reconfigure network topology.</rdfs:comment>
+    <rdfs:label>purpose</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Status.value">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Status value at 'dateTime'; prior status changes may have been kept in instances of activity records associated with the object to which this status applies.</rdfs:comment>
+    <rdfs:label>value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#SwitchingAction.executedDateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Actual date and time of this switching step.</rdfs:comment>
+    <rdfs:label>executedDateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#DateTimeInterval.end">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>End date and time of this interval.  The end date and time where the interval is defined up to, but excluded.</rdfs:comment>
+    <rdfs:label>end</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Document.createdDateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Date and time that this document was created.</rdfs:comment>
+    <rdfs:label>createdDateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#SwitchingAction.plannedDateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Planned date and time of this switching step.</rdfs:comment>
+    <rdfs:label>plannedDateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Document.title">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Document title.</rdfs:comment>
+    <rdfs:label>title</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Document.revisionNumber">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Revision number for this document.</rdfs:comment>
+    <rdfs:label>revisionNumber</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#SwitchingPlan.cancelledDateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Date and Time the switching plan was cancelled.</rdfs:comment>
+    <rdfs:label>cancelledDateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Status.reason">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Reason code or explanation for why an object went to the current status 'value'.</rdfs:comment>
+    <rdfs:label>reason</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Switch.open">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The attribute tells if the switch is considered open when used as input to topology processing.</rdfs:comment>
+    <rdfs:label>open</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Status.dateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Date and time for which status 'value' applies.</rdfs:comment>
+    <rdfs:label>dateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#OutagePlan.approvedDateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The date and time the outage plan was approved</rdfs:comment>
+    <rdfs:label>approvedDateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Document.lastModifiedDateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</rdfs:comment>
+    <rdfs:label>lastModifiedDateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#SwitchingPlan.approvedDateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The date and time the switching plan was approved</rdfs:comment>
+    <rdfs:label>approvedDateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Location.direction">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>(if applicable) Direction that allows field crews to quickly find a given asset. For a given location, such as a street address, this is the relative direction in which to find the asset. For example, a streetlight may be located at the 'NW' (northwest) corner of the customer's site, or a usage point may be located on the second floor of an apartment building.</rdfs:comment>
+    <rdfs:label>direction</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Document.authorName">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Name of the author of this document.</rdfs:comment>
+    <rdfs:label>authorName</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#ActivityRecord.severity">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Severity level of event resulting in this activity record.</rdfs:comment>
+    <rdfs:label>severity</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#OutagePlan.cancelledDateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Date and Time the planned outage was canceled.</rdfs:comment>
+    <rdfs:label>cancelledDateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Status.remark">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Pertinent information regarding the current 'value', as free form text.</rdfs:comment>
+    <rdfs:label>remark</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Switch.ratedCurrent">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The maximum continuous current carrying capacity in amps governed by the device material and construction.&#xD;
+The attribute shall be a positive value.</rdfs:comment>
+    <rdfs:label>ratedCurrent</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="CurrentFlow"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#SwitchingAction.issuedDateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Date and time when the crew was given the instruction to execute the action; not applicable if the action is performed by operator remote control.</rdfs:comment>
+    <rdfs:label>issuedDateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Person.mName">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Middle name(s) or initial(s).</rdfs:comment>
+    <rdfs:label>mName</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#IdentifiedObject.description">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</rdfs:comment>
+    <rdfs:label>description</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#SwitchingOrder.comment">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Free-form comment associated with the switching order.</rdfs:comment>
+    <rdfs:label>comment</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#DateTimeInterval.start">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Start date and time of this interval.  The start date and time is included in the defined interval.</rdfs:comment>
+    <rdfs:label>start</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#SwitchingPlan.purpose">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Purpose of  this plan, such as whether it is to move the state from normal to some abnormal condition, or to restore the normal state after an abnormal condition, or to perform some kind of optimisation such as correction of overload, voltage control, etc.</rdfs:comment>
+    <rdfs:label>purpose</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#ActivityRecord.createdDateTime">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable).</rdfs:comment>
+    <rdfs:label>createdDateTime</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#CurrentFlow">
+    <rdfs:comment>Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC.</rdfs:comment>
+    <rdfs:label>CurrentFlow</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#ActivityRecord.type">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdfs:comment>Type of event resulting in this activity record.</rdfs:comment>
+    <rdfs:label>type</rdfs:label>
+  </owl:DatatypeProperty>
+  <uml:Package rdf:about="#Package_Operations">
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:ID="Package_IEC61968"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>This package contains the core information classes that support operations and outage management applications.</rdfs:comment>
+    <rdfs:label>Operations</rdfs:label>
+  </uml:Package>
+  <uml:Package rdf:ID="Package_Base">
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:ID="Package_IEC61970"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>Content of the base CIM published as IEC 61970-301.</rdfs:comment>
+    <rdfs:label>Base</rdfs:label>
+  </uml:Package>
+  <uml:Package rdf:about="#Package_Common">
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="#Package_IEC61968"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>This package contains the information classes that support distribution management in general.</rdfs:comment>
+    <rdfs:label>Common</rdfs:label>
+  </uml:Package>
+  <uml:Package rdf:about="#Package_Core">
+    <rdfs:isDefinedBy rdf:resource="#Package_Base"/>
+    <rdfs:comment>Contains the core PowerSystemResource and ConductingEquipment entities shared by all applications plus common collections of those entities. Not all applications require all the Core entities.  This package does not depend on any other package except the Domain package, but most of the other packages have associations and generalizations that depend on it.</rdfs:comment>
+    <rdfs:label>Core</rdfs:label>
+  </uml:Package>
+  <uml:Package rdf:about="#Package_Domain">
+    <rdfs:isDefinedBy rdf:resource="#Package_Base"/>
+    <rdfs:comment>The domain package defines primitive datatypes that are used by classes in other packages. Stereotypes are used to describe the datatypes. The following stereotypes are defined:&#xD;
+&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt; A list of permissible constant values.&#xD;
+&amp;lt;&amp;lt;Primitive&amp;gt;&amp;gt; The most basic data types used to compose all other data types.&#xD;
+&amp;lt;&amp;lt;CIMDatatype&amp;gt;&amp;gt; A datatype that contains a value attribute, an optional unit of measure and a unit multiplier. The unit and multiplier may be specified as a static variable initialized to the allowed value.&#xD;
+&amp;lt;&amp;lt;Compound&amp;gt;&amp;gt; A composite of Primitive, enumeration, CIMDatatype or other Compound classes, as long as the Compound classes do not recurse.&#xD;
+For all datatypes both positive and negative values are allowed unless stated otherwise for a particular datatype.</rdfs:comment>
+    <rdfs:label>Domain</rdfs:label>
+  </uml:Package>
+  <uml:Package rdf:about="#Package_IEC61968">
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:ID="Package_TC57CIM"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>The IEC 61968 subpackages of the CIM are developed, standardized and maintained by the UCA community including its working groups and task forces.&#xD;
+Currently, normative parts of the model support the needs of information exchange defined in IEC 61968-3, IEC 61968-4, IEC 61968-5, IEC 61968-6, IEC 61968-8, IEC 61968-9 and in IEC 61968-13.</rdfs:comment>
+    <rdfs:label>IEC61968</rdfs:label>
+  </uml:Package>
+  <uml:Package rdf:about="#Package_TC57CIM">
+    <rdfs:isDefinedBy>
+      <uml:Package rdf:about="http://langdale.com.au/2005/UML#global_package"/>
+    </rdfs:isDefinedBy>
+    <rdfs:comment>Top package for IEC TC57 CIM.</rdfs:comment>
+    <rdfs:label>TC57CIM</rdfs:label>
+  </uml:Package>
+  <uml:Package rdf:about="http://langdale.com.au/2005/UML#global_package">
+    <rdfs:label>Global</rdfs:label>
+  </uml:Package>
+  <uml:Package rdf:about="#Package_IEC61970">
+    <rdfs:isDefinedBy rdf:resource="#Package_TC57CIM"/>
+    <rdfs:comment>Top package for IEC 61970.</rdfs:comment>
+    <rdfs:label>IEC61970</rdfs:label>
+  </uml:Package>
+  <uml:Package rdf:about="#Package_Wires">
+    <rdfs:isDefinedBy rdf:resource="#Package_Base"/>
+    <rdfs:comment>An extension to the Core and Topology package that models information on the electrical characteristics of Transmission and Distribution networks. This package is used by network applications such as State Estimation, Load Flow and Optimal Power Flow.</rdfs:comment>
+    <rdfs:label>Wires</rdfs:label>
+  </uml:Package>
+  <j.0:PhaseCode rdf:ID="PhaseCode.A">
+    <rdfs:comment>Phase A.</rdfs:comment>
+    <rdfs:label>A</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.AB">
+    <rdfs:comment>Phases A and B.</rdfs:comment>
+    <rdfs:label>AB</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.ABC">
+    <rdfs:comment>Phases A, B, and C.</rdfs:comment>
+    <rdfs:label>ABC</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.ABCN">
+    <rdfs:comment>Phases A, B, C, and N.</rdfs:comment>
+    <rdfs:label>ABCN</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.ABN">
+    <rdfs:comment>Phases A, B, and neutral.</rdfs:comment>
+    <rdfs:label>ABN</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.AC">
+    <rdfs:comment>Phases A and C.</rdfs:comment>
+    <rdfs:label>AC</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.ACN">
+    <rdfs:comment>Phases A, C and neutral.</rdfs:comment>
+    <rdfs:label>ACN</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.AN">
+    <rdfs:comment>Phases A and neutral.</rdfs:comment>
+    <rdfs:label>AN</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.B">
+    <rdfs:comment>Phase B.</rdfs:comment>
+    <rdfs:label>B</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.BC">
+    <rdfs:comment>Phases B and C.</rdfs:comment>
+    <rdfs:label>BC</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.BCN">
+    <rdfs:comment>Phases B, C, and neutral.</rdfs:comment>
+    <rdfs:label>BCN</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.BN">
+    <rdfs:comment>Phases B and neutral.</rdfs:comment>
+    <rdfs:label>BN</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.C">
+    <rdfs:comment>Phase C.</rdfs:comment>
+    <rdfs:label>C</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:PhaseCode rdf:ID="PhaseCode.CN">
+    <rdfs:comment>Phases C and neutral.</rdfs:comment>
+    <rdfs:label>CN</rdfs:label>
+  </j.0:PhaseCode>
+  <j.0:SwitchActionKind rdf:ID="SwitchActionKind.close">
+    <rdfs:comment>Close the switch.</rdfs:comment>
+    <rdfs:label>close</rdfs:label>
+  </j.0:SwitchActionKind>
+  <j.0:SwitchActionKind rdf:ID="SwitchActionKind.disableReclosing">
+    <rdfs:comment>Disable (automatic) switch reclosing.</rdfs:comment>
+    <rdfs:label>disableReclosing</rdfs:label>
+  </j.0:SwitchActionKind>
+  <j.0:SwitchActionKind rdf:ID="SwitchActionKind.enableReclosing">
+    <rdfs:comment>Enable (automatic) switch reclosing.</rdfs:comment>
+    <rdfs:label>enableReclosing</rdfs:label>
+  </j.0:SwitchActionKind>
+  <j.0:SwitchActionKind rdf:ID="SwitchActionKind.open">
+    <rdfs:comment>Open the switch.</rdfs:comment>
+    <rdfs:label>open</rdfs:label>
+  </j.0:SwitchActionKind>
+</rdf:RDF>

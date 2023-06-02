@@ -1,0 +1,1826 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033\fs20{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0{\*\fname Arial;}Arial CE;}
+{\f23\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Arial;}}{\colortbl;\red0\green0\blue238;}
+\pard\plain \sb120\qj\fs20\lang1033
+{\par\b\fs28DM_OMS_Profile Profile\par}Profile namespace:  http://pea.co.th/cim/profile/DM_OMS# 
+\par\pard\plain \sb120\qj\fs20\lang1033 
+
+{\par\b\fs28 Concrete Classes \par}
+
+{\par\b\fs24 {\*\bkmkstart Asset}Asset}{\fs24 {\*\bkmkend Asset}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 Tangible resource of the utility, including power system equipment, various end devices, cabinets, buildings, etc. For electrical network equipment, the role of the asset is defined through PowerSystemResource and its subclasses, defined mainly in the Wires model (refer to IEC61970-301 and model package IEC61970::Wires). Asset description places emphasis on the physical characteristics of the equipment fulfilling that role.}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 initialCondition \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Condition of asset at last baseline. Examples include new, rebuilt, overhaul required, other. Refer to inspection data for information on the most current condition of the asset.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 initialLossOfLife \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "PerCent"}}{\fldrslt {\fs16\ul\cf1 PerCent}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Percentage of initial life expectancy that has been lost as of the last life expectancy baseline. Represents}
+
+{\sb120\sa120 (initial life expectancy - current life expectancy) / initial life expectancy.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 inUseState \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "InUseStateKind"}}{\fldrslt {\fs16\ul\cf1 InUseStateKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Indication of whether asset is currently deployed (in use), ready to be put into use or not available for use.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 kind \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AssetKind"}}{\fldrslt {\fs16\ul\cf1 AssetKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Kind of asset. Used in description of asset components in asset instance templates.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 lifecycleState \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AssetLifecycleStateKind"}}{\fldrslt {\fs16\ul\cf1 AssetLifecycleStateKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Current lifecycle state of asset.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 lotNumber \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Lot number for this asset. Even for the same model and version number, many assets are manufactured in lots.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 purchasePrice \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "Money"}}{\fldrslt {\fs16\ul\cf1 Money}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Purchase price of asset.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 retiredReason \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "RetiredReasonKind"}}{\fldrslt {\fs16\ul\cf1 RetiredReasonKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Reason asset retired.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 serialNumber \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Serial number of this asset.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 type \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Utility-specific classification of Asset and its subtypes, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).}
+ \cell}
+\row
+}
+
+{\par\b\fs24 {\*\bkmkstart EndDevice}EndDevice}{\fs24 {\*\bkmkend EndDevice}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 Asset container that performs one or more end device functions. One type of end device is a meter which can perform metering, load management, connect/disconnect, accounting functions, etc. Some end devices, such as ones monitoring and controlling air conditioners, refrigerators, pool pumps may be connected to a meter. All end devices may have communication capability defined by the associated communication function(s). An end device may be owned by a consumer, a service provider, utility or otherwise.}
+
+{\par\pard\plain \sb120\qj\fs20\lang1033 There may be a related end device function that identifies a sensor or control point within a metering application or communications systems (e.g., water, gas, electricity).}
+
+{\par\pard\plain \sb120\qj\fs20\lang1033 Some devices may use an optical port that conforms to the ANSI C12.18 standard for communications.}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 mRID \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.}
+
+{\sb120\sa120 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 aliasName \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.}
+
+{\sb120\sa120 The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 inUseState \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "InUseStateKind"}}{\fldrslt {\fs16\ul\cf1 InUseStateKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Indication of whether asset is currently deployed (in use), ready to be put into use or not available for use.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 kind \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AssetKind"}}{\fldrslt {\fs16\ul\cf1 AssetKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Kind of asset. Used in description of asset components in asset instance templates.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 lifecycleState \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AssetLifecycleStateKind"}}{\fldrslt {\fs16\ul\cf1 AssetLifecycleStateKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Current lifecycle state of asset.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 lotNumber \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Lot number for this asset. Even for the same model and version number, many assets are manufactured in lots.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 name \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 The name is any free human readable and possibly non unique text naming the object.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 purchasePrice \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "Money"}}{\fldrslt {\fs16\ul\cf1 Money}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Purchase price of asset.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 retiredReason \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "RetiredReasonKind"}}{\fldrslt {\fs16\ul\cf1 RetiredReasonKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Reason asset retired.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 serialNumber \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Serial number of this asset.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 ActivityRecords \cell}
+{\pard \intbl \sb120\sa120\fs16 1..*  \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "ActivityRecord"}}{\fldrslt {\fs16\ul\cf1 ActivityRecord}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 All activity records created for this asset.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 AssetInfo \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AssetInfo"}}{\fldrslt {\fs16\ul\cf1 AssetInfo}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Data applicable to this asset.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 ErpInventory \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "ErpInventory"}}{\fldrslt {\fs16\ul\cf1 ErpInventory}}} \cell}
+{\pard \intbl \sb120\sa120\fs16  \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 Names \cell}
+{\pard \intbl \sb120\sa120\fs16 1..*  \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "Name"}}{\fldrslt {\fs16\ul\cf1 Name}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 All names of this identified object.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 ServiceLocation \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "ServiceLocation"}}{\fldrslt {\fs16\ul\cf1 ServiceLocation}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 The sevice location at which the assets exist}
+ \cell}
+\row
+}
+
+{\par\b\fs24 {\*\bkmkstart Meter}Meter}{\fs24 {\*\bkmkend Meter}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 Physical asset that performs the metering role of the usage point. Used for measuring consumption and detection of events.}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 mRID \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.}
+
+{\sb120\sa120 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 amrSystem \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Automated meter reading (AMR) or other communication system responsible for communications to this end device.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 connectionCategory \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 A code used to specify the connection category, e.g. low voltage, where the meter operates.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 initialCondition \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Condition of asset at last baseline. Examples include new, rebuilt, overhaul required, other. Refer to inspection data for information on the most current condition of the asset.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 initialLossOfLife \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "PerCent"}}{\fldrslt {\fs16\ul\cf1 PerCent}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Percentage of initial life expectancy that has been lost as of the last life expectancy baseline. Represents}
+
+{\sb120\sa120 (initial life expectancy - current life expectancy) / initial life expectancy.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 installCode \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Installation code.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 inUseState \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "InUseStateKind"}}{\fldrslt {\fs16\ul\cf1 InUseStateKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Indication of whether asset is currently deployed (in use), ready to be put into use or not available for use.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 kind \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AssetKind"}}{\fldrslt {\fs16\ul\cf1 AssetKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Kind of asset. Used in description of asset components in asset instance templates.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 name \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 The name is any free human readable and possibly non unique text naming the object.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 MeterReadings \cell}
+{\pard \intbl \sb120\sa120\fs16 1..*  \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "MeterReading"}}{\fldrslt {\fs16\ul\cf1 MeterReading}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 All meter readings provided by this meter.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 Names \cell}
+{\pard \intbl \sb120\sa120\fs16 1..*  \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "Name"}}{\fldrslt {\fs16\ul\cf1 Name}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 All names of this identified object.}
+ \cell}
+\row
+}
+{\par\b\fs20 Inherited Members\par}\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 mRID \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 aliasName \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 inUseState \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "InUseStateKind"}}{\fldrslt {\fs16\ul\cf1 InUseStateKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 kind \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AssetKind"}}{\fldrslt {\fs16\ul\cf1 AssetKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 lifecycleState \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AssetLifecycleStateKind"}}{\fldrslt {\fs16\ul\cf1 AssetLifecycleStateKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 lotNumber \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 name \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 purchasePrice \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "Money"}}{\fldrslt {\fs16\ul\cf1 Money}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 retiredReason \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "RetiredReasonKind"}}{\fldrslt {\fs16\ul\cf1 RetiredReasonKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 serialNumber \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 ActivityRecords \cell}
+{\pard \intbl \sb120\sa120\fs16 1..unbounded \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "ActivityRecord"}}{\fldrslt {\fs16\ul\cf1 ActivityRecord}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 AssetInfo \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AssetInfo"}}{\fldrslt {\fs16\ul\cf1 AssetInfo}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 ErpInventory \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "ErpInventory"}}{\fldrslt {\fs16\ul\cf1 ErpInventory}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 Names \cell}
+{\pard \intbl \sb120\sa120\fs16 1..unbounded \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "Name"}}{\fldrslt {\fs16\ul\cf1 Name}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 ServiceLocation \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "ServiceLocation"}}{\fldrslt {\fs16\ul\cf1 ServiceLocation}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 see {\field{\*\fldinst {\fs16 HYPERLINK  \\l "EndDevice"}}{\fldrslt {\fs16\ul\cf1 EndDevice}}} \cell}
+\row
+}
+
+{\par\b\fs28 Abstract Classes \par}
+
+{\par\b\fs24 {\*\bkmkstart AssetInfo}AssetInfo}{\fs32 {\*\bkmkend AssetInfo}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 Set of attributes of an asset, representing typical datasheet information of a physical device that can be instantiated and shared in different data exchange contexts:}
+
+{\par\pard\plain \sb120\qj\fs20\lang1033 - as attributes of an asset instance (installed or in stock)}
+
+{\par\pard\plain \sb120\qj\fs20\lang1033 - as attributes of an asset model (product by a manufacturer)}
+
+{\par\pard\plain \sb120\qj\fs20\lang1033 - as attributes of a type asset (generic type of an asset as used in designs/extension planning).}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 CatalogAssetType \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "CatalogAssetType"}}{\fldrslt {\fs16\ul\cf1 CatalogAssetType}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Asset information (nameplate) for this catalog asset type.}
+ \cell}
+\row
+}
+
+{\par\b\fs24 {\*\bkmkstart CatalogAssetType}CatalogAssetType}{\fs32 {\*\bkmkend CatalogAssetType}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 a Assets that may be used for planning, work or design purposes.}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 estimatedUnitCost \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "Money"}}{\fldrslt {\fs16\ul\cf1 Money}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Estimated unit cost (or cost per unit length) of this type of asset. It does not include labor to install, construct or configure it.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 kind \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "AssetKind"}}{\fldrslt {\fs16\ul\cf1 AssetKind}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Kind of asset (from enumerated list).}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 stockItem \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 boolean \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 True if item is a stock item (default).}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 type \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Description of type of asset.}
+ \cell}
+\row
+}
+
+{\par\b\fs24 {\*\bkmkstart ErpInventory}ErpInventory}{\fs32 {\*\bkmkend ErpInventory}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 Utility inventory-related information about an item or part (and not for description of the item and its attributes). It is used by ERP applications to enable the synchronization of Inventory data that exists on separate Item Master databases. This data is not the master data that describes the attributes of the item such as dimensions, weight, or unit of measure - it describes the item as it exists at a specific location.}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 mRID \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.}
+
+{\sb120\sa120 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 aliasName \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.}
+
+{\sb120\sa120 The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 name \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 The name is any free human readable and possibly non unique text naming the object.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 status \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "Status"}}{\fldrslt {\fs16\ul\cf1 Status}}} \cell}
+{\pard \intbl \sb120\sa120\fs16  \cell}
+\row
+}
+
+{\par\b\fs24 {\*\bkmkstart MeterReading}MeterReading}{\fs32 {\*\bkmkend MeterReading}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 Set of values obtained from the meter.}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 UsagePoint \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "UsagePoint"}}{\fldrslt {\fs16\ul\cf1 UsagePoint}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Usage point from which this meter reading (set of values) has been obtained.}
+ \cell}
+\row
+}
+
+{\par\b\fs24 {\*\bkmkstart Name}Name}{\fs32 {\*\bkmkend Name}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 The Name class provides the means to define any number of human readable  names for an object. A name is b>not/b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 name \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Any free text that name the object.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 IdentifiedObject \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "IdentifiedObject"}}{\fldrslt {\fs16\ul\cf1 IdentifiedObject}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Identified object that this name designates.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 NameType \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 {\field{\*\fldinst {\fs16 HYPERLINK  \\l "NameType"}}{\fldrslt {\fs16\ul\cf1 NameType}}} \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Type of this name.}
+ \cell}
+\row
+}
+
+{\par\b\fs24 {\*\bkmkstart UsagePoint}UsagePoint}{\fs32 {\*\bkmkend UsagePoint}}
+{\par\pard\plain \sb120\qj\fs20\lang1033 Logical or physical point in the network to which readings or events may be attributed. Used at the place where a physical or virtual meter may be located; however, it is not required that a meter be present.}
+
+\par\pard\plain \sb120\qj\fs20\lang1033 
+{\par\b\fs20 Native Members\par}
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b mult \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b type \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 mRID \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.}
+
+{\sb120\sa120 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2000
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx2720
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx4125
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 name \cell}
+{\pard \intbl \sb120\sa120\fs16 1..1 \cell}
+{\pard \intbl \sb120\sa120\fs16 string \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 The name is any free human readable and possibly non unique text naming the object.}
+ \cell}
+\row
+}
+
+{\par\b\fs28 Enumerations \par}
+
+{\par\b\fs24 {\*\bkmkstart AssetKind}AssetKind}{\fs32 {\*\bkmkend AssetKind} \par}
+Kinds of assets or asset components.
+\par\pard\plain \sb120\qj\fs20\lang1033 
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 breakerAirBlastBreaker \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Air blast circuit breaker.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 breakerBulkOilBreaker \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Bulk oil circuit breaker.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 breakerInsulatingStackAssembly \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Breaker insulating stack assembly (for live tank breaker).}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 breakerMinimumOilBreaker \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Minimum oil circuit breaker.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 breakerSF6DeadTankBreaker \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 SF6 dead tank breaker.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 breakerSF6LiveTankBreaker \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 SF6 live tank breaker.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 breakerTankAssembly \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Breaker tank assembly.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 other \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Other type of Asset. The type attribute may provide more details in this case.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 transformer \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Transformer.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 transformerTank \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Transformer tank.}
+ \cell}
+\row
+}
+
+{\par\b\fs24 {\*\bkmkstart AssetLifecycleStateKind}AssetLifecycleStateKind}{\fs32 {\*\bkmkend AssetLifecycleStateKind} \par}
+Lifecycle states an asset can be in.While the possible lifecycle states are standardized, the allowed transitions are not - they are intended to be defined by the business process requirements of local implementations.
+\par\pard\plain \sb120\qj\fs20\lang1033 
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 disposedOf \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Asset disposed of.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 manufactured \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Asset manufactured.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 purchased \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Asset purchased.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 received \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Asset received.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 retired \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Asset retired.}
+ \cell}
+\row
+}
+
+{\par\b\fs24 {\*\bkmkstart RetiredReasonKind}RetiredReasonKind}{\fs32 {\*\bkmkend RetiredReasonKind} \par}
+Reason asset retired.
+\par\pard\plain \sb120\qj\fs20\lang1033 
+\par
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16\qc\b name \cell}
+{\pard \intbl \sb120\sa120\fs16\qc\b description \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 environmental \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Retired due to environmental reasons.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 excessiveMaintenance \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Retired due to excessive maintainance issues.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 facilitiesUpgrade \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Retired due to facility upgrade.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 failed \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Retired because of failure.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 obsolescence \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Retired due to obsolescence.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 other \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Retired due to other reasons.}
+ \cell}
+\row
+}
+
+{
+\trowd \trgaph70 
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx3750
+\clbrdrt\brdrs\clbrdrl\brdrs\clbrdrb\brdrs\clbrdrr\brdrs
+\cellx9500
+{\pard \intbl \sb120\sa120\fs16 sold \cell}
+{\pard \intbl \sb120\sa120\fs16 
+{\sb120\sa120 Retired and sold.}
+ \cell}
+\row
+}
+
+{\par\b\fs28 Datatypes \par}
+
+{\par\b\fs24 {\*\bkmkstart Money}Money}{\fs32 {\*\bkmkend Money} \par}
+Amount of money.
+\par\pard\plain \sb120\qj\fs20\lang1033 XSD type: decimal 
+\par\pard\plain \sb120\qj\fs20\lang1033 
+
+{\par\b\fs24 {\*\bkmkstart PerCent}PerCent}{\fs32 {\*\bkmkend PerCent} \par}
+Percentage on a defined base.   For example, specify as 100 to indicate at the defined base.
+\par\pard\plain \sb120\qj\fs20\lang1033 XSD type: float 
+\par\pard\plain \sb120\qj\fs20\lang1033 
+
+\par}}}}}}}}

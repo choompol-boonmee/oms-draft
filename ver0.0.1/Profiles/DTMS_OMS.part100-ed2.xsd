@@ -1,0 +1,2948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:m="http://pea.co.th/cim/profile/DTMS_OMS#"
+           xmlns:part100="http://iec.ch/TC57/2021/schema/message"
+           xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://pea.co.th/cim/profile/DTMS_OMS#"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation/>
+   <xs:import namespace="http://iec.ch/TC57/2021/schema/message"
+              schemaLocation="AbstractPayloadType.xsd"/>
+   <xs:element name="DTMS_OMS_Profile"
+               type="m:DTMS_OMS_Profile"
+               substitutionGroup="part100:AbstractPayload"/>
+   <xs:complexType name="DTMS_OMS_Profile">
+      <xs:complexContent>
+         <xs:extension base="part100:AbstractPayloadType">
+            <xs:sequence>
+               <xs:element name="ActivityRecord"
+                           type="m:ActivityRecord"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="Outage"
+                           type="m:Outage"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="PowerTransformer"
+                           type="m:PowerTransformer"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+               <xs:element name="TransformerTankInfo"
+                           type="m:TransformerTankInfo"
+                           minOccurs="0"
+                           maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ActivityRecord"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivityRecord">
+      <xs:annotation>
+         <xs:documentation>Records activity for an entity at a point in time; activity may be for an event that has already occurred or for a planned activity.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="createdDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivityRecord.createdDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="reason"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivityRecord.reason">
+            <xs:annotation>
+               <xs:documentation>Reason for event resulting in this activity record, typically supplied when user initiated.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="severity"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivityRecord.severity">
+            <xs:annotation>
+               <xs:documentation>Severity level of event resulting in this activity record.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="type"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivityRecord.type">
+            <xs:annotation>
+               <xs:documentation>Type of event resulting in this activity record.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Analytic"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Analytic">
+      <xs:annotation>
+         <xs:documentation>An algorithm or calculation for making an assessment about an asset or asset grouping for lifecycle decision making.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="bestValue"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Analytic.bestValue">
+            <xs:annotation>
+               <xs:documentation>Value that indicates best possible numeric value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="createdDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.createdDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time that this document was created.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="kind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:AnalyticKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Analytic.kind">
+            <xs:annotation>
+               <xs:documentation>Kind of analytic this analytic is.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="lastModifiedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.lastModifiedDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="scaleKind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ScaleKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Analytic.scaleKind">
+            <xs:annotation>
+               <xs:documentation>The scoring scale kind.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="worstValue"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Analytic.worstValue">
+            <xs:annotation>
+               <xs:documentation>Value that indicates worst possible numeric value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="AnalyticKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#AnalyticKind">
+      <xs:annotation>
+         <xs:documentation>Possible kinds of analytics.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="agingAnalytic">
+            <xs:annotation>
+               <xs:documentation>Analytic evaluates aging.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="faultAnalytic">
+            <xs:annotation>
+               <xs:documentation>Analytic evaluates fault.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="healthAnalytic">
+            <xs:annotation>
+               <xs:documentation>Analytic evaluates asset health.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="other">
+            <xs:annotation>
+               <xs:documentation>Analytic evaluates other factor.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="replacementAnalytic">
+            <xs:annotation>
+               <xs:documentation>Analytic evaluates need for replacement.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="riskAnalytic">
+            <xs:annotation>
+               <xs:documentation>Analytic evaluates risk.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="AnalyticScore"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#AnalyticScore">
+      <xs:annotation>
+         <xs:documentation>An indicative scoring by an analytic that can be used to characterize the health of or the risk associated with one or more assets.  The analytic score reflects the results of an execution of an analytic against an asset or group of assets.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="calculationDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#AnalyticScore.calculationDateTime">
+            <xs:annotation>
+               <xs:documentation>Timestamp of when the score was calculated.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="effectiveDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#AnalyticScore.effectiveDateTime">
+            <xs:annotation>
+               <xs:documentation>Date-time for when the score applies.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="value"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#AnalyticScore.value">
+            <xs:annotation>
+               <xs:documentation>Asset health score value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Asset" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset">
+      <xs:annotation>
+         <xs:documentation>Tangible resource of the utility, including power system equipment, various end devices, cabinets, buildings, etc. For electrical network equipment, the role of the asset is defined through PowerSystemResource and its subclasses, defined mainly in the Wires model (refer to IEC61970-301 and model package IEC61970::Wires). Asset description places emphasis on the physical characteristics of the equipment fulfilling that role.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="initialCondition"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.initialCondition">
+            <xs:annotation>
+               <xs:documentation>Condition of asset at last baseline. Examples include new, rebuilt, overhaul required, other. Refer to inspection data for information on the most current condition of the asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="initialLossOfLife"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PerCent"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.initialLossOfLife">
+            <xs:annotation>
+               <xs:documentation>Percentage of initial life expectancy that has been lost as of the last life expectancy baseline. Represents</xs:documentation>
+               <xs:documentation>(initial life expectancy - current life expectancy) / initial life expectancy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="inUseState"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:InUseStateKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.inUseState">
+            <xs:annotation>
+               <xs:documentation>Indication of whether asset is currently deployed (in use), ready to be put into use or not available for use.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="kind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:AssetKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.kind">
+            <xs:annotation>
+               <xs:documentation>Kind of asset. Used in description of asset components in asset instance templates.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="lifecycleState"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:AssetLifecycleStateKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.lifecycleState">
+            <xs:annotation>
+               <xs:documentation>Current lifecycle state of asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="lotNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.lotNumber">
+            <xs:annotation>
+               <xs:documentation>Lot number for this asset. Even for the same model and version number, many assets are manufactured in lots.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="purchasePrice"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Money"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.purchasePrice">
+            <xs:annotation>
+               <xs:documentation>Purchase price of asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="retiredReason"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:RetiredReasonKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.retiredReason">
+            <xs:annotation>
+               <xs:documentation>Reason asset retired.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="serialNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.serialNumber">
+            <xs:annotation>
+               <xs:documentation>Serial number of this asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="type"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.type">
+            <xs:annotation>
+               <xs:documentation>Utility-specific classification of Asset and its subtypes, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ActivityRecords"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:ActivityRecord"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.ActivityRecords">
+            <xs:annotation>
+               <xs:documentation>All activity records created for this asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Analytic"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Analytic"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.Analytic">
+            <xs:annotation>
+               <xs:documentation>Analytic performed on this asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="AnalyticScore"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:AnalyticScore"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.AnalyticScore">
+            <xs:annotation>
+               <xs:documentation>Analytic result related to this asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="AssetContainer"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:AssetContainer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.AssetContainer">
+            <xs:annotation>
+               <xs:documentation>Container of this asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="AssetDeployment"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:AssetDeployment"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.AssetDeployment">
+            <xs:annotation>
+               <xs:documentation>This asset's deployment.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="AssetInfo"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:AssetInfo"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.AssetInfo">
+            <xs:annotation>
+               <xs:documentation>Data applicable to this asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Measurements"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Measurement"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.Measurements">
+            <xs:annotation>
+               <xs:documentation>Measurement related to this asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Procedures"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Procedure"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Asset.Procedures">
+            <xs:annotation>
+               <xs:documentation>All procedures applicable to this asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="AssetContainer"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetContainer">
+      <xs:annotation>
+         <xs:documentation>Asset that is aggregation of other assets such as conductors, transformers, switchgear, land, fences, buildings, equipment, vehicles, etc.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:Asset">
+            <xs:sequence>
+               <xs:element name="mRID"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+                  <xs:annotation>
+                     <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+                     <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="description"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+                  <xs:annotation>
+                     <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+                  <xs:annotation>
+                     <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="AssetDeployment"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetDeployment">
+      <xs:annotation>
+         <xs:documentation>Deployment of asset deployment in a power system resource role.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="deploymentState"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:DeploymentStateKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetDeployment.deploymentState">
+            <xs:annotation>
+               <xs:documentation>Current deployment state of asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="facilityKind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:FacilityKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetDeployment.facilityKind">
+            <xs:annotation>
+               <xs:documentation>Kind of facility (like substation or pole or building or plant or service center) at which asset deployed.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="transformerApplication"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:TransformerApplicationKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetDeployment.transformerApplication">
+            <xs:annotation>
+               <xs:documentation>Type of network role transformer is playing in this deployment (applies to transformer assets only).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="AssetInfo"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetInfo">
+      <xs:annotation>
+         <xs:documentation>Set of attributes of an asset, representing typical datasheet information of a physical device that can be instantiated and shared in different data exchange contexts:</xs:documentation>
+         <xs:documentation>- as attributes of an asset instance (installed or in stock)</xs:documentation>
+         <xs:documentation>- as attributes of an asset model (product by a manufacturer)</xs:documentation>
+         <xs:documentation>- as attributes of a type asset (generic type of an asset as used in designs/extension planning).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="AssetKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetKind">
+      <xs:annotation>
+         <xs:documentation>Kinds of assets or asset components.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="breakerAirBlastBreaker">
+            <xs:annotation>
+               <xs:documentation>Air blast circuit breaker.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="breakerBulkOilBreaker">
+            <xs:annotation>
+               <xs:documentation>Bulk oil circuit breaker.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="breakerInsulatingStackAssembly">
+            <xs:annotation>
+               <xs:documentation>Breaker insulating stack assembly (for live tank breaker).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="breakerMinimumOilBreaker">
+            <xs:annotation>
+               <xs:documentation>Minimum oil circuit breaker.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="breakerSF6DeadTankBreaker">
+            <xs:annotation>
+               <xs:documentation>SF6 dead tank breaker.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="breakerSF6LiveTankBreaker">
+            <xs:annotation>
+               <xs:documentation>SF6 live tank breaker.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="breakerTankAssembly">
+            <xs:annotation>
+               <xs:documentation>Breaker tank assembly.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="other">
+            <xs:annotation>
+               <xs:documentation>Other type of Asset. The type attribute may provide more details in this case.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="transformer">
+            <xs:annotation>
+               <xs:documentation>Transformer.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="transformerTank">
+            <xs:annotation>
+               <xs:documentation>Transformer tank.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="AssetLifecycleStateKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetLifecycleStateKind">
+      <xs:annotation>
+         <xs:documentation>Lifecycle states an asset can be in.</xs:documentation>
+         <xs:documentation>While the possible lifecycle states are standardized, the allowed transitions are not - they are intended to be defined by the business process requirements of local implementations.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="disposedOf">
+            <xs:annotation>
+               <xs:documentation>Asset disposed of.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="manufactured">
+            <xs:annotation>
+               <xs:documentation>Asset manufactured.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="purchased">
+            <xs:annotation>
+               <xs:documentation>Asset purchased.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="received">
+            <xs:annotation>
+               <xs:documentation>Asset received.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="retired">
+            <xs:annotation>
+               <xs:documentation>Asset retired.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="CatalogAssetType"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CatalogAssetType">
+      <xs:annotation>
+         <xs:documentation>a Assets that may be used for planning, work or design purposes.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="estimatedUnitCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Money"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CatalogAssetType.estimatedUnitCost">
+            <xs:annotation>
+               <xs:documentation>Estimated unit cost (or cost per unit length) of this type of asset. It does not include labor to install, construct or configure it.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="kind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:AssetKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CatalogAssetType.kind">
+            <xs:annotation>
+               <xs:documentation>Kind of asset (from enumerated list).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="stockItem"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CatalogAssetType.stockItem">
+            <xs:annotation>
+               <xs:documentation>True if item is a stock item (default).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="type"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CatalogAssetType.type">
+            <xs:annotation>
+               <xs:documentation>Description of type of asset.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CoordinateSystem"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CoordinateSystem">
+      <xs:annotation>
+         <xs:documentation>Coordinate reference system.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="crsUrn"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CoordinateSystem.crsUrn">
+            <xs:annotation>
+               <xs:documentation>A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'.</xs:documentation>
+               <xs:documentation>An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc:def:crs:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry web site http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would be urn:ogc:def:crs:EPSG::4.3.2.6</xs:documentation>
+               <xs:documentation>A profile should limit this code to a set of allowed URNs agreed to by all sending and receiving parties.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="CorporateStandardKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#CorporateStandardKind">
+      <xs:annotation>
+         <xs:documentation>Kind of corporate standard.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="experimental">
+            <xs:annotation>
+               <xs:documentation>Asset model is used experimentally.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="other">
+            <xs:annotation>
+               <xs:documentation>Other kind of corporate standard for the asset model.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="standard">
+            <xs:annotation>
+               <xs:documentation>Asset model is used as corporate standard.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="underEvaluation">
+            <xs:annotation>
+               <xs:documentation>Asset model usage is under evaluation.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="DeploymentStateKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#DeploymentStateKind">
+      <xs:annotation>
+         <xs:documentation>Possible states of asset deployment.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="inService">
+            <xs:annotation>
+               <xs:documentation>Asset in service in deployment location.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="installed">
+            <xs:annotation>
+               <xs:documentation>Asset installed in deployment location.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="notYetInstalled">
+            <xs:annotation>
+               <xs:documentation>Asset not yet installed in deployment location.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="outOfService">
+            <xs:annotation>
+               <xs:documentation>Asset out of service, but in deployment location.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="removed">
+            <xs:annotation>
+               <xs:documentation>Asset removed from deployment location.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="FacilityKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#FacilityKind">
+      <xs:annotation>
+         <xs:documentation>Types of facilities at which an asset can be deployed.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="distributionPoleTop">
+            <xs:annotation>
+               <xs:documentation>Distribution pole top.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="substationDistribution">
+            <xs:annotation>
+               <xs:documentation>Distribution substation.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="substationFossilPlant">
+            <xs:annotation>
+               <xs:documentation>Fossil plant substation.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="substationHydroPlant">
+            <xs:annotation>
+               <xs:documentation>Hydro plant substation.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="substationNuclearPlant">
+            <xs:annotation>
+               <xs:documentation>Nuclear plant substation.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="substationSubTransmission">
+            <xs:annotation>
+               <xs:documentation>Subtransmission substation.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="substationTransmission">
+            <xs:annotation>
+               <xs:documentation>Transmission substation.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="InUseStateKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#InUseStateKind">
+      <xs:annotation>
+         <xs:documentation>Possible 'in use' states that an asset can be in.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="inUse">
+            <xs:annotation>
+               <xs:documentation>Asset is deployed (in use) or is being put into use.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="notReadyForUse">
+            <xs:annotation>
+               <xs:documentation>Asset is not ready to be put into use.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="readyForUse">
+            <xs:annotation>
+               <xs:documentation>Asset is ready to be put into use.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="Location"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location">
+      <xs:annotation>
+         <xs:documentation>The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="direction"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.direction">
+            <xs:annotation>
+               <xs:documentation>(if applicable) Direction that allows field crews to quickly find a given asset. For a given location, such as a street address, this is the relative direction in which to find the asset. For example, a streetlight may be located at the 'NW' (northwest) corner of the customer's site, or a usage point may be located on the second floor of an apartment building.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geoInfoReference"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.geoInfoReference">
+            <xs:annotation>
+               <xs:documentation>(if applicable) Reference to geographical information source, often external to the utility.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="type"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.type">
+            <xs:annotation>
+               <xs:documentation>Classification by utility's corporate standards and practices, relative to the location itself (e.g., geographical, functional accounting, etc., not a given property that happens to exist at that location).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="CoordinateSystem"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CoordinateSystem"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.CoordinateSystem">
+            <xs:annotation>
+               <xs:documentation>Coordinate system used to describe position points of this location.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="PositionPoints"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:PositionPoint"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Location.PositionPoints">
+            <xs:annotation>
+               <xs:documentation>Sequence of position points describing this location, expressed in coordinate system 'Location.CoordinateSystem'.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Measurement"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Measurement">
+      <xs:annotation>
+         <xs:documentation>A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement.</xs:documentation>
+         <xs:documentation>The PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leaves, e.g. Substation-VoltageLevel-Bay-Switch-Measurement.</xs:documentation>
+         <xs:documentation>Some Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (VT) or potential transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment.</xs:documentation>
+         <xs:documentation>If both a Terminal and PSR are associated, and the PSR is of type ConductingEquipment, the associated Terminal should belong to that ConductingEquipment instance.</xs:documentation>
+         <xs:documentation>When the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="measurementType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Measurement.measurementType">
+            <xs:annotation>
+               <xs:documentation>Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.</xs:documentation>
+               <xs:documentation>When the measurementType is set to "Specialization", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="phases"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Measurement.phases">
+            <xs:annotation>
+               <xs:documentation>Indicates to which phases the measurement applies and avoids the need to use 'measurementType' to also encode phase information (which would explode the types). The phase information in Measurement, along with 'measurementType' and 'phases' uniquely defines a Measurement for a device, based on normal network phase. Their meaning will not change when the computed energizing phasing is changed due to jumpers or other reasons.</xs:documentation>
+               <xs:documentation>If the attribute is missing three phases (ABC) shall be assumed.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="unitMultiplier"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:UnitMultiplier"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Measurement.unitMultiplier">
+            <xs:annotation>
+               <xs:documentation>The unit multiplier of the measured quantity.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="unitSymbol"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:UnitSymbol"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Measurement.unitSymbol">
+            <xs:annotation>
+               <xs:documentation>The unit of measure of the measured quantity.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="MeasurementAction"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:MeasurementAction"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Measurement.MeasurementAction">
+            <xs:annotation>
+               <xs:documentation>The measurement action that is performed on the measurement</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Procedures"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Procedure"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Measurement.Procedures">
+            <xs:annotation>
+               <xs:documentation>Measurements are specified in types of documents, such as procedures.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="MeasurementAction"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#MeasurementAction">
+      <xs:annotation>
+         <xs:documentation>Measurement taken as a switching step.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="executedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchingAction.executedDateTime">
+            <xs:annotation>
+               <xs:documentation>Actual date and time of this switching step.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="plannedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SwitchingAction.plannedDateTime">
+            <xs:annotation>
+               <xs:documentation>Planned date and time of this switching step.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="MeasurementValue"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#MeasurementValue">
+      <xs:annotation>
+         <xs:documentation>The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="sensorAccuracy"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PerCent"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#MeasurementValue.sensorAccuracy">
+            <xs:annotation>
+               <xs:documentation>The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="timeStamp"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#MeasurementValue.timeStamp">
+            <xs:annotation>
+               <xs:documentation>The time when the value was last updated.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="value"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#AnalogValue.value">
+            <xs:annotation>
+               <xs:documentation>The value to supervise.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="RemoteSource"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:RemoteSource"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#MeasurementValue.RemoteSource">
+            <xs:annotation>
+               <xs:documentation>Link to the physical telemetered point associated with this measurement.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="MeasurementValueQuality"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#MeasurementValueQuality">
+      <xs:annotation>
+         <xs:documentation>Measurement quality flags. Bits 0-10 are defined for substation automation in IEC 61850-7-3. Bits 11-15 are reserved for future expansion by that document. Bits 16-31 are reserved for EMS applications.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="MeasurementValue"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:MeasurementValue"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#MeasurementValueQuality.MeasurementValue">
+            <xs:annotation>
+               <xs:documentation>A MeasurementValue has a MeasurementValueQuality associated with it.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Name" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name">
+      <xs:annotation>
+         <xs:documentation>The Name class provides the means to define any number of human readable  names for an object. A name is &lt;b&gt;not&lt;/b&gt; to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.name">
+            <xs:annotation>
+               <xs:documentation>Any free text that name the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="IdentifiedObject"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.IdentifiedObject">
+            <xs:annotation>
+               <xs:documentation>Identified object that this name designates.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="NameType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:NameType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Name.NameType">
+            <xs:annotation>
+               <xs:documentation>Type of this name.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NameType"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameType">
+      <xs:annotation>
+         <xs:documentation>Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName as defined in CIM version 14. The definition from CIM14 is:</xs:documentation>
+         <xs:documentation>The localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameType.description">
+            <xs:annotation>
+               <xs:documentation>Description of the name type.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameType.name">
+            <xs:annotation>
+               <xs:documentation>Name of the name type.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="NameTypeAuthority"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:NameTypeAuthority"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameType.NameTypeAuthority">
+            <xs:annotation>
+               <xs:documentation>Authority responsible for managing names of this type.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NameTypeAuthority"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameTypeAuthority">
+      <xs:annotation>
+         <xs:documentation>Authority responsible for creation and management of names of a given type; typically an organization or an enterprise system.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameTypeAuthority.description">
+            <xs:annotation>
+               <xs:documentation>Description of the name type authority.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#NameTypeAuthority.name">
+            <xs:annotation>
+               <xs:documentation>Name of the name type authority.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Outage" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage">
+      <xs:annotation>
+         <xs:documentation>Document describing details of an active or planned outage in a part of the electrical network.</xs:documentation>
+         <xs:documentation>A non-planned outage may be created upon:</xs:documentation>
+         <xs:documentation>- a breaker trip,</xs:documentation>
+         <xs:documentation>- a fault indicator status change,</xs:documentation>
+         <xs:documentation>- a meter event indicating customer outage,</xs:documentation>
+         <xs:documentation>- a reception of one or more customer trouble calls, or</xs:documentation>
+         <xs:documentation>- an operator command, reflecting information obtained from the field crew.</xs:documentation>
+         <xs:documentation>Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.</xs:documentation>
+         <xs:documentation>A planned outage may be created upon:</xs:documentation>
+         <xs:documentation>- a request for service, maintenance or construction work in the field, or</xs:documentation>
+         <xs:documentation>- an operator-defined outage for what-if/contingency network analysis.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="comment"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.comment">
+            <xs:annotation>
+               <xs:documentation>Free text comment.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="subject"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.subject">
+            <xs:annotation>
+               <xs:documentation>Document subject.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="title"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.title">
+            <xs:annotation>
+               <xs:documentation>Document title.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="type"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Document.type">
+            <xs:annotation>
+               <xs:documentation>Utility-specific classification of this document, according to its corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="PositionPoint"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint">
+      <xs:annotation>
+         <xs:documentation>Set of spatial coordinates that determine a point, defined in the coordinate system specified in 'Location.CoordinateSystem'. Use a single position point instance to describe a point-oriented location. Use a sequence of position points to describe a line-oriented object (physical location of non-point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone - in this case, have first and last position point with the same values).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="sequenceNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint.sequenceNumber">
+            <xs:annotation>
+               <xs:documentation>Zero-relative sequence number of this point within a series of points.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="xPosition"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint.xPosition">
+            <xs:annotation>
+               <xs:documentation>X axis position.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="yPosition"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PositionPoint.yPosition">
+            <xs:annotation>
+               <xs:documentation>Y axis position.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="PowerSystemResource"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource">
+      <xs:annotation>
+         <xs:documentation>A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="PowerTransformer"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformer">
+      <xs:annotation>
+         <xs:documentation>An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).</xs:documentation>
+         <xs:documentation>A power transformer may be composed of separate transformer tanks that need not be identical.</xs:documentation>
+         <xs:documentation>A power transformer can be modelled with or without tanks and is intended for use in both balanced and unbalanced representations.   A power transformer typically has two terminals, but may have one (grounding), three or more terminals.</xs:documentation>
+         <xs:documentation>The inherited association ConductingEquipment.BaseVoltage should not be used.  The association from TransformerEnd to BaseVoltage should be used instead.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aliasName"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+            <xs:annotation>
+               <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+               <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="beforeShCircuitHighestOperatingCurrent"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CurrentFlow"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformer.beforeShCircuitHighestOperatingCurrent">
+            <xs:annotation>
+               <xs:documentation>The highest operating current (Ib in IEC 60909-0) before short circuit (depends on network configuration and relevant reliability philosophy). It is used for calculation of the impedance correction factor KT defined in IEC 60909-0.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="beforeShCircuitHighestOperatingVoltage"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Voltage"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformer.beforeShCircuitHighestOperatingVoltage">
+            <xs:annotation>
+               <xs:documentation>The highest operating voltage (Ub in IEC 60909-0) before short circuit. It is used for calculation of the impedance correction factor KT defined in IEC 60909-0. This is worst case voltage on the low side winding (3.7.1 of IEC 60909:2001). Used to define operating conditions.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="beforeShortCircuitAnglePf"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:AngleDegrees"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformer.beforeShortCircuitAnglePf">
+            <xs:annotation>
+               <xs:documentation>The angle of power factor before short circuit (phib in IEC 60909-0). It is used for calculation of the impedance correction factor KT defined in IEC 60909-0. This is the worst case power factor. Used to define operating conditions.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="highSideMinOperatingU"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Voltage"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformer.highSideMinOperatingU">
+            <xs:annotation>
+               <xs:documentation>The minimum operating voltage (uQmin in IEC 60909-0) at the high voltage side (Q side) of the unit transformer of the power station unit. A value well established from long-term operating experience of the system. It is used for calculation of the impedance correction factor KG defined in IEC 60909-0.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="isPartOfGeneratorUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformer.isPartOfGeneratorUnit">
+            <xs:annotation>
+               <xs:documentation>Indicates whether the machine is part of a power station unit. Used for short circuit data exchange according to IEC 60909.  It has an impact on how the correction factors are calculated for transformers, since the transformer is not necessarily part of a synchronous machine and generating unit. It is not always possible to derive this information from the model. This is why the attribute is necessary.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="operationalValuesConsidered"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformer.operationalValuesConsidered">
+            <xs:annotation>
+               <xs:documentation>It is used to define if the data (other attributes related to short circuit data exchange) defines long term operational conditions or not. Used for short circuit data exchange according to IEC 60909.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vectorGroup"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformer.vectorGroup">
+            <xs:annotation>
+               <xs:documentation>Vector group of the transformer for protective relaying, e.g., Dyn1. For unbalanced transformers, this may not be simply determined from the constituent winding connections and phase angle displacements.</xs:documentation>
+               <xs:documentation>The vectorGroup string consists of the following components in the order listed: high voltage winding connection, mid voltage winding connection (for three winding transformers), phase displacement clock number from 0 to 11,  low voltage winding connection</xs:documentation>
+               <xs:documentation>phase displacement clock number from 0 to 11.   The winding connections are D (delta), Y (wye), YN (wye with neutral), Z (zigzag), ZN (zigzag with neutral), A (auto transformer). Upper case means the high voltage, lower case mid or low. The high voltage winding always has clock position 0 and is not included in the vector group string.  Some examples: YNy0 (two winding wye to wye with no phase displacement), YNd11 (two winding wye to delta with 330 degrees phase displacement), YNyn0d5 (three winding transformer wye with neutral high voltage, wye with neutral mid voltage and no phase displacement, delta low voltage with 150 degrees displacement).</xs:documentation>
+               <xs:documentation>Phase displacement is defined as the angular difference between the phasors representing the voltages between the neutral point (real or imaginary) and the corresponding terminals of two windings, a positive sequence voltage system being applied to the high-voltage terminals, following each other in alphabetical sequence if they are lettered, or in numerical sequence if they are numbered: the phasors are assumed to rotate in a counter-clockwise sense.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="AssetDatasheet"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.AssetDatasheet">
+            <xs:annotation>
+               <xs:documentation>Datasheet information for this power system resource.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="Assets"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Asset"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Assets">
+            <xs:annotation>
+               <xs:documentation>All assets represented by this power system resource. For example, multiple conductor assets are electrically modelled as a single AC line segment.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Location"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Location"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerSystemResource.Location">
+            <xs:annotation>
+               <xs:documentation>Location of this power system resource.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Names"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Name"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.Names">
+            <xs:annotation>
+               <xs:documentation>All names of this identified object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Outages"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:Outage"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Equipment.Outages">
+            <xs:annotation>
+               <xs:documentation>All outages in which this equipment is involved.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="PowerTransformerEnd"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformerEnd">
+      <xs:annotation>
+         <xs:documentation>A PowerTransformerEnd is associated with each Terminal of a PowerTransformer.</xs:documentation>
+         <xs:documentation>The impedance values r, r0, x, and x0 of a PowerTransformerEnd represents a star equivalent as follows.</xs:documentation>
+         <xs:documentation>1) for a two Terminal PowerTransformer the high voltage (TransformerEnd.endNumber=1) PowerTransformerEnd has non zero values on r, r0, x, and x0 while the low voltage (TransformerEnd.endNumber=2) PowerTransformerEnd has zero values for r, r0, x, and x0.  Parameters are always provided, even if the PowerTransformerEnds have the same rated voltage.  In this case, the parameters are provided at the PowerTransformerEnd which has TransformerEnd.endNumber equal to 1.</xs:documentation>
+         <xs:documentation>2) for a three Terminal PowerTransformer the three PowerTransformerEnds represent a star equivalent with each leg in the star represented by r, r0, x, and x0 values.</xs:documentation>
+         <xs:documentation>3) For a three Terminal transformer each PowerTransformerEnd shall have g, g0, b and b0 values corresponding to the no load losses distributed on the three PowerTransformerEnds. The total no load loss shunt impedances may also be placed at one of the PowerTransformerEnds, preferably the end numbered 1, having the shunt values on end 1.  This is the preferred way.</xs:documentation>
+         <xs:documentation>4) for a PowerTransformer with more than three Terminals the PowerTransformerEnd impedance values cannot be used. Instead use the TransformerMeshImpedance or split the transformer into multiple PowerTransformers.</xs:documentation>
+         <xs:documentation>Each PowerTransformerEnd must be contained by a PowerTransformer. Because a PowerTransformerEnd (or any other object) can not be contained by more than one parent, a PowerTransformerEnd can not have an association to an EquipmentContainer (Substation, VoltageLevel, etc).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mRID"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+            <xs:annotation>
+               <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+               <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="connectionKind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformerEnd.connectionKind">
+            <xs:annotation>
+               <xs:documentation>Kind of connection.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType sawsdl:modelReference="">
+               <xs:attribute name="ref" type="xs:string" use="required"/>
+               <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="description"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+            <xs:annotation>
+               <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+            <xs:annotation>
+               <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="PowerTransformerInfo"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformerInfo">
+      <xs:annotation>
+         <xs:documentation>Set of power transformer data, from an equipment library.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:AssetInfo">
+            <xs:sequence>
+               <xs:element name="mRID"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+                  <xs:annotation>
+                     <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+                     <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+                  <xs:annotation>
+                     <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="CatalogAssetType"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:CatalogAssetType"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetInfo.CatalogAssetType">
+                  <xs:annotation>
+                     <xs:documentation>Asset information (nameplate) for this catalog asset type.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="ProductAssetModel"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:ProductAssetModel"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetInfo.ProductAssetModel">
+                  <xs:annotation>
+                     <xs:documentation>Product asset model which conforms to this catalog asset type.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="TransformerTankInfos"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           type="m:TransformerTankInfo"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerTransformerInfo.TransformerTankInfos">
+                  <xs:annotation>
+                     <xs:documentation>Data for all the tanks described by this power transformer data.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="Procedure"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Procedure">
+      <xs:annotation>
+         <xs:documentation>Documented procedure for various types of work or work tasks on assets.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="instruction"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Procedure.instruction">
+            <xs:annotation>
+               <xs:documentation>Textual description of this procedure.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="kind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ProcedureKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Procedure.kind">
+            <xs:annotation>
+               <xs:documentation>Kind of procedure.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="sequenceNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Procedure.sequenceNumber">
+            <xs:annotation>
+               <xs:documentation>Sequence number in a sequence of procedures being performed.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ProcedureDataSets"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:ProcedureDataSet"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Procedure.ProcedureDataSets">
+            <xs:annotation>
+               <xs:documentation>All data sets captured by this procedure.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ProcedureDataSet"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProcedureDataSet">
+      <xs:annotation>
+         <xs:documentation>A data set recorded each time a procedure is executed. Observed results are captured in associated measurement values and/or values for properties relevant to the type of procedure performed.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="completedDateTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProcedureDataSet.completedDateTime">
+            <xs:annotation>
+               <xs:documentation>Date and time procedure was completed.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="MeasurementValue"
+                     minOccurs="1"
+                     maxOccurs="unbounded"
+                     type="m:MeasurementValue"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProcedureDataSet.MeasurementValue">
+            <xs:annotation>
+               <xs:documentation>Measurement value related to this procedure data set.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="ProcedureKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProcedureKind">
+      <xs:annotation>
+         <xs:documentation>Kind of procedure.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="diagnosis">
+            <xs:annotation>
+               <xs:documentation>Diagnosis procedure.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="inspection">
+            <xs:annotation>
+               <xs:documentation>Inspection procedure.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="maintenance">
+            <xs:annotation>
+               <xs:documentation>Maintenance procedure.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="other">
+            <xs:annotation>
+               <xs:documentation>Other procedure.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="test">
+            <xs:annotation>
+               <xs:documentation>Test procedure.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="ProductAssetModel"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProductAssetModel">
+      <xs:annotation>
+         <xs:documentation>Asset model by a specific manufacturer.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="catalogueNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProductAssetModel.catalogueNumber">
+            <xs:annotation>
+               <xs:documentation>Catalogue number for asset model.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="corporateStandardKind"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CorporateStandardKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProductAssetModel.corporateStandardKind">
+            <xs:annotation>
+               <xs:documentation>Kind of corporate standard for this asset model.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="drawingNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProductAssetModel.drawingNumber">
+            <xs:annotation>
+               <xs:documentation>Drawing number for asset model.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="modelNumber"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProductAssetModel.modelNumber">
+            <xs:annotation>
+               <xs:documentation>Manufacturer's model number.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="modelVersion"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ProductAssetModel.modelVersion">
+            <xs:annotation>
+               <xs:documentation>Version number for product model, which indicates vintage of the product.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="RemoteSource"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#RemoteSource">
+      <xs:annotation>
+         <xs:documentation>Remote sources are state variables that are telemetered or calculated within the remote unit.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="deadband"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RemoteSource.deadband">
+            <xs:annotation>
+               <xs:documentation>The smallest change in value to be reported.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="scanInterval"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Seconds"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RemoteSource.scanInterval">
+            <xs:annotation>
+               <xs:documentation>The time interval between scans.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="sensorMaximum"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RemoteSource.sensorMaximum">
+            <xs:annotation>
+               <xs:documentation>The maximum value the telemetry item can return.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="sensorMinimum"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RemoteSource.sensorMinimum">
+            <xs:annotation>
+               <xs:documentation>The minimum value the telemetry item can return.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="RetiredReasonKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#RetiredReasonKind">
+      <xs:annotation>
+         <xs:documentation>Reason asset retired.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="environmental">
+            <xs:annotation>
+               <xs:documentation>Retired due to environmental reasons.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="excessiveMaintenance">
+            <xs:annotation>
+               <xs:documentation>Retired due to excessive maintainance issues.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="facilitiesUpgrade">
+            <xs:annotation>
+               <xs:documentation>Retired due to facility upgrade.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="failed">
+            <xs:annotation>
+               <xs:documentation>Retired because of failure.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="obsolescence">
+            <xs:annotation>
+               <xs:documentation>Retired due to obsolescence.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="other">
+            <xs:annotation>
+               <xs:documentation>Retired due to other reasons.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="sold">
+            <xs:annotation>
+               <xs:documentation>Retired and sold.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="ScaleKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#ScaleKind">
+      <xs:annotation>
+         <xs:documentation>Kinds of scaling.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="exponential">
+            <xs:annotation>
+               <xs:documentation>Exponential scale.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="linear">
+            <xs:annotation>
+               <xs:documentation>Linear scale.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="TransformerApplicationKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#TransformerApplicationKind">
+      <xs:annotation>
+         <xs:documentation>Classifications of network roles in which transformers can be deployed. The classifications are intended to reflect both criticality of transformer in network operations and typical usage experienced by transformer.</xs:documentation>
+         <xs:documentation>Note: This enumeration provides essential information to asset health analytics. The existing list is a starting point and is anticipated to be fleshed out further as requirements are better understood (PAB 2016/01/09).</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="distribution">
+            <xs:annotation>
+               <xs:documentation>Transformer between one distribution voltage level and another distribution voltage level.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="generatorStepUp">
+            <xs:annotation>
+               <xs:documentation>Transformer is generator step-up transformer.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="transmissionBusToBus">
+            <xs:annotation>
+               <xs:documentation>Transformer between bus at one transmission voltage level and a bus at another transmission voltage level.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="transmissionBusToDistribution">
+            <xs:annotation>
+               <xs:documentation>Transformer between bus at transmission voltage level and bus at distribution voltage level.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="TransformerTankInfo"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#TransformerTankInfo">
+      <xs:annotation>
+         <xs:documentation>Set of transformer tank data, from an equipment library.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:AssetInfo">
+            <xs:sequence>
+               <xs:element name="mRID"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.mRID">
+                  <xs:annotation>
+                     <xs:documentation>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</xs:documentation>
+                     <xs:documentation>For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="aliasName"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.aliasName">
+                  <xs:annotation>
+                     <xs:documentation>The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+                     <xs:documentation>The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="description"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.description">
+                  <xs:annotation>
+                     <xs:documentation>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#IdentifiedObject.name">
+                  <xs:annotation>
+                     <xs:documentation>The name is any free human readable and possibly non unique text naming the object.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="PowerSystemResources"
+                           minOccurs="1"
+                           maxOccurs="unbounded"
+                           type="m:PowerSystemResource"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetInfo.PowerSystemResources">
+                  <xs:annotation>
+                     <xs:documentation>All power system resources with this datasheet information.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="ProductAssetModel"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#AssetInfo.ProductAssetModel">
+                  <xs:annotation>
+                     <xs:documentation>Product asset model which conforms to this catalog asset type.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType sawsdl:modelReference="">
+                     <xs:attribute name="ref" type="xs:string" use="required"/>
+                     <xs:attribute name="referenceType" type="xs:string" use="optional"/>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:simpleType name="UnitMultiplier"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnitMultiplier">
+      <xs:annotation>
+         <xs:documentation>The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.</xs:documentation>
+         <xs:documentation>For example, if a unit symbol is "m2Pers" and the multiplier is "k", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol "�" represents the derived unit "m2Pers", then applying the multiplier "k" can be conceptualized simply as "k�".</xs:documentation>
+         <xs:documentation>For example, the SI unit for mass is "kg" and not "g".  If the unit symbol is defined as "kg", then the multiplier is applied to "kg" as a whole and does not replace the "k" in front of the "g". In this case, the multiplier of "m" would be used with the unit symbol of "kg" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the "kg" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the "kg" were replaced by a symbol "�", then it is easier to conceptualize the multiplier "m" as creating the proper unit "m�", and not the forbidden unit "mkg".</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="E">
+            <xs:annotation>
+               <xs:documentation>Exa 10**18.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="G">
+            <xs:annotation>
+               <xs:documentation>Giga 10**9.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="M">
+            <xs:annotation>
+               <xs:documentation>Mega 10**6.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="P">
+            <xs:annotation>
+               <xs:documentation>Peta 10**15.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="T">
+            <xs:annotation>
+               <xs:documentation>Tera 10**12.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Y">
+            <xs:annotation>
+               <xs:documentation>Yotta 10**24.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Z">
+            <xs:annotation>
+               <xs:documentation>Zetta 10**21.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="a">
+            <xs:annotation>
+               <xs:documentation>Atto 10**-18.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="c">
+            <xs:annotation>
+               <xs:documentation>Centi 10**-2.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="d">
+            <xs:annotation>
+               <xs:documentation>Deci 10**-1.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="da">
+            <xs:annotation>
+               <xs:documentation>Deca 10**1.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="f">
+            <xs:annotation>
+               <xs:documentation>Femto 10**-15.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="h">
+            <xs:annotation>
+               <xs:documentation>Hecto 10**2.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="k">
+            <xs:annotation>
+               <xs:documentation>Kilo 10**3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m">
+            <xs:annotation>
+               <xs:documentation>Milli 10**-3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="micro">
+            <xs:annotation>
+               <xs:documentation>Micro 10**-6.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="n">
+            <xs:annotation>
+               <xs:documentation>Nano 10**-9.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="none">
+            <xs:annotation>
+               <xs:documentation>No multiplier or equivalently multiply by 1.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="p">
+            <xs:annotation>
+               <xs:documentation>Pico 10**-12.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="y">
+            <xs:annotation>
+               <xs:documentation>Yocto 10**-24.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="z">
+            <xs:annotation>
+               <xs:documentation>Zepto 10**-21.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="UnitSymbol"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnitSymbol">
+      <xs:annotation>
+         <xs:documentation>The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as "F" instead of "CPerV". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as "kgPerm3". With the exception of the "kg", which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole.</xs:documentation>
+         <xs:documentation>Every unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.</xs:documentation>
+         <xs:documentation>To allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol "/" is replaced by the letters "Per". Exponents are written in plain text after the unit as "m3" instead of being formatted as "m" with a superscript of 3  or introducing a symbol as in "m^3". The degree symbol "�" is replaced with the letters "deg". Any clarification of the meaning for a substitution is included in the description for the unit symbol.</xs:documentation>
+         <xs:documentation>Non-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units.</xs:documentation>
+         <xs:documentation>The integer values are used for harmonization with IEC 61850.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="A">
+            <xs:annotation>
+               <xs:documentation>Current in amperes.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="A2">
+            <xs:annotation>
+               <xs:documentation>Amperes squared (A�).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="A2h">
+            <xs:annotation>
+               <xs:documentation>Ampere-squared hour, ampere-squared hour.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="A2s">
+            <xs:annotation>
+               <xs:documentation>Ampere squared time in square amperes (A�s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="APerA">
+            <xs:annotation>
+               <xs:documentation>Current, ratio of amperages.   Note: Users may need to supply a prefix such as �m� to show rates such as �mA/A�.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="APerm">
+            <xs:annotation>
+               <xs:documentation>A/m, magnetic field strength, amperes per metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Ah">
+            <xs:annotation>
+               <xs:documentation>Ampere-hours, ampere-hours.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="As">
+            <xs:annotation>
+               <xs:documentation>Ampere seconds (A�s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Bq">
+            <xs:annotation>
+               <xs:documentation>Radioactivity in becquerels (1/s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Btu">
+            <xs:annotation>
+               <xs:documentation>Energy, British Thermal Units.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="C">
+            <xs:annotation>
+               <xs:documentation>Electric charge in coulombs (A�s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CPerkg">
+            <xs:annotation>
+               <xs:documentation>Exposure (x rays), coulombs per kilogram.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CPerm2">
+            <xs:annotation>
+               <xs:documentation>Surface charge density, coulombs per square metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CPerm3">
+            <xs:annotation>
+               <xs:documentation>Electric charge density, coulombs per cubic metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="F">
+            <xs:annotation>
+               <xs:documentation>Electric capacitance in farads (C/V).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FPerm">
+            <xs:annotation>
+               <xs:documentation>Permittivity, farads per metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="G">
+            <xs:annotation>
+               <xs:documentation>Magnetic flux density, gausses (1 G = 10-4 T).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Gy">
+            <xs:annotation>
+               <xs:documentation>Absorbed dose in grays (J/kg).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GyPers">
+            <xs:annotation>
+               <xs:documentation>Absorbed dose rate, grays per second.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="H">
+            <xs:annotation>
+               <xs:documentation>Electric inductance in henrys (Wb/A).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HPerm">
+            <xs:annotation>
+               <xs:documentation>Permeability, henrys per metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Hz">
+            <xs:annotation>
+               <xs:documentation>Frequency in hertz (1/s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HzPerHz">
+            <xs:annotation>
+               <xs:documentation>Frequency, rate of frequency change.   Note: Users may need to supply a prefix such as �m� to show rates such as �mHz/Hz�.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HzPers">
+            <xs:annotation>
+               <xs:documentation>Rate of change of frequency in hertz per second.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="J">
+            <xs:annotation>
+               <xs:documentation>Energy in joules (N�m = C�V = W�s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JPerK">
+            <xs:annotation>
+               <xs:documentation>Heat capacity in joules/kelvin.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JPerkg">
+            <xs:annotation>
+               <xs:documentation>Specific energy, Joules / kg.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JPerkgK">
+            <xs:annotation>
+               <xs:documentation>Specific heat capacity, specific entropy, joules per kilogram Kelvin.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JPerm2">
+            <xs:annotation>
+               <xs:documentation>Insulation energy density, joules per square metre or watt second per square metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JPerm3">
+            <xs:annotation>
+               <xs:documentation>Energy density, joules per cubic metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JPermol">
+            <xs:annotation>
+               <xs:documentation>Molar energy, joules per mole.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JPermolK">
+            <xs:annotation>
+               <xs:documentation>Molar entropy, molar heat capacity, joules per mole kelvin.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JPers">
+            <xs:annotation>
+               <xs:documentation>Energy rate in joules per second (J/s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="K">
+            <xs:annotation>
+               <xs:documentation>Temperature in kelvins.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="KPers">
+            <xs:annotation>
+               <xs:documentation>Temperature change rate in kelvins per second.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="M">
+            <xs:annotation>
+               <xs:documentation>Length, nautical miles (1 M = 1852 m).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Mx">
+            <xs:annotation>
+               <xs:documentation>Magnetic flux, maxwells (1 Mx = 10-8 Wb).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="N">
+            <xs:annotation>
+               <xs:documentation>Force in newtons (kg�m/s�).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NPerm">
+            <xs:annotation>
+               <xs:documentation>Surface tension, newton per metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Nm">
+            <xs:annotation>
+               <xs:documentation>Moment of force, newton metres.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Oe">
+            <xs:annotation>
+               <xs:documentation>Magnetic field in oersteds, (1 Oe = (103/4p) A/m).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Pa">
+            <xs:annotation>
+               <xs:documentation>Pressure in pascals (N/m�). Note: the absolute or relative measurement of pressure is implied with this entry. See below for more explicit forms.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PaPers">
+            <xs:annotation>
+               <xs:documentation>Pressure change rate in pascals per second.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Pas">
+            <xs:annotation>
+               <xs:documentation>Dynamic viscosity, pascal seconds.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Q">
+            <xs:annotation>
+               <xs:documentation>Quantity power, Q.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Qh">
+            <xs:annotation>
+               <xs:documentation>Quantity energy, Qh.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="S">
+            <xs:annotation>
+               <xs:documentation>Conductance in siemens.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SPerm">
+            <xs:annotation>
+               <xs:documentation>Conductance per length (F/m).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Sv">
+            <xs:annotation>
+               <xs:documentation>Dose equivalent in sieverts (J/kg).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="T">
+            <xs:annotation>
+               <xs:documentation>Magnetic flux density in teslas (Wb/m2).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="V">
+            <xs:annotation>
+               <xs:documentation>Electric potential in volts (W/A).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="V2">
+            <xs:annotation>
+               <xs:documentation>Volt squared (W�/A�).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="V2h">
+            <xs:annotation>
+               <xs:documentation>Volt-squared hour, volt-squared-hours.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VA">
+            <xs:annotation>
+               <xs:documentation>Apparent power in volt amperes. See also real power and reactive power.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VAh">
+            <xs:annotation>
+               <xs:documentation>Apparent energy in volt ampere hours.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VAr">
+            <xs:annotation>
+               <xs:documentation>Reactive power in volt amperes reactive. The �reactive� or �imaginary� component of electrical power (VIsin(phi)). (See also real power and apparent power).</xs:documentation>
+               <xs:documentation>Note: Different meter designs use different methods to arrive at their results. Some meters may compute reactive power as an arithmetic value, while others compute the value vectorially. The data consumer should determine the method in use and the suitability of the measurement for the intended purpose.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VArh">
+            <xs:annotation>
+               <xs:documentation>Reactive energy in volt ampere reactive hours.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VPerHz">
+            <xs:annotation>
+               <xs:documentation>Magnetic flux in volt per hertz.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VPerV">
+            <xs:annotation>
+               <xs:documentation>Voltage, ratio of voltages.  Note: Users may need to supply a prefix such as �m� to show rates such as �mV/V�.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VPerVA">
+            <xs:annotation>
+               <xs:documentation>Power factor, PF, the ratio of the active power to the apparent power.  Note: The sign convention used for power factor will differ between IEC meters and EEI (ANSI) meters. It is assumed that the data consumers understand the type of meter being used and agree on the sign convention in use at any given utility.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VPerVAr">
+            <xs:annotation>
+               <xs:documentation>Power factor, PF, the ratio of the active power to the apparent power. Note: The sign convention used for power factor will differ between IEC meters and EEI (ANSI) meters. It is assumed that the data consumers understand the type of meter being used and agree on the sign convention in use at any given utility.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VPerm">
+            <xs:annotation>
+               <xs:documentation>Electric field strength, volts per metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Vh">
+            <xs:annotation>
+               <xs:documentation>Volt-hour, Volt hours.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Vs">
+            <xs:annotation>
+               <xs:documentation>Volt seconds (Ws/A).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="W">
+            <xs:annotation>
+               <xs:documentation>Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&amp;#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WPerA">
+            <xs:annotation>
+               <xs:documentation>Active power per current flow, watts per Ampere.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WPerW">
+            <xs:annotation>
+               <xs:documentation>Signal Strength, ratio of power.   Note: Users may need to supply a prefix such as �m� to show rates such as �mW/W�.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WPerm2">
+            <xs:annotation>
+               <xs:documentation>Heat flux density, irradiance, watts per square metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WPerm2sr">
+            <xs:annotation>
+               <xs:documentation>Radiance, watts per square metre steradian.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WPermK">
+            <xs:annotation>
+               <xs:documentation>Thermal conductivity in watt/metres kelvin.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WPers">
+            <xs:annotation>
+               <xs:documentation>Ramp rate in watts per second.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WPersr">
+            <xs:annotation>
+               <xs:documentation>Radiant intensity, watts per steradian.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Wb">
+            <xs:annotation>
+               <xs:documentation>Magnetic flux in webers (V�s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Wh">
+            <xs:annotation>
+               <xs:documentation>Real energy in watt hours.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="anglemin">
+            <xs:annotation>
+               <xs:documentation>Plane angle, minutes.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="anglesec">
+            <xs:annotation>
+               <xs:documentation>Plane angle, seconds.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="bar">
+            <xs:annotation>
+               <xs:documentation>Pressure in bars, (1 bar = 100 kPa).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="cd">
+            <xs:annotation>
+               <xs:documentation>Luminous intensity in candelas.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="charPers">
+            <xs:annotation>
+               <xs:documentation>Data rate (baud) in characters per second.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="character">
+            <xs:annotation>
+               <xs:documentation>Number of characters.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="cosPhi">
+            <xs:annotation>
+               <xs:documentation>Power factor, dimensionless.</xs:documentation>
+               <xs:documentation>Note 1: This definition of power factor only holds for balanced systems. See the alternative definition under code 153.</xs:documentation>
+               <xs:documentation>Note 2�: Beware of differing sign conventions in use between the IEC and EEI. It is assumed that the data consumer understands the type of meter in use and the sign convention in use by the utility.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="count">
+            <xs:annotation>
+               <xs:documentation>Amount of substance, Counter value.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="d">
+            <xs:annotation>
+               <xs:documentation>Time in days, day = 24 h = 86400 s.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="dB">
+            <xs:annotation>
+               <xs:documentation>Sound pressure level in decibels. Note:  multiplier �d� is included in this unit symbol for compatibility with IEC 61850-7-3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="dBm">
+            <xs:annotation>
+               <xs:documentation>Power level (logarithmic ratio of signal strength , Bel-mW), normalized to 1mW. Note:  multiplier �d� is included in this unit symbol for compatibility with IEC 61850-7-3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="deg">
+            <xs:annotation>
+               <xs:documentation>Plane angle in degrees.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="degC">
+            <xs:annotation>
+               <xs:documentation>Relative temperature in degrees Celsius.</xs:documentation>
+               <xs:documentation>In the SI unit system the symbol is �C. Electric charge is measured in coulomb that has the unit symbol C. To distinguish degree Celsius from coulomb the symbol used in the UML is degC. The reason for not using �C is that the special character � is difficult to manage in software.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ft3">
+            <xs:annotation>
+               <xs:documentation>Volume, cubic feet.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="gPerg">
+            <xs:annotation>
+               <xs:documentation>Concentration, The ratio of the mass of a solute divided by the mass of  the solution. Note: Users may need use a prefix such a ��� to express a quantity such as ��g/g�.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="gal">
+            <xs:annotation>
+               <xs:documentation>Volume in gallons, US gallon (1 gal = 231 in3 = 128 fl ounce).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="h">
+            <xs:annotation>
+               <xs:documentation>Time in hours, hour = 60 min = 3600 s.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ha">
+            <xs:annotation>
+               <xs:documentation>Area, hectares.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="kat">
+            <xs:annotation>
+               <xs:documentation>Catalytic activity, katal = mol / s.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="katPerm3">
+            <xs:annotation>
+               <xs:documentation>Catalytic activity concentration, katals per cubic metre.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="kg">
+            <xs:annotation>
+               <xs:documentation>Mass in kilograms.  Note: multiplier �k� is included in this unit symbol for compatibility with IEC 61850-7-3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="kgPerJ">
+            <xs:annotation>
+               <xs:documentation>Weight per energy in kilograms per joule (kg/J). Note: multiplier �k� is included in this unit symbol for compatibility with IEC 61850-7-3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="kgPerm3">
+            <xs:annotation>
+               <xs:documentation>Density in kilogram/cubic metres (kg/m�). Note: multiplier �k� is included in this unit symbol for compatibility with IEC 61850-7-3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="kgm">
+            <xs:annotation>
+               <xs:documentation>Moment of mass in kilogram metres (kg�m) (first moment of mass). Note: multiplier �k� is included in this unit symbol for compatibility with IEC 61850-7-3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="kgm2">
+            <xs:annotation>
+               <xs:documentation>Moment of mass in kilogram square metres (kg�m�) (Second moment of mass, commonly called the moment of inertia). Note: multiplier �k� is included in this unit symbol for compatibility with IEC 61850-7-3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="kn">
+            <xs:annotation>
+               <xs:documentation>Speed, knots (1 kn = 1852/3600) m/s.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="l">
+            <xs:annotation>
+               <xs:documentation>Volume in litres, litre = dm3 = m3/1000.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="lPerh">
+            <xs:annotation>
+               <xs:documentation>Volumetric flow rate, litres per hour.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="lPerl">
+            <xs:annotation>
+               <xs:documentation>Concentration, The ratio of the volume of a solute divided by the volume of  the solution. Note: Users may need use a prefix such a ��� to express a quantity such as ��L/L�.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="lPers">
+            <xs:annotation>
+               <xs:documentation>Volumetric flow rate in litres per second.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="lm">
+            <xs:annotation>
+               <xs:documentation>Luminous flux in lumens (cd�sr).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="lx">
+            <xs:annotation>
+               <xs:documentation>Illuminance in lux (lm/m�).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m">
+            <xs:annotation>
+               <xs:documentation>Length in metres.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m2">
+            <xs:annotation>
+               <xs:documentation>Area in square metres (m�).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m2Pers">
+            <xs:annotation>
+               <xs:documentation>Viscosity in square metres / second (m�/s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m3">
+            <xs:annotation>
+               <xs:documentation>Volume in cubic metres (m�).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m3Compensated">
+            <xs:annotation>
+               <xs:documentation>Volume, cubic metres, with the value compensated for weather effects.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m3Perh">
+            <xs:annotation>
+               <xs:documentation>Volumetric flow rate, cubic metres per hour.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m3Perkg">
+            <xs:annotation>
+               <xs:documentation>Specific volume, cubic metres per kilogram, v.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m3Pers">
+            <xs:annotation>
+               <xs:documentation>Volumetric flow rate in cubic metres per second (m�/s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m3Uncompensated">
+            <xs:annotation>
+               <xs:documentation>Volume, cubic metres, with the value uncompensated for weather effects.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="mPerm3">
+            <xs:annotation>
+               <xs:documentation>Fuel efficiency in metres per cubic metres (m/m�).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="mPers">
+            <xs:annotation>
+               <xs:documentation>Velocity in metres per second (m/s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="mPers2">
+            <xs:annotation>
+               <xs:documentation>Acceleration in metres per second squared (m/s�).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="min">
+            <xs:annotation>
+               <xs:documentation>Time in minutes, minute  = 60 s.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="mmHg">
+            <xs:annotation>
+               <xs:documentation>Pressure, millimetres of mercury (1 mmHg is approximately 133.3 Pa).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="mol">
+            <xs:annotation>
+               <xs:documentation>Amount of substance in moles.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="molPerkg">
+            <xs:annotation>
+               <xs:documentation>Concentration, Molality, the amount of solute in moles and the amount of solvent in kilograms.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="molPerm3">
+            <xs:annotation>
+               <xs:documentation>Concentration, The amount of substance concentration, (c), the amount of solvent in moles divided by the volume of solution in m�.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="molPermol">
+            <xs:annotation>
+               <xs:documentation>Concentration, Molar fraction, the ratio of the molar amount of a solute divided by the molar amount of the solution.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="none">
+            <xs:annotation>
+               <xs:documentation>Dimension less quantity, e.g. count, per unit, etc.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ohm">
+            <xs:annotation>
+               <xs:documentation>Electric resistance in ohms (V/A).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ohmPerm">
+            <xs:annotation>
+               <xs:documentation>Electric resistance per length in ohms per metre ((V/A)/m).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ohmm">
+            <xs:annotation>
+               <xs:documentation>Resistivity, ohm metres, (rho).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="onePerHz">
+            <xs:annotation>
+               <xs:documentation>Reciprocal of frequency (1/Hz).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="onePerm">
+            <xs:annotation>
+               <xs:documentation>Wavenumber, reciprocal metres,  (1/m).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ppm">
+            <xs:annotation>
+               <xs:documentation>Concentration in parts per million.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="rad">
+            <xs:annotation>
+               <xs:documentation>Plane angle in radians (m/m).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="radPers">
+            <xs:annotation>
+               <xs:documentation>Angular velocity in radians per second (rad/s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="radPers2">
+            <xs:annotation>
+               <xs:documentation>Angular acceleration, radians per second squared.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="rev">
+            <xs:annotation>
+               <xs:documentation>Amount of rotation, revolutions.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="rotPers">
+            <xs:annotation>
+               <xs:documentation>Rotations per second (1/s). See also Hz (1/s).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="s">
+            <xs:annotation>
+               <xs:documentation>Time in seconds.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="sPers">
+            <xs:annotation>
+               <xs:documentation>Time, Ratio of time.  Note: Users may need to supply a prefix such as �&amp;#181;� to show rates such as �&amp;#181;s/s�.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="sr">
+            <xs:annotation>
+               <xs:documentation>Solid angle in steradians (m2/m2).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="therm">
+            <xs:annotation>
+               <xs:documentation>Energy, therms.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="tonne">
+            <xs:annotation>
+               <xs:documentation>Mass in tons, �tonne� or �metric  ton� (1000 kg = 1 Mg).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="AngleDegrees"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#AngleDegrees">
+      <xs:annotation>
+         <xs:documentation>Measurement of angle in degrees.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Seconds"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Seconds">
+      <xs:annotation>
+         <xs:documentation>Time, in seconds.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="PerCent"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#PerCent">
+      <xs:annotation>
+         <xs:documentation>Percentage on a defined base.   For example, specify as 100 to indicate at the defined base.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Voltage"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Voltage">
+      <xs:annotation>
+         <xs:documentation>Electrical voltage, can be both AC and DC.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Money" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Money">
+      <xs:annotation>
+         <xs:documentation>Amount of money.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:decimal"/>
+   </xs:simpleType>
+   <xs:simpleType name="CurrentFlow"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#CurrentFlow">
+      <xs:annotation>
+         <xs:documentation>Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+</xs:schema>

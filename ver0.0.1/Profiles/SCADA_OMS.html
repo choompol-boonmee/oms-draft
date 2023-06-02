@@ -1,0 +1,1295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:a="http://langdale.com.au/2005/Message#"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <title>Profile Documentation</title>
+      <style type="text/css">
+/* typography: fonts */
+body { font-family: arial, sans-serif; }
+
+.name, .type, .cardinality, .superclass, .xsdtype, .namespace { font-family: courier, monospace; }
+
+
+/* typography: emphasis */
+h1 { color: white; background: gray;}
+
+h2, h3 { color: gray; text-decoration: none;}
+
+h2.abstract, h2.enumerated, h2.domain {font-style: italic } 
+
+p.note { background-color: #ddd }
+
+p.declaration { color: gray }
+
+:link { color: purple; }
+
+.xsdtype { color: black; font-weight: bold; }
+
+.namespace { color: black }
+
+.package { font-size: x-large; color: gray }
+
+
+/* borders */
+div.group {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	
+}
+
+th, td {
+	border-top-style : solid;
+	border-top-width : 1px;
+	border-color: gray;
+ }
+
+
+/* spacing and alignment */
+body {padding: 5px; }
+
+h1 { padding: 5px;}
+
+div.group {
+	margin-top: 10px;
+	padding: 5px;
+	position: relative;
+}
+th, td {
+	text-align : left;
+	vertical-align : top;
+}
+th, td.type { width: 15em; overflow: visible; }
+
+p.cardinality { width: 4em; }
+
+p.package { position: absolute; right: 10px; top: 0px}				
+</style>
+   </head>
+   <body>
+      <h1>Profile Documentation</h1>
+      <p/>
+      <p class="declaration">
+					Profile namespace:
+					<span class="namespace">http://pea.co.th/cim/profile/SCADA_OMS#</span>
+      </p>
+      <h1>Concrete Classes</h1>
+      <div id="SwitchAction" class="group">
+         <a href="#SwitchAction">
+            <h2 class="concrete">SwitchAction</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Action on switch as a switching step.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchAction.kind">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#SwitchActionKind">SwitchActionKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Switching action to perform.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchAction.OperatedSwitch">OperatedSwitch</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Switch">Switch</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Switch that is the object of this switch action.</p>
+               </td>
+            </tr>
+         </table>
+         <h3>Inherited Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">executedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#SwitchingAction.executedDateTime">SwitchingAction</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">issuedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#SwitchingAction.issuedDateTime">SwitchingAction</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">phases</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PhaseCode">PhaseCode</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#SwitchingAction.phases">SwitchingAction</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">plannedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#SwitchingAction.plannedDateTime">SwitchingAction</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">SwitchingEvent</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#SwitchingEvent">SwitchingEvent</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#SwitchingAction.SwitchingEvent">SwitchingAction</a>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">SwitchingStep</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#SwitchingStep">SwitchingStep</a>
+                  </p>
+               </td>
+               <td>
+                  <p>see <a class="superclass" href="#SwitchingAction.SwitchingStep">SwitchingAction</a>
+                  </p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="SwitchingAction" class="group">
+         <a href="#SwitchingAction">
+            <h2 class="concrete">SwitchingAction</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Atomic switching action.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingAction.executedDateTime">executedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Actual date and time of this switching step.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingAction.issuedDateTime">issuedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time when the crew was given the instruction to execute the action; not applicable if the action is performed by operator remote control.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingAction.phases">phases</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PhaseCode">PhaseCode</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Phases of the Switching Action</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingAction.plannedDateTime">plannedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Planned date and time of this switching step.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingAction.SwitchingEvent">SwitchingEvent</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#SwitchingEvent">SwitchingEvent</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The switching event that the switching action is performed on</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingAction.SwitchingStep">SwitchingStep</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#SwitchingStep">SwitchingStep</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The switching step that is associated to the switching action.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="SwitchingEvent" class="group">
+         <a href="#SwitchingEvent">
+            <h2 class="concrete">SwitchingEvent</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Event indicating the completion (success or fail) of any switching action (jumper action, cut action, tag action, etc).  The switching action may or may not be a consequential event in response to a request to complete the action.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingEvent.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this activity record has been created (different from the 'status.dateTime', which is the time of a status change of the associated object, if applicable).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingEvent.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason for event resulting in this activity record, typically supplied when user initiated.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingEvent.severity">severity</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Severity level of event resulting in this activity record.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingEvent.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Type of event resulting in this activity record.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="SwitchingOrder" class="group">
+         <a href="#SwitchingOrder">
+            <h2 class="concrete">SwitchingOrder</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Transmits a switching plan to a crew in order for the plan to be executed.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.authorName">authorName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Name of the author of this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free-form comment associated with the switching order.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.lastModifiedDateTime">lastModifiedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.revisionNumber">revisionNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Revision number for this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.title">title</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document title.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.Approver">Approver</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Approver">Approver</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Approver of this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.Author">Author</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Author">Author</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Author of this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.docStatus">docStatus</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Status of this document. For status of subject matter this document represents (e.g., Agreement, Work), use 'status' attribute.</p>
+                  <p class="comment">Example values for 'docStatus.status' are draft, approved, cancelled, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.Issuer">Issuer</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Issuer">Issuer</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Issuer of this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.Location">Location</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Location">Location</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Location of this switching order.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.plannedExecutionInterval">plannedExecutionInterval</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#DateTimeInterval">DateTimeInterval</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The planned start and end time for the switching order.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Status of subject matter (e.g., Agreement, Work) this document represents. For status of the document itself, use 'docStatus' attribute.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingOrder.SwitchingPlan">SwitchingPlan</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#SwitchingPlan">SwitchingPlan</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The switching plan that is defined in the switching order.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="SwitchingPlan" class="group">
+         <a href="#SwitchingPlan">
+            <h2 class="concrete">SwitchingPlan</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">A sequence of grouped or atomic steps intended to:</p>
+         <p class="comment">- de-energise equipment or part of the network for safe work, and/or</p>
+         <p class="comment">- bring back in service previously de-energised equipment or part of the network.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingPlan.approvedDateTime">approvedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">The date and time the switching plan was approved</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingPlan.cancelledDateTime">cancelledDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and Time the switching plan was cancelled.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingPlan.purpose">purpose</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Purpose of  this plan, such as whether it is to move the state from normal to some abnormal condition, or to restore the normal state after an abnormal condition, or to perform some kind of optimisation such as correction of overload, voltage control, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingPlan.OutagePlan">OutagePlan</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#OutagePlan">OutagePlan</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The outage plan for which the switching plan is defined.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingPlan.plannedPeriod">plannedPeriod</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#DateTimeInterval">DateTimeInterval</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">the planned start and end times for the switching plan.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="SwitchingPlan.SwitchingAction">SwitchingAction</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#SwitchingAction">SwitchingAction</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The switching actions that are associated with the switching plan.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Abstract Classes</h1>
+      <div id="Approver" class="group">
+         <a href="#Approver">
+            <h2 class="abstract">Approver</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Person who accepted/signed or rejected the document.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Approver.Person">Person</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Person">Person</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Person having this role.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Author" class="group">
+         <a href="#Author">
+            <h2 class="abstract">Author</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Person who created document or activity record.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Author.Person">Person</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Person">Person</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Person having this role.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Issuer" class="group">
+         <a href="#Issuer">
+            <h2 class="abstract">Issuer</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Person who issued the document and is responsible for its content.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Issuer.Person">Person</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Person">Person</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Person having this role.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Location" class="group">
+         <a href="#Location">
+            <h2 class="abstract">Location</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Location.direction">direction</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">(if applicable) Direction that allows field crews to quickly find a given asset. For a given location, such as a street address, this is the relative direction in which to find the asset. For example, a streetlight may be located at the 'NW' (northwest) corner of the customer's site, or a usage point may be located on the second floor of an apartment building.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="OutagePlan" class="group">
+         <a href="#OutagePlan">
+            <h2 class="abstract">OutagePlan</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Document containing the definition of planned outages of equipment and/or usage points. It will reference switching plans that are used to execute the planned outage.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.approvedDateTime">approvedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">The date and time the outage plan was approved</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.cancelledDateTime">cancelledDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and Time the planned outage was canceled.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.purpose">purpose</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Purpose of  this outage plan, such as whether it is to replace equipment or perform maintenance or repairs or to reconfigure network topology.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="OutagePlan.plannedPeriod">plannedPeriod</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#DateTimeInterval">DateTimeInterval</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">planned start and end time of the planned outage.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Person" class="group">
+         <a href="#Person">
+            <h2 class="abstract">Person</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">General purpose information for name and other information to contact people.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Person.mName">mName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Middle name(s) or initial(s).</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Switch" class="group">
+         <a href="#Switch">
+            <h2 class="abstract">Switch</h2>
+         </a>
+         <p class="package">Wires</p>
+         <p class="comment">A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches. The ACDCTerminal.connected at the two sides of the switch shall not be considered for assessing switch connectivity, i.e. only Switch.open, .normalOpen and .locked are relevant.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Switch.normalOpen">normalOpen</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Switch.open">open</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">The attribute tells if the switch is considered open when used as input to topology processing.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Switch.ratedCurrent">ratedCurrent</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CurrentFlow">CurrentFlow</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The maximum continuous current carrying capacity in amps governed by the device material and construction.</p>
+                  <p class="comment">The attribute shall be a positive value.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Switch.switchOnDate">switchOnDate</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">The date and time when the switch was last switched on.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="SwitchingStep" class="group">
+         <a href="#SwitchingStep">
+            <h2 class="abstract">SwitchingStep</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Atomic switching step; can be part of a switching step group, or part of a switching plan.</p>
+      </div>
+      <h1>Enumerations</h1>
+      <div id="PhaseCode" class="group">
+         <a href="#PhaseCode">
+            <h2 class="enumerated">PhaseCode</h2>
+         </a>
+         <p class="package">Core</p>
+         <p class="comment">An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.</p>
+         <p class="comment">Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.</p>
+         <p class="comment">The integer values are from IEC 61968-9 to support revenue metering applications.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">A</p>
+               </th>
+               <td>
+                  <p class="comment">Phase A.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">AB</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A and B.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ABC</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A, B, and C.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ABCN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A, B, C, and N.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ABN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A, B, and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">AC</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A and C.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">ACN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A, C and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">AN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases A and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">B</p>
+               </th>
+               <td>
+                  <p class="comment">Phase B.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">BC</p>
+               </th>
+               <td>
+                  <p class="comment">Phases B and C.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">BCN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases B, C, and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">BN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases B and neutral.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">C</p>
+               </th>
+               <td>
+                  <p class="comment">Phase C.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">CN</p>
+               </th>
+               <td>
+                  <p class="comment">Phases C and neutral.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="SwitchActionKind" class="group">
+         <a href="#SwitchActionKind">
+            <h2 class="enumerated">SwitchActionKind</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Kind of action on switch.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">close</p>
+               </th>
+               <td>
+                  <p class="comment">Close the switch.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">disableReclosing</p>
+               </th>
+               <td>
+                  <p class="comment">Disable (automatic) switch reclosing.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">enableReclosing</p>
+               </th>
+               <td>
+                  <p class="comment">Enable (automatic) switch reclosing.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">open</p>
+               </th>
+               <td>
+                  <p class="comment">Open the switch.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Compound Types</h1>
+      <div id="DateTimeInterval" class="group">
+         <a href="#DateTimeInterval">
+            <h2 class="abstract">DateTimeInterval</h2>
+         </a>
+         <p class="package">Domain</p>
+         <p class="comment">Interval between two date and time points, where the interval includes the start time but excludes end time.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="DateTimeInterval.end">end</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">End date and time of this interval.  The end date and time where the interval is defined up to, but excluded.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="DateTimeInterval.start">start</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Start date and time of this interval.  The start date and time is included in the defined interval.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="Status" class="group">
+         <a href="#Status">
+            <h2 class="abstract">Status</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Current status information relevant to an entity.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Status.dateTime">dateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time for which status 'value' applies.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.reason">reason</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Reason code or explanation for why an object went to the current status 'value'.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.remark">remark</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Pertinent information regarding the current 'value', as free form text.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Status.value">value</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Status value at 'dateTime'; prior status changes may have been kept in instances of activity records associated with the object to which this status applies.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Datatypes</h1>
+      <div id="CurrentFlow" class="group">
+         <a href="#CurrentFlow">
+            <h2 class="domain">CurrentFlow</h2>
+         </a>
+         <p class="package"/>
+         <p class="comment">Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC.</p>
+         <p class="declaration">XSD type: <span class="xsdtype">float</span>
+         </p>
+      </div>
+   </body>
+</html>

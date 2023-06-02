@@ -1,0 +1,2342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:a="http://langdale.com.au/2005/Message#"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <title>Profile Documentation</title>
+      <style type="text/css">
+/* typography: fonts */
+body { font-family: arial, sans-serif; }
+
+.name, .type, .cardinality, .superclass, .xsdtype, .namespace { font-family: courier, monospace; }
+
+
+/* typography: emphasis */
+h1 { color: white; background: gray;}
+
+h2, h3 { color: gray; text-decoration: none;}
+
+h2.abstract, h2.enumerated, h2.domain {font-style: italic } 
+
+p.note { background-color: #ddd }
+
+p.declaration { color: gray }
+
+:link { color: purple; }
+
+.xsdtype { color: black; font-weight: bold; }
+
+.namespace { color: black }
+
+.package { font-size: x-large; color: gray }
+
+
+/* borders */
+div.group {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+	
+}
+
+th, td {
+	border-top-style : solid;
+	border-top-width : 1px;
+	border-color: gray;
+ }
+
+
+/* spacing and alignment */
+body {padding: 5px; }
+
+h1 { padding: 5px;}
+
+div.group {
+	margin-top: 10px;
+	padding: 5px;
+	position: relative;
+}
+th, td {
+	text-align : left;
+	vertical-align : top;
+}
+th, td.type { width: 15em; overflow: visible; }
+
+p.cardinality { width: 4em; }
+
+p.package { position: absolute; right: 10px; top: 0px}				
+</style>
+   </head>
+   <body>
+      <h1>Profile Documentation</h1>
+      <p/>
+      <p class="declaration">
+					Profile namespace:
+					<span class="namespace">http://pea.co.th/cim/profile/CA_OMS#</span>
+      </p>
+      <h1>Concrete Classes</h1>
+      <div id="Customer" class="group">
+         <a href="#Customer">
+            <h2 class="concrete">Customer</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Organisation receiving services from service supplier.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.kind">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CustomerKind">CustomerKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.locale">locale</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Locale designating language to use in communications with this customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.specialNeed">specialNeed</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">True if customer organisation has special service needs such as life support, hospitals, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.vip">vip</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">(deprecated) (use 'priority' instead) True if this is an important customer. Importance is for matters different than those in 'specialNeed' attribute.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.CustomerAccounts">CustomerAccounts</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CustomerAccount">CustomerAccount</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All accounts of this customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.Person">Person</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Person">Person</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The person representing the customer</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.priority">priority</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Priority">Priority</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Priority of the customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Status of this customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Customer.TroubleTickets">TroubleTickets</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#TroubleTicket">TroubleTicket</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All trouble tickets for this customer.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="CustomerAccount" class="group">
+         <a href="#CustomerAccount">
+            <h2 class="concrete">CustomerAccount</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Assignment of a group of products and services purchased by the customer through a customer agreement, used as a mechanism for customer billing and payment. It contains common information from the various types of customer agreements to create billings (invoices) for a customer and receive payment.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.billingCycle">billingCycle</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Cycle day on which the associated customer account will normally be billed, used to determine when to produce the billing.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.budgetBill">budgetBill</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Budget bill code.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.lastBillAmount">lastBillAmount</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Money">Money</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The last amount that will be billed to the customer prior to shut off of the account.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.CustomerAgreements">CustomerAgreements</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CustomerAgreement">CustomerAgreement</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All agreements for this customer account.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.CustomerBillingInfos">CustomerBillingInfos</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CustomerBillingInfo">CustomerBillingInfo</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.ErpInvoicees">ErpInvoicees</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ErpInvoice">ErpInvoice</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAccount.MeterReadSchedule">MeterReadSchedule</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#MeterReadSchedule">MeterReadSchedule</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Meter read schedule that applies to the customer account</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Abstract Classes</h1>
+      <div id="AccountNotification" class="group">
+         <a href="#AccountNotification">
+            <h2 class="abstract">AccountNotification</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Notifications for move-in, move-out, delinquencies, etc.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="AccountNotification.customerNotificationType">customerNotificationType</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Notifications for move-in, move-out, delinquencies, planned outage, demand response programs, time of use, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AccountNotification.methodType">methodType</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">method of notification such as phone call, email, letter, door hanger, text message, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AccountNotification.note">note</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free form text characterizing the notification.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AccountNotification.time">time</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Time of notification - this is the time the notification was sent.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="AccountNotification.CustomerAccount">CustomerAccount</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CustomerAccount">CustomerAccount</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The customer account for which a notification is made</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="CustomerAgreement" class="group">
+         <a href="#CustomerAgreement">
+            <h2 class="abstract">CustomerAgreement</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Agreement between the customer and the service supplier to pay for service at a specific service location. It records certain billing information about the type of service provided at the service location and is used during charge creation to determine the type of service.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAgreement.isPrePay">isPrePay</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">If true, the customer is a pre-pay customer for the specified service.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAgreement.loadMgmt">loadMgmt</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Load management code.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAgreement.shutOffDateTime">shutOffDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Final date and time the service will be billed to the previous customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAgreement.CustomerAccount">CustomerAccount</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CustomerAccount">CustomerAccount</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Customer account owning this agreement.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAgreement.MeterReadSchedule">MeterReadSchedule</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#MeterReadSchedule">MeterReadSchedule</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Meter read schedule that applies to the customer agreement</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAgreement.PricingStructures">PricingStructures</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#PricingStructure">PricingStructure</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All pricing structures applicable to this customer agreement.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerAgreement.UsagePoints">UsagePoints</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#UsagePoint">UsagePoint</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All service delivery points regulated by this customer agreement.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="CustomerBillingInfo" class="group">
+         <a href="#CustomerBillingInfo">
+            <h2 class="abstract">CustomerBillingInfo</h2>
+         </a>
+         <p class="package">InfCustomers</p>
+         <p class="comment">The creation of the monthly customer billing statements is the method employed to notify Customers of charges, adjustments and credits applied to their account for Services and Products. The actuall billing occurs through an ErpInvoice. The CustomerBillingInfo includes information from the payment, collection, meter reading, installed meter, service, site, customer, customer account, customer agreement, services and pricing subject areas. Each component price shows up as a separate line item on the ErpInvoice.</p>
+         <p class="comment">The Customer Billing Statement may include collection and account messages, marketing/civic event messages and bill inserts.</p>
+         <p class="comment">One Customer Billing Statement is produced for all Agreements under a CustomerAccount per billing cycle date defined in 'CustomerAccount.billingCycle'.</p>
+         <p class="comment">The history of CustomerBillingInfo, Invoices and Payments is to be maintained in associated ActivityRecords.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerBillingInfo.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerBillingInfo.billingDate">billingDate</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">date</p>
+               </td>
+               <td>
+                  <p class="comment">Business date designated for the billing run which produced this CustomerBillingInfo.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerBillingInfo.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerBillingInfo.dueDate">dueDate</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">date</p>
+               </td>
+               <td>
+                  <p class="comment">Calculated date upon which a customer billing amount is due, used in the invoicing process to determine when a Customer's Payment is delinquent. It takes into consideration the regulatory criteria and the Customer's requested due date. In the absence of a Customer requested due date, the due date is typically calculated from the regulated number of days and the 'billingDate'.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerBillingInfo.kind">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CustomerBillingKind">CustomerBillingKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of bill customer receives.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="CustomerBillingInfo.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="DERFunction" class="group">
+         <a href="#DERFunction">
+            <h2 class="abstract">DERFunction</h2>
+         </a>
+         <p class="package">DER</p>
+         <p class="comment">Specifies the list of functions that are supported.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="DERFunction.connectDisconnect">connectDisconnect</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">If set to TRUE, the connect/disconnect function is supported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="DERFunction.maxRealPowerLimiting">maxRealPowerLimiting</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">If set to TRUE, the maxRealPowerLimiting function is supported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="DERFunction.realPowerDispatch">realPowerDispatch</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">If set to TRUE, the realPowerDispatch function is supported.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="EndDevice" class="group">
+         <a href="#EndDevice">
+            <h2 class="abstract">EndDevice</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Asset container that performs one or more end device functions. One type of end device is a meter which can perform metering, load management, connect/disconnect, accounting functions, etc. Some end devices, such as ones monitoring and controlling air conditioners, refrigerators, pool pumps may be connected to a meter. All end devices may have communication capability defined by the associated communication function(s). An end device may be owned by a consumer, a service provider, utility or otherwise.</p>
+         <p class="comment">There may be a related end device function that identifies a sensor or control point within a metering application or communications systems (e.g., water, gas, electricity).</p>
+         <p class="comment">Some devices may use an optical port that conforms to the ANSI C12.18 standard for communications.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.amrSystem">amrSystem</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Automated meter reading (AMR) or other communication system responsible for communications to this end device.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.connectionCategory">connectionCategory</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">A code used to specify the connection category, e.g. low voltage, where the meter operates.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.formNumber">formNumber</p>
+               </th>
+               <td>
+                  <p class="cardinality">0..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Meter form designation per ANSI C12.10 or other applicable standard. An alphanumeric designation denoting the circuit arrangement for which the meter is applicable and its specific terminal arrangement.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.installCode">installCode</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Installation code.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDevice.UsagePoint">UsagePoint</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#UsagePoint">UsagePoint</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Usage point to which this end device belongs.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="EndDeviceGroup" class="group">
+         <a href="#EndDeviceGroup">
+            <h2 class="abstract">EndDeviceGroup</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Abstraction for management of group communications within a two-way AMR system or the data for a group of related end devices. Commands can be issued to all of the end devices that belong to the group using a defined group address and the underlying AMR communication infrastructure. A DERGroup and a PANDeviceGroup is an EndDeviceGroup.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceGroup.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Type of this group.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceGroup.DER Function">DER Function</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#DERFunction">DERFunction</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The DER functions that are applied to the DER Group.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="EndDeviceGroup.EndDevices">EndDevices</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDevice">EndDevice</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All end devices this end device group refers to.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="ErpInvoice" class="group">
+         <a href="#ErpInvoice">
+            <h2 class="abstract">ErpInvoice</h2>
+         </a>
+         <p class="package">InfERPSupport</p>
+         <p class="comment">A roll up of invoice line items. The whole invoice has a due date and amount to be paid, with information such as customer, banks etc. being obtained through associations. The invoice roll up is based on individual line items that each contain amounts and descriptions for specific services or products.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.amount">amount</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Money">Money</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Total amount due on this invoice based on line items and applicable adjustments.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.billMediaKind">billMediaKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#BillMediaKind">BillMediaKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of media by which the CustomerBillingInfo was delivered.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.dueDate">dueDate</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">date</p>
+               </td>
+               <td>
+                  <p class="comment">Calculated date upon which the Invoice amount is due.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.kind">kind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ErpInvoiceKind">ErpInvoiceKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Kind of invoice (default is 'sales').</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.lastModifiedDateTime">lastModifiedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.subject">subject</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document subject.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="ErpInvoice.ErpInvoiceLineItems">ErpInvoiceLineItems</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ErpInvoiceLineItem">ErpInvoiceLineItem</a>
+                  </p>
+               </td>
+               <td/>
+            </tr>
+         </table>
+      </div>
+      <div id="Incident" class="group">
+         <a href="#Incident">
+            <h2 class="abstract">Incident</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Description of a problem in the field that may be reported in a trouble ticket or come from another source. It may have to do with an outage.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="Incident.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Incident.aliasName">aliasName</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.</p>
+                  <p class="comment">The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Incident.cause">cause</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Cause of this incident.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Incident.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Incident.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Incident.lastModifiedDateTime">lastModifiedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Incident.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Incident.title">title</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document title.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="Incident.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Utility-specific classification of this document, according to its corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.).</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="IncidentHazard" class="group">
+         <a href="#IncidentHazard">
+            <h2 class="abstract">IncidentHazard</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Hazardous situation associated with an incident. Examples are line down, gas leak, fire, etc.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="IncidentHazard.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="IncidentHazard.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="IncidentHazard.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="IncidentHazard.type">type</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Type of this hazard.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="MeterReadSchedule" class="group">
+         <a href="#MeterReadSchedule">
+            <h2 class="abstract">MeterReadSchedule</h2>
+         </a>
+         <p class="package">Metering</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.lastModifiedDateTime">lastModifiedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.subject">subject</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document subject.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.title">title</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document title.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.EndDevice">EndDevice</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDevice">EndDevice</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All end devices for the meter read schedule.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.EndDeviceGroup">EndDeviceGroup</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#EndDeviceGroup">EndDeviceGroup</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All end device groups for the meter read schedule.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.TimeSchedule">TimeSchedule</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#TimeSchedule">TimeSchedule</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All time schedules for the meter read schedule.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="MeterReadSchedule.UsagePoint">UsagePoint</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#UsagePoint">UsagePoint</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All usage points for the meter read schedule.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="PricingStructure" class="group">
+         <a href="#PricingStructure">
+            <h2 class="abstract">PricingStructure</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Grouping of pricing components and prices used in the creation of customer charges and the eligibility criteria under which these terms may be offered to a customer. The reasons for grouping include state, customer classification, site characteristics, classification (i.e. fee price structure, deposit price structure, electric service price structure, etc.) and accounting requirements.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="PricingStructure.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PricingStructure.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PricingStructure.lastModifiedDateTime">lastModifiedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this document was last modified. Documents may potentially be modified many times during their lifetime.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="PricingStructure.title">title</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Document title.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="TimeSchedule" class="group">
+         <a href="#TimeSchedule">
+            <h2 class="abstract">TimeSchedule</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Description of anything that changes through time. Time schedule is used to perform a single-valued function of time. Use inherited 'type' attribute to give additional information on this schedule, such as: periodic (hourly, daily, weekly, monthly, etc.), day of the month, by date, calendar (specific times and dates).</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="TimeSchedule.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TimeSchedule.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="TroubleOrder" class="group">
+         <a href="#TroubleOrder">
+            <h2 class="abstract">TroubleOrder</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Trouble order sends an incident to a crew to initiate a response to an unplanned outage.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free-form comment associated with the trouble order.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.electronicAddress">electronicAddress</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#ElectronicAddress">ElectronicAddress</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Electronic address.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.Incident">Incident</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Incident">Incident</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The incident that may be associated with the trouble order.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.Issuer">Issuer</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Issuer">Issuer</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Issuer of this document.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.Location">Location</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Location">Location</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The location of this trouble order</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.plannedExecutionInterval">plannedExecutionInterval</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#DateTimeInterval">DateTimeInterval</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The planned start and end time for the trouble order.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Status of subject matter (e.g., Agreement, Work) this document represents. For status of the document itself, use 'docStatus' attribute.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.TroubleTicket">TroubleTicket</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#TroubleTicket">TroubleTicket</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The ticket called in by the customer that describes the trouble</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.UnplannedOutage">UnplannedOutage</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#UnplannedOutage">UnplannedOutage</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The unplanned outage that is associated to the Trouble Order.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleOrder.WorkTask">WorkTask</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#WorkTask">WorkTask</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The work tasks that are associated with this trouble order.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="TroubleTicket" class="group">
+         <a href="#TroubleTicket">
+            <h2 class="abstract">TroubleTicket</h2>
+         </a>
+         <p class="package">Customers</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free-form comment associated with the trouble call for example, "customer reported a large flash", etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.dateTimeOfReport">dateTimeOfReport</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time the trouble has been reported.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.firstResponderStatus">firstResponderStatus</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Indicates whether the first responder such as police, fire department etc.has been notified and whether they are on site or en route.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.multiplePremises">multiplePremises</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">boolean</p>
+               </td>
+               <td>
+                  <p class="comment">Set to true if the outage report indicated that other neighbors are also out of power.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.reportingKind">reportingKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#TroubleReportingKind">TroubleReportingKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Indicates how the customer reported trouble.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.resolvedDateTime">resolvedDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time this trouble ticket has been resolved.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.troubleCode">troubleCode</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Trouble code (e.g., power down, flickering lights, partial power, etc).</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.Incident">Incident</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Incident">Incident</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Incident reported in this trouble ticket</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.IncidentHazard">IncidentHazard</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..<item>*</item>
+                  </p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#IncidentHazard">IncidentHazard</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">All hazards reported with this trouble ticket.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.TroubleOrder">TroubleOrder</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#TroubleOrder">TroubleOrder</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The order to which one or more trouble tickets are associated.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="TroubleTicket.UnplannedOutage">UnplannedOutage</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#UnplannedOutage">UnplannedOutage</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The unplanned outage to which one or more trouble tickets are associated.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="UnplannedOutage" class="group">
+         <a href="#UnplannedOutage">
+            <h2 class="abstract">UnplannedOutage</h2>
+         </a>
+         <p class="package">Operations</p>
+         <p class="comment">Document describing the consequence of an unplanned outage in a part of the electrical network. For the purposes of this model, an unplanned outage refers to a state where energy is not delivered; such as, customers out of service, a street light is not served, etc.</p>
+         <p class="comment">A unplanned outage may be created upon:</p>
+         <p class="comment">- impacts the SAIDI calculation</p>
+         <p class="comment">- a breaker trip,</p>
+         <p class="comment">- a fault indicator status change,</p>
+         <p class="comment">- a meter event indicating customer outage,</p>
+         <p class="comment">- a reception of one or more customer trouble calls, or</p>
+         <p class="comment">- an operator command, reflecting information obtained from the field crew.</p>
+         <p class="comment">Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.cause">cause</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The cause of this outage.  This is the cause that is used to present to external entities.  That is, the cause is weather, equipment failure, etc.</p>
+                  <p class="comment">Note: At present, this is a free string text; it could be replaced with an enumeration in the future.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.causeKind">causeKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#OutageCauseKind">OutageCauseKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">The possible cause that could be associated with this unplanned outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.comment">comment</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Free text comment.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.communityDescriptor">communityDescriptor</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">a name to denote the community - this could be a name or a code of some kind.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.createdDateTime">createdDateTime</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">dateTime</p>
+               </td>
+               <td>
+                  <p class="comment">Date and time that this document was created.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.customersRestored">customersRestored</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">number of customers that have been restored in the area.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.metersAffected">metersAffected</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.originalMetersAffected">originalMetersAffected</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">integer</p>
+               </td>
+               <td>
+                  <p class="comment">The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.outageKind">outageKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#OutageStatusKind">OutageStatusKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Defines if the outage has been verified or is only estimated</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.statusKind">statusKind</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#CrewStatusKind">CrewStatusKind</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">defines the status of the crew as in dispatched or arrived, etc.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.utilityDisclaimer">utilityDisclaimer</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">This contains an disclaimers the utility would like to place on the data provided to any stakeholder.  This may be different for different stakeholders.  This should possibly be an attribute under the Organization class but it is placed here for now.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UnplannedOutage.status">status</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">
+                     <a href="#Status">Status</a>
+                  </p>
+               </td>
+               <td>
+                  <p class="comment">Status of subject matter (e.g., Agreement, Work) this document represents. For status of the document itself, use 'docStatus' attribute.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <div id="UsagePoint" class="group">
+         <a href="#UsagePoint">
+            <h2 class="abstract">UsagePoint</h2>
+         </a>
+         <p class="package">Metering</p>
+         <p class="comment">Logical or physical point in the network to which readings or events may be attributed. Used at the place where a physical or virtual meter may be located; however, it is not required that a meter be present.</p>
+         <h3>Native Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="UsagePoint.mRID">mRID</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.</p>
+                  <p class="comment">For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UsagePoint.description">description</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name" id="UsagePoint.name">name</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">The name is any free human readable and possibly non unique text naming the object.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Enumerations</h1>
+      <div id="BillMediaKind" class="group">
+         <a href="#BillMediaKind">
+            <h2 class="enumerated">BillMediaKind</h2>
+         </a>
+         <p class="package">InfERPSupport</p>
+         <p class="comment">Kind of bill media.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">electronic</p>
+               </th>
+               <td/>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">other</p>
+               </th>
+               <td/>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">paper</p>
+               </th>
+               <td/>
+            </tr>
+         </table>
+      </div>
+      <div id="CustomerKind" class="group">
+         <a href="#CustomerKind">
+            <h2 class="enumerated">CustomerKind</h2>
+         </a>
+         <p class="package">Customers</p>
+         <p class="comment">Kind of customer.</p>
+         <table>
+            <tr>
+               <th>
+                  <p class="name">commercialIndustrial</p>
+               </th>
+               <td>
+                  <p class="comment">Commercial industrial customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">energyServiceScheduler</p>
+               </th>
+               <td>
+                  <p class="comment">Customer as energy service scheduler.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">energyServiceSupplier</p>
+               </th>
+               <td>
+                  <p class="comment">Customer as energy service supplier.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">enterprise</p>
+               </th>
+               <td>
+                  <p class="comment">Enterprise customer</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">internalUse</p>
+               </th>
+               <td>
+                  <p class="comment">Internal use customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">other</p>
+               </th>
+               <td>
+                  <p class="comment">Other kind of customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">pumpingLoad</p>
+               </th>
+               <td>
+                  <p class="comment">Pumping load customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">regionalOperator</p>
+               </th>
+               <td>
+                  <p class="comment">Regional Operator customer</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">residential</p>
+               </th>
+               <td>
+                  <p class="comment">Residential customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">residentialAndCommercial</p>
+               </th>
+               <td>
+                  <p class="comment">Residential and commercial customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">residentialAndStreetlight</p>
+               </th>
+               <td>
+                  <p class="comment">Residential and streetlight customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">residentialFarmService</p>
+               </th>
+               <td>
+                  <p class="comment">Residential farm service customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">residentialStreetlightOthers</p>
+               </th>
+               <td>
+                  <p class="comment">Residential streetlight or other related customer.</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">subsidiary</p>
+               </th>
+               <td>
+                  <p class="comment">Subsidiary customer</p>
+               </td>
+            </tr>
+            <tr>
+               <th>
+                  <p class="name">windMachine</p>
+               </th>
+               <td>
+                  <p class="comment">Wind machine customer.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Compound Types</h1>
+      <div id="ElectronicAddress" class="group">
+         <a href="#ElectronicAddress">
+            <h2 class="abstract">ElectronicAddress</h2>
+         </a>
+         <p class="package">Common</p>
+         <p class="comment">Electronic address information.</p>
+         <h3>Members</h3>
+         <table>
+            <tr>
+               <th>
+                  <p class="name" id="ElectronicAddress.email1">email1</p>
+               </th>
+               <td>
+                  <p class="cardinality">1..1</p>
+               </td>
+               <td class="type">
+                  <p class="type">string</p>
+               </td>
+               <td>
+                  <p class="comment">Primary email address.</p>
+               </td>
+            </tr>
+         </table>
+      </div>
+      <h1>Datatypes</h1>
+      <div id="Money" class="group">
+         <a href="#Money">
+            <h2 class="domain">Money</h2>
+         </a>
+         <p class="package"/>
+         <p class="comment">Amount of money.</p>
+         <p class="declaration">XSD type: <span class="xsdtype">decimal</span>
+         </p>
+      </div>
+   </body>
+</html>
